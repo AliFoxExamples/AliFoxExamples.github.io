@@ -1,0 +1,45 @@
+.wrapper {
+	margin: 100px 0 0 0; padding: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper2 {
+	margin: 10px 0 0 0; padding: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#rang {
+	margin: 0; padding: 0;
+
+	width: 200px; height: 10px;
+
+	border: black 2px solid;
+
+	border-radius: 50px;
+
+	position: relative;
+}
+
+#button {
+	margin: 0; padding: 0;
+	width: 15px; height: 15px;
+
+	border: gray 1px solid;
+
+	border-radius: 50%;
+
+	background-color: green;
+
+	cursor: pointer;
+
+	position: absolute;
+	top: 50%; left: -1px;
+
+	transform: translate(0, -8px);
+}
