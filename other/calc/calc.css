@@ -1,0 +1,90 @@
+body{
+	background-color:#FAFAD2;
+
+}
+
+#calc{
+	margin-top:100px;
+	background-color:#008B8B;
+	margin-left:40%;
+	margin-right:40%;
+	border:2px solid black;
+	padding:5px;
+	border-radius:8px;
+}
+
+#table{
+	animation: blink 0.8s linear infinite;
+	font-size:22;
+	text-align:right;
+	color:black;
+	background-color:#B0C4DE;
+	border:3px solid grey;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	padding-right:5px;
+	padding-top:20;
+	border-radius:5px;
+}
+
+@keyframes blink{
+	0%{color: rgb(34, 34, 34);}
+	100%{color: rgb(34, 34, 34, 0);}
+}
+
+#keys{
+	background-image:url(calc.jpg);
+	border:3px solid gray;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:5px;
+	padding:2px;
+	border-radius:5px;
+}
+
+.actions{
+	border-color:grey;
+	font-weight:700;
+	background-color:#7FFFD4;
+	height:70px;
+	width:70px;
+	margin:5px;
+	color:red;
+	font-size:20;
+	
+}
+
+.numbers{
+	border-color:grey;
+	font-weight:700;
+	background-color:#98FB98;
+	height:70px;
+	width:70px;
+	margin:5px;
+	color:red;
+	font-size:20;
+	
+}
+
+#equals{
+	border-color:grey;
+	background-color:#7FFFD4;
+	height:70px;
+	width:154px;
+	margin:5px;
+	color:red;
+	font-size:20;	
+}
+
+#number0{
+	border-color:grey;
+	background-color:#98FB98;
+	height:70px;
+	width:154px;
+	margin:5px;
+	color:red;
+	font-size:20;	
+}
+

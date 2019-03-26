@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<title>
+			Examples
+		</title>
+		<link href="html.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body bgcolor="#E0FFFF">
+	
+		<!-- Начало с текстом -->
+		
+		<p><i>Тестовая страница</i></p>
+		<h1 align="center"><span> Синтаксис и операторы</span></h1>
+		<br/>
+		<hr color="#800080" width="80%" align="center" />
+		<br/>
+		
+		<!-- Ссылка на вк -->
+		
+		<a href="http://vk.com" title="VK" target="_blank">В Контакте</a>
+		<br/>
+		<hr color="#800080" />
+		
+		<!-- Картинка -->
+		
+		<br/>
+		<img id="img1" src="aaa.jpg" height="45%" width="45%" border="2px" align="right" alt="aaa.jpg" />
+		
+		<!-- Текст с фоном -->
+		
+		<div style="background-color:#AFEEEE; color:blue; width:30%;">
+			<p>Текст</p>
+			<p>Text</p>
+		</div>
+		
+		<!-- Текст с разным цветом -->
+		
+		<h2>Некоторое
+			<span style="color:green">важное</span>
+		сообщение</h2>
+		<br/>
+		
+		<!-- Форма с перенаправлением на вк через новую вкладку-->
+		
+		<form action="http://vk.com" method="POST" target="_blank">
+			<input type="text" placeholder="Name" name="name" required />
+			<br/>
+			<input type="password" placeholder="Password" name="password" required />
+			<input type="submit" name="submit" value="Accept" style="color:red" />
+		</form>
+		<br/>
+		<br/>
+		
+		<!-- Форма с выбором пола -->
+		
+		<form action="http://vk.com" method="POST">
+			<input type="radio" name="gender" value="Male" />Male
+			<br/>
+			<input type="radio" name="gender" value="Female" />Female
+			<br/>
+			<br/>	
+		</form>
+		<br/>
+		
+		<!-- Поле ввода имени, e-mail и текста -->
+		
+		<form action="">
+				<input type="email" name"email"/>
+				<br/>
+				<br/>
+				<input type="text" name="name"/>
+				<br/>
+				<br/>
+				<textarea name="message" style="height:25%; width:35%;">
+				</textarea>
+				<input type="submit" class="submit" value="SEND"/>
+				<br/>
+				<br/>
+		</form>
+		
+		<!-- Выпадающий список input-datalist -->
+		
+		<br/>
+		<div align="center">	
+			<label>Выберите цвет:
+				<input name="colorsname1" type="text" list="colors" />
+				<datalist id="colors">
+					<option value="Красный">Красный</option>
+					<option value="Синий">Синий</option>
+					<option value="Голубой">Голубой</option>
+				</datalist>
+			</label>
+		</div>
+		<br/>
+		
+		<!-- Выпадающий список form-select -->
+		
+		<br/>
+		<div align="center">	
+			<form method="GET" />
+				<label for="colors2" >Выберите цвет:</label>
+				<select name="colorsname2" id="colors2">
+					<option value="Красный">Красный</option>
+					<option value="Синий">Синий</option>
+					<option value="Голубой">Голубой</option>
+				</select>
+			</form>
+		</div>
+		<br/>		
+		
+		<!-- Анимация SVG элемента -->
+		
+		<br/>
+		<svg width="*" height="250">
+			<rect width="150" height="150" fill="orange">
+				<animate attributeName="x" from="0" to="2080" dur="3s" fill="freeze" repeatCount="indefinite" />
+			</rect>
+		</svg>
+		<br/>
+		
+		<!-- SVG элемент -->
+		
+		<svg width="500" height="500">
+			<path d="M 0 0 L200 200 L200 0 Z" dur="5s" />
+		</svg>
+		
+		<!-- SVG элемент - круг -->
+		
+		<div align="center" >
+			<svg width="100" height="100">
+				<circle cx="50" cy="50" r="50" fill="green" stroke="red"/>
+			</svg>
+		</div>
+		<br/>
+		
+		<!-- Audio -->
+		
+		<br/>
+		<div align="center">
+			<audio src="aaa.mp3" controls >
+			Элемент audio не поддерживается вышим браузером.
+			</audio>
+			<br/>
+			
+			<audio controls >
+				<source src="bbb.mp3" type="audio/mp3"/>
+				<source />
+				<source src="bbb.ogg" type="audio/ogg"/>
+				<source />
+				Элемент audio не поддерживается вышим браузером.
+			</audio>
+			<br/>
+		</div>
+		
+		<!-- Video -->
+		
+		<br/>
+		<div align="center">
+			<video width="1024" height="720" src="vvv.mp4" controls>
+			</video>
+			<br/>
+			
+			<video controls>
+				<source src="vvv.mp4" type="video/mp4">
+				</source>
+				<source src="vvv.ogg" type="video/ogg">
+				</source>
+				Элемент video не поддерживается вышим браузером.
+			</video>
+			<br/>
+		</div>
+
+	</body>
+</html>

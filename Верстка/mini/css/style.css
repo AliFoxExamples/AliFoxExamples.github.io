@@ -1,0 +1,457 @@
+
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+
+/* HEADER SECTION BEGINS */
+
+header {
+	position: absolute;
+	top: 84px;
+	left: 0;
+	right: 0;
+	/*z-index: 99;*/
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1250px;
+	padding: 0 40px;
+
+}
+
+.header-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.logo a {
+	width: 150px;
+	height: 150px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #ffffff;
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 45px;
+	font-weight: 700;
+	line-height: 45px;
+	text-transform: uppercase;
+
+	cursor: pointer;
+}
+
+
+
+/* HEADER NAVIGATION SECTION BEGINS */
+
+
+
+.main-nav {
+
+}
+
+.main-menu {
+	list-style: none;
+
+	display: flex;
+}
+
+.main-menu-item {
+	margin-left: 90px;
+
+	position: relative;
+
+}
+
+.main-menu-item:after {
+	content: "\\\\";
+	display: block;
+
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #ffffff;
+
+	position: absolute;
+	left: 100%;
+	top: 0;
+
+	margin-left: 40px;
+}
+
+.main-menu-item:last-child:after {
+	display: none;
+}
+
+.main-menu-link {
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #ffffff;
+
+	cursor: pointer;
+}
+
+.main-menu-link:hover {
+	color: #0d0d0d;
+}
+
+
+
+/* HEADER NAVIGATION SECTION ENDS */
+
+/* HEADER SECTION ENDS */
+
+/* BANNER SECTION BEGINS */
+
+.banner {
+	height: 1100px;
+	background: url(../img/banner.png) no-repeat center top;
+
+	padding-top: 450px;
+	padding-bottom: 280px;
+
+	text-align: center;
+}
+
+
+h1 {
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 60px;
+
+	margin-bottom: 90px;
+}
+
+h1 .lg {
+	font-size: 70px;
+	font-weight: 700;
+	line-height: 80px;
+
+	display: block;
+
+	letter-spacing: -3px;
+}
+
+h1 .sm {
+	font-size: 40px;
+	font-weight: 300;
+	line-height: 60px;
+}
+
+
+/* BUTTONS' STYLES SECTION BEGINS */
+
+.button {
+	display: inline-block;
+	/*vertical-align: middle;*/
+	height: 42px;
+	padding: 11px 35px 0;
+	border: 2px solid #ffffff;
+	background-color: transparent;
+	color: #ffffff;
+
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #f39c12;
+	border-color: #f39c12;
+
+	text-decoration: none;
+	color: #ffffff;
+}
+
+
+
+/* BUTTONS' STYLES SECTION ENDS */
+
+/* ABOUT SECTION BEGINS */
+
+.about {
+	padding: 100px 0;
+}
+
+.heading {
+	display: flex;
+	align-items: center;
+	margin-bottom: 151px;
+}
+
+.heading h2 {
+	color: #0d0d0d;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 35px;
+	text-transform: uppercase;
+
+	position: relative;
+
+	margin-right: 40px;
+}
+
+.heading h2:after {
+	content: "";
+	display: block;
+	height: 45px;
+	width: 4px;
+	background-color: #f39c12;
+
+	position: absolute;
+	top: 50%;
+	left: 100%;
+
+	margin-top: -22px;
+	margin-left: 19px;
+
+}
+
+.heading p {
+	color: #4d4d4d;
+	font-style: 16px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+}
+
+
+
+
+/*About p.2*/
+
+
+
+
+.about-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	border-bottom: 2px solid #e6e6e6;
+
+	padding-bottom: 124px;
+}
+
+.about-wrap-content {
+	display: flex;
+	align-items: flex-start;
+
+	flex: 1;
+}
+
+.about-wrap-content-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: none;
+
+	width: 125px;
+	height: 125px;
+
+	border: 2px solid #f39c12;
+	border-radius: 50%;
+	background-color: #ffffff;
+
+	margin-right: 29px;
+
+}
+
+
+h6 {
+	color: #0d0d0d;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+
+	margin-bottom: 26px;
+}
+
+.about-wrap-content-text .heading-text {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: left;
+  color: #e74c3c;
+  margin-bottom: 26px;
+}
+
+.about-wrap-content-text p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  color: #737373;
+  word-spacing: -0.1px;
+}
+
+
+.about-wrap-img {
+	width: 450px;
+	height: 254px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	flex: none;
+
+	background-color: #FF4A39;
+	margin-left: 65px;
+}
+
+
+/*Skill*/
+
+.box-skills {
+	display: flex;
+
+	margin-top: 120px;
+}
+
+.box-skills-item {
+	flex: 1;
+	width: 50%;
+}
+
+.box-skills-item .about-wrap-content-text p {
+	word-spacing: -1px;
+}
+
+.box-skills-left {
+	padding-right: 50px;
+	text-align: right;
+}
+
+.box-skills-right {
+	padding-left: 45px;
+}
+
+.box-skills-left img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+/*Skill Progress Bars*/
+
+.box-bars {
+	margin-top: 68px;
+}
+
+.bars {
+	margin-bottom: 30px;
+}
+
+.bars-title {
+	font-size: 16px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: #0d0d0d;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.bars-title span {
+	color: #bfbfbf;
+	font-weight: 600;
+}
+
+.bars-title .span-procent {
+	color: #0d0d0d;
+	font-weight: 300;
+}
+
+.bars-progress {
+	height: 10px;
+	background-color: #e7e7e7;
+}
+
+.bars-progress div {
+	height: 10px;
+	background-color: #f49d09;
+}
+
+/* ABOUT SECTION ENDS */
+
+
+
+
+/* QUOTE SECTION BEGINS */
+
+.box-quote {
+	padding: 250px 0;
+	text-align: center;
+	color: #ffffff;
+
+	background: url("../img/bg-image.png") no-repeat center top;
+	background-size: cover;
+}
+
+.quote-text {
+	padding: 0 50px;
+
+	font-size: 45px;
+	font-weight: 700;
+	line-height: 60px;
+	color: #ffffff;
+	position: relative;
+
+	margin-bottom: 33px;
+}
+
+.quote-text:before, .quote-text:after {
+	display: block;
+	font-size: 110px;
+	font-weight: 700;
+	line-height: 60px;
+	font-style: italic;
+
+	position: absolute;
+	top: 0;
+}
+
+.quote-text:before {
+	content: '“';
+	left: 0;
+}
+
+.quote-text:after {
+	content: '"';
+	right: 0;
+}
+
+.quote-author {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+.quote-author:before {
+	content: "";
+	display: block;
+	width: 50px; height: 4px;
+	background-color: #f39c12;
+
+	margin: 0 auto 15px;
+}
+
+
+/* QUOTE SECTION ENDS */
