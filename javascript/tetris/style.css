@@ -1,0 +1,72 @@
+.wrapper {
+	margin: 0; padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#box {
+	width: 375px; height: 500px;
+	margin: 50px 0 30px 0; padding: 0;
+	background-color: gray;
+	border: 1px black solid;
+	
+	display: flex;
+	flex-wrap: wrap;
+
+	align-content: flex-start;
+}
+
+.cell {
+	margin: 0; padding: 0;
+	width: 23px; height: 23px;
+	border: 1px white solid;
+}
+
+#button {
+	width: 80px; height: 30px;
+	margin: 0; padding: 0;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	background-color: gray;
+	
+}
+
+#button div {
+	color: yellow;
+	
+}
+
+#button:hover {
+	cursor: pointer;
+}
+
+
+/* Пример поворота блоков */
+
+
+#button2 {
+	width: 80px; height: 30px;
+	margin: 10px 0 0 0; padding: 0;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	background-color: gray;
+	
+}
+
+#button2 div {
+	color: yellow;
+	
+}
+
+#button2:hover {
+	cursor: pointer;
+}
+

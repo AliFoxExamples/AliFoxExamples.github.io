@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+	<title>Tetris</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+</head>
+<body>
+
+
+	<div class="wrapper">
+		<div id="box">
+			<div class="cell" id="cell1_1"></div>
+			<div class="cell" id="cell1_2"></div>
+			<div class="cell" id="cell1_3"></div>
+			<div class="cell" id="cell1_4"></div>
+			<div class="cell" id="cell1_5"></div>
+			<div class="cell" id="cell1_6"></div>
+			<div class="cell" id="cell1_7"></div>
+			<div class="cell" id="cell1_8"></div>
+			<div class="cell" id="cell1_9"></div>
+			<div class="cell" id="cell1_10"></div>
+			<div class="cell" id="cell1_11"></div>
+			<div class="cell" id="cell1_12"></div>
+			<div class="cell" id="cell1_13"></div>
+			<div class="cell" id="cell1_14"></div>
+			<div class="cell" id="cell1_15"></div>
+
+			<div class="cell" id="cell2_1"></div>
+			<div class="cell" id="cell2_2"></div>
+			<div class="cell" id="cell2_3"></div>
+			<div class="cell" id="cell2_4"></div>
+			<div class="cell" id="cell2_5"></div>
+			<div class="cell" id="cell2_6"></div>
+			<div class="cell" id="cell2_7"></div>
+			<div class="cell" id="cell2_8"></div>
+			<div class="cell" id="cell2_9"></div>
+			<div class="cell" id="cell2_10"></div>
+			<div class="cell" id="cell2_11"></div>
+			<div class="cell" id="cell2_12"></div>
+			<div class="cell" id="cell2_13"></div>
+			<div class="cell" id="cell2_14"></div>
+			<div class="cell" id="cell2_15"></div>
+
+			<div class="cell" id="cell3_1"></div>
+			<div class="cell" id="cell3_2"></div>
+			<div class="cell" id="cell3_3"></div>
+			<div class="cell" id="cell3_4"></div>
+			<div class="cell" id="cell3_5"></div>
+			<div class="cell" id="cell3_6"></div>
+			<div class="cell" id="cell3_7"></div>
+			<div class="cell" id="cell3_8"></div>
+			<div class="cell" id="cell3_9"></div>
+			<div class="cell" id="cell3_10"></div>
+			<div class="cell" id="cell3_11"></div>
+			<div class="cell" id="cell3_12"></div>
+			<div class="cell" id="cell3_13"></div>
+			<div class="cell" id="cell3_14"></div>
+			<div class="cell" id="cell3_15"></div>
+
+			<div class="cell" id="cell4_1"></div>
+			<div class="cell" id="cell4_2"></div>
+			<div class="cell" id="cell4_3"></div>
+			<div class="cell" id="cell4_4"></div>
+			<div class="cell" id="cell4_5"></div>
+			<div class="cell" id="cell4_6"></div>
+			<div class="cell" id="cell4_7"></div>
+			<div class="cell" id="cell4_8"></div>
+			<div class="cell" id="cell4_9"></div>
+			<div class="cell" id="cell4_10"></div>
+			<div class="cell" id="cell4_11"></div>
+			<div class="cell" id="cell4_12"></div>
+			<div class="cell" id="cell4_13"></div>
+			<div class="cell" id="cell4_14"></div>
+			<div class="cell" id="cell4_15"></div>
+
+			<div class="cell" id="cell5_1"></div>
+			<div class="cell" id="cell5_2"></div>
+			<div class="cell" id="cell5_3"></div>
+			<div class="cell" id="cell5_4"></div>
+			<div class="cell" id="cell5_5"></div>
+			<div class="cell" id="cell5_6"></div>
+			<div class="cell" id="cell5_7"></div>
+			<div class="cell" id="cell5_8"></div>
+			<div class="cell" id="cell5_9"></div>
+			<div class="cell" id="cell5_10"></div>
+			<div class="cell" id="cell5_11"></div>
+			<div class="cell" id="cell5_12"></div>
+			<div class="cell" id="cell5_13"></div>
+			<div class="cell" id="cell5_14"></div>
+			<div class="cell" id="cell5_15"></div>
+
+			<div class="cell" id="cell6_1"></div>
+			<div class="cell" id="cell6_2"></div>
+			<div class="cell" id="cell6_3"></div>
+			<div class="cell" id="cell6_4"></div>
+			<div class="cell" id="cell6_5"></div>
+			<div class="cell" id="cell6_6"></div>
+			<div class="cell" id="cell6_7"></div>
+			<div class="cell" id="cell6_8"></div>
+			<div class="cell" id="cell6_9"></div>
+			<div class="cell" id="cell6_10"></div>
+			<div class="cell" id="cell6_11"></div>
+			<div class="cell" id="cell6_12"></div>
+			<div class="cell" id="cell6_13"></div>
+			<div class="cell" id="cell6_14"></div>
+			<div class="cell" id="cell6_15"></div>
+
+			<div class="cell" id="cell7_1"></div>
+			<div class="cell" id="cell7_2"></div>
+			<div class="cell" id="cell7_3"></div>
+			<div class="cell" id="cell7_4"></div>
+			<div class="cell" id="cell7_5"></div>
+			<div class="cell" id="cell7_6"></div>
+			<div class="cell" id="cell7_7"></div>
+			<div class="cell" id="cell7_8"></div>
+			<div class="cell" id="cell7_9"></div>
+			<div class="cell" id="cell7_10"></div>
+			<div class="cell" id="cell7_11"></div>
+			<div class="cell" id="cell7_12"></div>
+			<div class="cell" id="cell7_13"></div>
+			<div class="cell" id="cell7_14"></div>
+			<div class="cell" id="cell7_15"></div>
+
+			<div class="cell" id="cell8_1"></div>
+			<div class="cell" id="cell8_2"></div>
+			<div class="cell" id="cell8_3"></div>
+			<div class="cell" id="cell8_4"></div>
+			<div class="cell" id="cell8_5"></div>
+			<div class="cell" id="cell8_6"></div>
+			<div class="cell" id="cell8_7"></div>
+			<div class="cell" id="cell8_8"></div>
+			<div class="cell" id="cell8_9"></div>
+			<div class="cell" id="cell8_10"></div>
+			<div class="cell" id="cell8_11"></div>
+			<div class="cell" id="cell8_12"></div>
+			<div class="cell" id="cell8_13"></div>
+			<div class="cell" id="cell8_14"></div>
+			<div class="cell" id="cell8_15"></div>
+
+			<div class="cell" id="cell9_1"></div>
+			<div class="cell" id="cell9_2"></div>
+			<div class="cell" id="cell9_3"></div>
+			<div class="cell" id="cell9_4"></div>
+			<div class="cell" id="cell9_5"></div>
+			<div class="cell" id="cell9_6"></div>
+			<div class="cell" id="cell9_7"></div>
+			<div class="cell" id="cell9_8"></div>
+			<div class="cell" id="cell9_9"></div>
+			<div class="cell" id="cell9_10"></div>
+			<div class="cell" id="cell9_11"></div>
+			<div class="cell" id="cell9_12"></div>
+			<div class="cell" id="cell9_13"></div>
+			<div class="cell" id="cell9_14"></div>
+			<div class="cell" id="cell9_15"></div>
+
+			<div class="cell" id="cell10_1"></div>
+			<div class="cell" id="cell10_2"></div>
+			<div class="cell" id="cell10_3"></div>
+			<div class="cell" id="cell10_4"></div>
+			<div class="cell" id="cell10_5"></div>
+			<div class="cell" id="cell10_6"></div>
+			<div class="cell" id="cell10_7"></div>
+			<div class="cell" id="cell10_8"></div>
+			<div class="cell" id="cell10_9"></div>
+			<div class="cell" id="cell10_10"></div>
+			<div class="cell" id="cell10_11"></div>
+			<div class="cell" id="cell10_12"></div>
+			<div class="cell" id="cell10_13"></div>
+			<div class="cell" id="cell10_14"></div>
+			<div class="cell" id="cell10_15"></div>
+
+			<div class="cell" id="cell11_1"></div>
+			<div class="cell" id="cell11_2"></div>
+			<div class="cell" id="cell11_3"></div>
+			<div class="cell" id="cell11_4"></div>
+			<div class="cell" id="cell11_5"></div>
+			<div class="cell" id="cell11_6"></div>
+			<div class="cell" id="cell11_7"></div>
+			<div class="cell" id="cell11_8"></div>
+			<div class="cell" id="cell11_9"></div>
+			<div class="cell" id="cell11_10"></div>
+			<div class="cell" id="cell11_11"></div>
+			<div class="cell" id="cell11_12"></div>
+			<div class="cell" id="cell11_13"></div>
+			<div class="cell" id="cell11_14"></div>
+			<div class="cell" id="cell11_15"></div>
+
+			<div class="cell" id="cell12_1"></div>
+			<div class="cell" id="cell12_2"></div>
+			<div class="cell" id="cell12_3"></div>
+			<div class="cell" id="cell12_4"></div>
+			<div class="cell" id="cell12_5"></div>
+			<div class="cell" id="cell12_6"></div>
+			<div class="cell" id="cell12_7"></div>
+			<div class="cell" id="cell12_8"></div>
+			<div class="cell" id="cell12_9"></div>
+			<div class="cell" id="cell12_10"></div>
+			<div class="cell" id="cell12_11"></div>
+			<div class="cell" id="cell12_12"></div>
+			<div class="cell" id="cell12_13"></div>
+			<div class="cell" id="cell12_14"></div>
+			<div class="cell" id="cell12_15"></div>
+
+			<div class="cell" id="cell13_1"></div>
+			<div class="cell" id="cell13_2"></div>
+			<div class="cell" id="cell13_3"></div>
+			<div class="cell" id="cell13_4"></div>
+			<div class="cell" id="cell13_5"></div>
+			<div class="cell" id="cell13_6"></div>
+			<div class="cell" id="cell13_7"></div>
+			<div class="cell" id="cell13_8"></div>
+			<div class="cell" id="cell13_9"></div>
+			<div class="cell" id="cell13_10"></div>
+			<div class="cell" id="cell13_11"></div>
+			<div class="cell" id="cell13_12"></div>
+			<div class="cell" id="cell13_13"></div>
+			<div class="cell" id="cell13_14"></div>
+			<div class="cell" id="cell13_15"></div>
+
+			<div class="cell" id="cell14_1"></div>
+			<div class="cell" id="cell14_2"></div>
+			<div class="cell" id="cell14_3"></div>
+			<div class="cell" id="cell14_4"></div>
+			<div class="cell" id="cell14_5"></div>
+			<div class="cell" id="cell14_6"></div>
+			<div class="cell" id="cell14_7"></div>
+			<div class="cell" id="cell14_8"></div>
+			<div class="cell" id="cell14_9"></div>
+			<div class="cell" id="cell14_10"></div>
+			<div class="cell" id="cell14_11"></div>
+			<div class="cell" id="cell14_12"></div>
+			<div class="cell" id="cell14_13"></div>
+			<div class="cell" id="cell14_14"></div>
+			<div class="cell" id="cell14_15"></div>
+
+			<div class="cell" id="cell15_1"></div>
+			<div class="cell" id="cell15_2"></div>
+			<div class="cell" id="cell15_3"></div>
+			<div class="cell" id="cell15_4"></div>
+			<div class="cell" id="cell15_5"></div>
+			<div class="cell" id="cell15_6"></div>
+			<div class="cell" id="cell15_7"></div>
+			<div class="cell" id="cell15_8"></div>
+			<div class="cell" id="cell15_9"></div>
+			<div class="cell" id="cell15_10"></div>
+			<div class="cell" id="cell15_11"></div>
+			<div class="cell" id="cell15_12"></div>
+			<div class="cell" id="cell15_13"></div>
+			<div class="cell" id="cell15_14"></div>
+			<div class="cell" id="cell15_15"></div>
+
+			<div class="cell" id="cell16_1"></div>
+			<div class="cell" id="cell16_2"></div>
+			<div class="cell" id="cell16_3"></div>
+			<div class="cell" id="cell16_4"></div>
+			<div class="cell" id="cell16_5"></div>
+			<div class="cell" id="cell16_6"></div>
+			<div class="cell" id="cell16_7"></div>
+			<div class="cell" id="cell16_8"></div>
+			<div class="cell" id="cell16_9"></div>
+			<div class="cell" id="cell16_10"></div>
+			<div class="cell" id="cell16_11"></div>
+			<div class="cell" id="cell16_12"></div>
+			<div class="cell" id="cell16_13"></div>
+			<div class="cell" id="cell16_14"></div>
+			<div class="cell" id="cell16_15"></div>
+
+			<div class="cell" id="cell17_1"></div>
+			<div class="cell" id="cell17_2"></div>
+			<div class="cell" id="cell17_3"></div>
+			<div class="cell" id="cell17_4"></div>
+			<div class="cell" id="cell17_5"></div>
+			<div class="cell" id="cell17_6"></div>
+			<div class="cell" id="cell17_7"></div>
+			<div class="cell" id="cell17_8"></div>
+			<div class="cell" id="cell17_9"></div>
+			<div class="cell" id="cell17_10"></div>
+			<div class="cell" id="cell17_11"></div>
+			<div class="cell" id="cell17_12"></div>
+			<div class="cell" id="cell17_13"></div>
+			<div class="cell" id="cell17_14"></div>
+			<div class="cell" id="cell17_15"></div>
+
+			<div class="cell" id="cell18_1"></div>
+			<div class="cell" id="cell18_2"></div>
+			<div class="cell" id="cell18_3"></div>
+			<div class="cell" id="cell18_4"></div>
+			<div class="cell" id="cell18_5"></div>
+			<div class="cell" id="cell18_6"></div>
+			<div class="cell" id="cell18_7"></div>
+			<div class="cell" id="cell18_8"></div>
+			<div class="cell" id="cell18_9"></div>
+			<div class="cell" id="cell18_10"></div>
+			<div class="cell" id="cell18_11"></div>
+			<div class="cell" id="cell18_12"></div>
+			<div class="cell" id="cell18_13"></div>
+			<div class="cell" id="cell18_14"></div>
+			<div class="cell" id="cell18_15"></div>
+
+			<div class="cell" id="cell19_1"></div>
+			<div class="cell" id="cell19_2"></div>
+			<div class="cell" id="cell19_3"></div>
+			<div class="cell" id="cell19_4"></div>
+			<div class="cell" id="cell19_5"></div>
+			<div class="cell" id="cell19_6"></div>
+			<div class="cell" id="cell19_7"></div>
+			<div class="cell" id="cell19_8"></div>
+			<div class="cell" id="cell19_9"></div>
+			<div class="cell" id="cell19_10"></div>
+			<div class="cell" id="cell19_11"></div>
+			<div class="cell" id="cell19_12"></div>
+			<div class="cell" id="cell19_13"></div>
+			<div class="cell" id="cell19_14"></div>
+			<div class="cell" id="cell19_15"></div>
+
+			<div class="cell" id="cell20_1"></div>
+			<div class="cell" id="cell20_2"></div>
+			<div class="cell" id="cell20_3"></div>
+			<div class="cell" id="cell20_4"></div>
+			<div class="cell" id="cell20_5"></div>
+			<div class="cell" id="cell20_6"></div>
+			<div class="cell" id="cell20_7"></div>
+			<div class="cell" id="cell20_8"></div>
+			<div class="cell" id="cell20_9"></div>
+			<div class="cell" id="cell20_10"></div>
+			<div class="cell" id="cell20_11"></div>
+			<div class="cell" id="cell20_12"></div>
+			<div class="cell" id="cell20_13"></div>
+			<div class="cell" id="cell20_14"></div>
+			<div class="cell" id="cell20_15"></div>
+
+			<div class="cell" id="cell21_1"></div>
+			<div class="cell" id="cell21_2"></div>
+			<div class="cell" id="cell21_3"></div>
+			<div class="cell" id="cell21_4"></div>
+			<div class="cell" id="cell21_5"></div>
+			<div class="cell" id="cell21_6"></div>
+			<div class="cell" id="cell21_7"></div>
+			<div class="cell" id="cell21_8"></div>
+			<div class="cell" id="cell21_9"></div>
+			<div class="cell" id="cell21_10"></div>
+			<div class="cell" id="cell21_11"></div>
+			<div class="cell" id="cell21_12"></div>
+			<div class="cell" id="cell21_13"></div>
+			<div class="cell" id="cell21_14"></div>
+			<div class="cell" id="cell2	1_15"></div>
+
+			
+
+
+		</div>
+		<div id="button"><div>ADD</div></div>
+		
+		<!-- Пример поворота блоков -->
+		
+		<div id="button2"><div>FLIP</div></div>
+		
+		
+	</div>
+	
+	
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
