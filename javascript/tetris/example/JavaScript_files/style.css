@@ -1,0 +1,347 @@
+html, .container {min-width: 950px !important;}
+body {background: #f9f9f9 !important;}
+a {color: #32619a;}
+label[for="comment-editor"] {display: none !important; height: 0;}
+/*h1, h2, h3 {font-family: Georgia, serif !important; font-style: italic;}*/
+h1, h2, h3 {font-family: 'Roboto Slab', Georgia, serif !important;}
+header {/*margin-bottom: 20px; background: url('/img/headers.png') bottom center repeat-x; padding-bottom: 30px;*/ height: 55px;}
+header > .row {height: 88px;}
+header .col-md-4, header .col-md-8 {margin-top: 25px; margin-bottom: 25px;}
+.logo {display: block; margin-top: 11px; width: 130px;}
+/*.logo img {height: 60px; width: 140px;}*/
+header nav {position: relative; height: 45px; /*84px;*/}
+header nav .row {position: relative;  top: 50%; margin-top: -20px;}
+
+[class^="glyphicon-"], [class*=" glyphicon-"] {
+    margin-top: 1px;
+    margin-right: .3em;
+}
+.content img {
+    max-width: 100%;
+    margin: 10px 0 !important;
+}
+.content img.bordered {
+    padding: 7px !important;
+    background: #DEDEDE;
+    border: 1px solid #BEBEBE !important;
+}
+blockquote {font-size: 100% !important; margin: 8px 0 15px !important;}
+/*div.ticket-meta {padding:10px 0; margin: 20px 0 55px;}*/
+div.ticket-meta {padding: 10px 15px; margin: 20px 0 35px; border: 1px solid #999; border-radius: 9px; float: left; font-size: 11px;}
+a.read-more {display: none;}
+.content h3 a {color: #333;}
+.content a:hover {text-decoration: none;}
+aside a:hover {color: #2a6496 !important; text-decoration: none;}
+.content a, aside a {text-decoration: underline;}
+aside a {text-decoration: none;}
+.ticket-meta a {color: #333; text-decoration: none;}
+.ticket-meta > span {margin-right: 25px;}
+/*.ticket-meta > span:first-child {padding-left: 0;}
+.ticket-meta > span:last-child {border-right: none;}*/
+
+.comments-subscribe {font-size: 12px; white-space: nowrap; line-height: 21px; margin-top: 13px;}
+.comments h3 {margin-bottom: -50px;}
+.comments .comments-subscribe + h3 {white-space: nowrap; float: left;}
+
+h1 + .section-row {margin-top: 45px;}
+.section-row h3 {margin-top: 0; margin-bottom: 45px;}
+
+.content pre {margin-top: 5px;}
+.content pre {font-family: 'Ubuntu Mono',sans-serif;}
+
+.str{color:#080}
+.kwd{color:#008}
+.com{color:#800}
+.typ{color:#606}
+.lit{color:#066}
+.pun,.opn,.clo{color:#660}
+.tag{color:#008}
+.atn{color:#606}
+.atv{color:#080}
+.dec,.var{color:#606}
+.fun{color:#c00}
+.pln{color:#000;}
+
+.prettyprint {
+  padding: 8px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+     -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+          box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+}
+
+.tickets-latest-row {margin-bottom: 20px;}
+.tickets-latest-row .date {font-size: 80%; color: #666;}
+.tickets-latest-row .date:before {content: "(";}
+.tickets-latest-row .date:after {content: ")";}
+.tickets-latest-row .ticket a {color: #333; text-decoration: underline; padding: 5px 0;}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+}
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.navbar.top {margin: 0; min-height: 20px; font-size: 90%;}
+.top .nav a {padding-top: 5px; padding-bottom: 5px;}
+.top .nav, .afterHeader .nav {margin-left: -15px;}
+.container ul.nav.navbar-nav li {float: left;}
+.container p.navbar-text.navbar-right {float: right;}
+nav .form-group {float: left; margin-right: 9px;}
+/*.top .nav a {border-right: 1px solid #666;}*/
+/*.top .nav a:hover {background: #666;}*/
+/*.top .nav li:first-child a {border-left: 1px solid #666;}*/
+/*.afterHeader .nav a {border-color: #ccc !important;}*/
+.top p {margin: 5px 15px;}
+aside {background: #f3f3f3; padding: 1px 15px;}
+.navbar.navbar-inverse {background-color: #071B04;}
+
+#comments-wrapper > ol.comment-list {padding-left: 0; margin-left: 0; margin-top: 110px;}
+#comments-wrapper .comment-reply a {text-decoration: none; margin-right: 8px; border-bottom: 1px dashed;}
+#comments-wrapper #comment-form {margin-top: 25px;}
+.comments {margin-bottom: 25px;}
+
+.col-xs-4 #templatesList > div {width: 48% !important; font-size: 12px;}
+.col-xs-4 #templatesList > div h3 {display: none;}
+.col-xs-4 #templatesList + div {display: none !important;}
+
+footer {margin-top: 60px; padding-top: 20px; padding-bottom: 40px; border-top: 4px solid #071B04; background: #f3f3f3; font-size: 11px;}
+.pagination {margin: 0 0 0 1px !important;}
+ul.pagination li:first-child, ul.pagination li:last-child {display: none !important;}
+ul.pagination li.control a:before, ul.pagination li.disabled span:before {content: "Далее ";}
+ul.pagination li:nth-child(2) a:after, ul.pagination li:nth-child(2) span:after {content: " Назад";}
+ul.pagination li:nth-child(2) a:before, ul.pagination li:nth-child(2) span:before {content: "";}
+
+a.loginza.srv {
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-right: 4px;
+    text-decoration: none;
+    background-image: url("/img/login_icons.png");
+    height: 32px;
+    width: 32px;
+}
+a.loginza.srv:last-child {margin-right: 0;}
+a.loginza.srv.yandex {background-position: 0 -248px;}
+a.loginza.srv.google {background-position: 0 -213px;}
+a.loginza.srv.facebook {background-position: 0 -143px;}
+a.loginza.srv.vkontakte {background-position: 0 -38px;}
+a.loginza.srv.odnoklassniki {background-position: 0 -73px;}
+a.loginza.srv.mailru {background-position: 0 -108px;}
+a.loginza.srv.twitter {background-position: 0 -178px;}
+a.loginza.srv.rambler {background-position: 0 -352px;}
+
+.navbar-nav > li > a {padding-top: 5px !important; padding-bottom: 5px !important;}
+.navbar.afterHeader {min-height: 30px; background: #234266 /*url('/img/toolbar.png') center center*/;}
+.navbar.afterHeader .navbar-nav > li > a {color: #fff; margin-top: 1px;}
+.navbar.afterHeader .navbar-nav > .active > a, .navbar.afterHeader .navbar-nav > .active > a:hover, .navbar.afterHeader .navbar-nav > .active > a:focus {background:#fff; color: #234266;}
+
+.ticket-comment-header img {border-radius: 4px;}
+.ticket-comment-author {font-family: tahoma,sans-serif;}
+.tickets-row, .content {overflow: hidden;}
+.static .content {overflow: hidden;}
+
+.neighbors {overflow: hidden; margin: 20px 0;}
+.neighbors a {text-decoration: none;}
+.neighbors small {font-size: 10px;}
+.neighbors .link-prev {float: left; text-align: left;}
+.neighbors .link-next {float: right; text-align: right;}
+#objectexplorer_jumplist_div .oe_cell {font-family: 'Ubuntu Mono',sans-serif; margin: 0 0 4px 0; font-size: 12px; width: 16.666665%; height: auto;}
+#objectexplorer_jumplist_div .oe_cell a {padding: 0; color: #2a6496; display:block; width: 95%; overflow: hidden;}
+/*#objectexplorer_jumplist_div .oe_cell:first-child {width: 30%;}
+#objectexplorer_jumplist_div .oe_cell:last-child {width: 30%;}*/
+div#objectexplorer_jumplist_div {width: 940px; box-shadow: 0 0 10px #000;}
+div#objectexplorer_jumplist_div .blockHeader {display: none; margin: 0 0 15px; font-size: 31px;}
+div#objectexplorer_jumplist_div.affix {top: 0; overflow: hidden; padding: 5px 20px !important; height: 50px;}
+div#objectexplorer_jumplist_div.affix .blockHeader {display: block;}
+div#objectexplorer_jumplist_div.affix .blockHeader:after {content: " ↓"; font-size: 28px; vertical-align: top; display: inline-block; margin-left: 15px;}
+div#objectexplorer_jumplist_div.affix:hover {height: auto; padding: 20px !important;}
+div#objectexplorer_jumplist_div.affix + .full-reference {margin-top: 40px;}
+div.full-reference a {color: #333 !important;}
+div.full-reference a.anchor {padding: 0 !important; /*margin-top: -360px; margin-bottom: 380px;*/ display: block; width: 1px; height: 1px;}
+div.full-reference {margin-right: -60px;}
+.objectContainer {width: 48%; float: left; padding-right: 2%;}
+.buttonDescr {margin-top: 3px;}
+
+a.button13 {
+  display: inline-block;
+  width: 15em;
+  font-size: 80%;
+  color: rgba(255,255,255,.9);
+  text-shadow: #2ebd7e 0 1px 2px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  white-space: pre-line;
+  padding: .7em 0;
+  border: 1px solid;
+  border-color: #60d8a3 #29a970 #29a970 #60d8a3;
+  border-radius: 6px;
+  outline: none;
+  background: #14B81A linear-gradient(#4EDA42, #2FAC1E 50%, #0D9718);
+  box-shadow: inset rgba(255,255,255,.5) 1px 1px;
+}
+a.button13:first-line{
+  font-size: 170%;
+  font-weight: 700;
+}
+a.button13:hover {
+  color: rgb(255,255,255);
+  background-image: linear-gradient(#7EFA72, #4FBC3E 50%, #2DA738);
+}
+a.button13:active {
+  color: rgb(255,255,255);
+  border-color: #29a970;
+  background-image: linear-gradient(#7EFA72, #4FBC3E);
+  box-shadow: none;
+}
+
+.xPoller {
+    padding: 25px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.xPoller p {
+    margin: 0;
+}
+
+.xPoller h3 {
+    margin-top: 0;
+}
+
+.xPoller .progress {
+    margin-bottom: 6px;
+}
+
+#totop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    cursor: pointer;
+}
+#totoplabel {
+    position: fixed;
+    left: 8px;
+    bottom: 25px;
+    padding: 8px;
+    background: #ccc;
+    color: #fff;
+    border-radius: 4px;
+}
+#totoplabel .text {
+    display: none;
+}
+#totop:hover {
+    /*background: #f3f3f3;*/
+    background: url('/img/totop.png') 0 0 repeat-y;
+}
+#totop:hover #totoplabel {
+    background: #999;
+}
+footer, header, body > .container {
+    position: relative;
+    z-index: 1;
+}
+header {
+    background: #f9f9f9;
+}
+body > .container {
+    background: #f9f9f9;
+    padding-bottom: 60px;
+    padding-top: 20px;
+    min-height: 560px;
+}
+nav.navbar {
+    margin-bottom: 0;
+}
+footer {
+    margin-top: 0;
+}
+
+.reviews-block .comments .title,
+.reviews-block .comments-subscribe,
+.reviews-block .comment-reply,
+.reviews-block .ticket-comment-link,
+.reviews-block .ticket-comment-rating,
+.reviews-block .ticket-avatar {
+    display: none;
+}
+.reviews-block #comments {
+    margin-top: 30px !important;
+}
+.reviews-block .ticket-comment {
+    margin-bottom: 50px;
+}
+.reviews-block .ticket-comment-guest .ticket-comment-author {
+    color: #000;
+}
+.reviews-block .ticket-comment-author,
+.reviews-block .ticket-comment-createdon {
+    display: block;
+    margin-left: 0;
+}
+.reviews-block .ticket-comment-createdon {
+    margin: 5px 0 10px;
+}
+
+.homeBreadcrumbInMeta {display: none;}
+
+.views div {
+    display: inline;
+}
+.views img {
+    width: 10px !important;
+    display: inline !important;
+    margin: 0 10px !important;
+}
+
+textarea#comment-editor {
+    display: block;
+}
+
+#ticketForm [name="content"] {
+    padding: 6px 12px;
+}
+
+@media screen and (min-width: 500px) {
+    #comments-wrapper > ol.comment-list {margin-top: 70px;}
+}
+@media screen and (min-width: 1450px) {
+    #totoplabel {
+        left: 25px;
+        bottom: 25px;
+        padding: 8px 15px 8px 8px;
+    }
+    #totoplabel .text {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1285px) {
+    #totoplabel {
+            display: none;
+    }
+}
+@media screen and (max-width: 1075px) {
+    #totoplabel {
+            display: none;
+    }
+}
+@media screen and (min-width: 1200px) {
+    div#objectexplorer_jumplist_div {width: 1140px;}
+    div.full-reference {margin-right: -73px;}
+    .buttonDescr {margin-top: 9px;}
+}
