@@ -193,7 +193,8 @@ h1 .sm {
 .heading {
 	display: flex;
 	align-items: center;
-	margin-bottom: 151px;
+	max-width: 90%;
+	margin: 0 auto 151px;
 }
 
 .heading h2 {
@@ -286,11 +287,11 @@ h6 {
 }
 
 .about-wrap-content-text .heading-text {
-  font-size: 20px;
-  line-height: 1.5;
-  text-align: left;
-  color: #e74c3c;
-  margin-bottom: 26px;
+	font-size: 20px;
+  	line-height: 1.5;
+  	text-align: left;
+  	color: #e74c3c;
+  	margin-bottom: 26px;
 }
 
 .about-wrap-content-text p {
@@ -392,16 +393,26 @@ h6 {
 
 
 
+.section-bg {
+	height: 700px;
 
-/* QUOTE SECTION BEGINS */
-
-.box-quote {
-	padding: 250px 0;
-	text-align: center;
-	color: #ffffff;
+	display: flex;
+	align-items: center;
 
 	background: url("../img/bg-image.png") no-repeat center top;
 	background-size: cover;
+}
+
+
+
+/* QUOTE SECTION BEGINS */
+
+.quote {
+
+	text-align: center;
+	color: #ffffff;
+
+
 }
 
 .quote-text {
@@ -455,3 +466,114 @@ h6 {
 
 
 /* QUOTE SECTION ENDS */
+
+
+
+/* TEAM SECTION BEGINS */
+
+
+.box-team {
+	padding: 105px 0 100px;
+}
+
+.team-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.team-list__item {
+	width: 269px;
+	/*background: red;*/
+	padding: 25px 15px 30px;
+	text-align: center;
+}
+
+.team-list__item:hover {
+	background:  #F0F0F0;
+	box-shadow: inset 0px 4px #F39C12;
+	cursor: pointer;
+}
+
+.team-list__item:hover .team-list__job:after {
+	background-color: #E74C3C;
+}
+
+
+
+.team-list__img {
+	margin: 0 auto 30px; 
+	background-color: #e8f8f4;
+	width: 200px; height: 200px;
+	border: 6px solid #f2f2f2;
+	border-radius: 50%;
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.team-list__img:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 202px; height: 202px;
+	border-radius: 50%;
+	border: 1px solid #e6e6e6;
+}
+
+.team-list__img img {
+	width: 100%; height: 100%;
+	border-radius: 50%;
+	display: block;
+}
+
+.team-list__item h6 {
+	margin-bottom: 9px;
+}
+
+.team-list__job {
+	font-family: "Lato", sans-serif;
+	font-size: 18px;
+	line-height: 1;
+	color: #7F7F7F;
+}
+
+.team-list__job:after {
+
+	content: "";
+	display: block;
+	width: 20px; height: 4px;
+	background-color: #7F7F7F;
+
+	margin: 14px auto 19px;
+}
+
+.team-list__item p {
+	margin-bottom: 25px;
+	font-size: 16px;
+	line-height: 1.75;
+	color: #7F7F7F;
+}
+
+.social {
+	margin: 0 auto;
+	width: 150px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.fa {
+	color: #999999;
+	font-size: 18px;
+}
+
+.fa:hover {
+	color: #F29E17;
+}
+
+/* TEAM SECTION ENDS */
+
