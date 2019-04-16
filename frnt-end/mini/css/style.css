@@ -11,12 +11,6 @@ body {
 
 /* HEADER SECTION BEGINS */
 
-section {
-	
-	margin: 0 auto;			/* test */
-}
-
-
 header {
 	
 	margin: 0 auto;			/* test */
@@ -713,3 +707,9 @@ h6 {
 
 
 /* SERVICE SECTION ENDS */
+
+section {
+	
+	margin: 0 auto;			/* test */
+}
+
