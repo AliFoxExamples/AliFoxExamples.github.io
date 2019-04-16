@@ -1,6 +1,7 @@
 
 body {
-	font-family: "Open Sans", Arial, sans-serif;
+	margin: 0 auto;			/* test */
+ 	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 }
