@@ -1,9 +1,6 @@
 
 body {
-	
-	margin: 0 auto;			/* test */
-
- 	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 }
@@ -12,9 +9,6 @@ body {
 /* HEADER SECTION BEGINS */
 
 header {
-	
-	margin: 0 auto;			/* test */
-
 	position: absolute;
 	top: 84px;
 	left: 0;
@@ -707,9 +701,3 @@ h6 {
 
 
 /* SERVICE SECTION ENDS */
-
-section {
-	
-	margin: 0 auto;			/* test */
-}
-
