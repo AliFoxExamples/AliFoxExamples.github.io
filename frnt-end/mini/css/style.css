@@ -19,6 +19,7 @@ header {
 .wrapper {
 	margin: 0 auto;
 	max-width: 1250px;
+	width: 100%;
 	padding: 0 40px;
 
 }
@@ -186,8 +187,9 @@ h1 .sm {
 
 /* ABOUT SECTION BEGINS */
 
-.about {
-	padding: 100px 0;
+
+.section {
+	padding: 105px 0 100px;
 }
 
 .heading {
@@ -471,11 +473,6 @@ h6 {
 
 /* TEAM SECTION BEGINS */
 
-
-.box-team {
-	padding: 105px 0 100px;
-}
-
 .team-list {
 	display: flex;
 	justify-content: space-between;
@@ -577,3 +574,130 @@ h6 {
 
 /* TEAM SECTION ENDS */
 
+
+
+/* FACTS SECTION BEGINS */
+
+.facts-list {
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.facts-list__item {
+	/*margin-right: 163px;*/
+	text-align: center;
+}
+
+.facts-list__item:hover .facts-list__icon {
+	border-color: #fff;
+	transition: all 0.3s;
+}
+
+.facts-list__item:hover .facts-list__icon svg {
+	fill: rgb(243, 156, 18);
+	transition: all 0.3s;
+
+}
+
+.facts-list__item:last-child {
+	margin-right: 0;
+}
+
+.facts-list__icon {
+	width: 174px; height: 174px;
+	border: 2px solid rgb(243, 156, 18);
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.facts-list__icon svg {
+	fill: #fff;
+}
+
+.facts-list__item h5 {
+	margin-top: 33px;
+	font-size: 25px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.facts-list__item span {
+	font-size: 45px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	line-height: 1.2;
+	display: block;
+}
+
+
+
+
+
+
+/* FACTS SECTION ENDS */
+
+
+
+/* SERVICE SECTION BEGINS */
+
+
+
+.service-list {
+	display: flex;
+	justify-content: space-between;
+
+	margin: 0 -17px;
+	/*padding-bottom: 120px;
+
+	border-bottom: 2px solid #e6e6e6;*/
+}
+
+.service-list__item {
+	text-align: center;
+	/*margin-right: 34px;*/
+	padding: 0 17px;
+}
+
+.service-list__item:hover .service-list__icon svg {
+	fill: rgb(255, 255, 255); 
+	transition: all 0.3s;
+}
+
+.service-list__item:hover .service-list__icon {
+	background-color: rgb(243, 156, 18);
+	transition: all 0.3s;
+}
+
+.service-list__item:last-child {
+	margin-right: 0;
+}
+
+
+.service-list__icon {
+	margin: 0 auto 30px;
+	width: 109px; height: 109px;
+	border: 2px solid rgb(243, 156, 18);
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.service-list__item p {
+	font-size: 16px;
+	color: rgb(115, 115, 115);
+	line-height: 1.75;
+}
+
+
+
+
+
+/* SERVICE SECTION ENDS */
