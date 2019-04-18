@@ -6,61 +6,61 @@ var buttonLeftOffset; // Число левого отступа ползунка
 
 
 
-// При клике менять цвет:
-
-function makeRed() {
-	button.style.backgroundColor = "red";
-}
-function setColor() {
-	button.style.backgroundColor = "green";
-
-}
-button.addEventListener('mousedown', makeRed);
-button.addEventListener('mouseup', setColor);
-
-
-
-
-
 // Основной скрипт:
 
-
 button.addEventListener('mousedown', function(event) {
+
+	button.style.backgroundColor = "red";
+	
 
 	positionOnClick = event.clientX;  // Позиция курсора мыши по оси X, в момент клика.
 	buttonLeftOffset = button.offsetLeft;  // Текущий левый отступ ползунка от контейнера.
 
+	var statusM = 0;
 
-	document.addEventListener('mousemove', function(event) {			
 
-		dynamicPosition = event.clientX; // Позиция перемещенного курсора мыши по оси X, после клика.
+	document.addEventListener('mousemove', function(event) {
 
-		if (positionOnClick > dynamicPosition ) {
+		function readd () {		
 
-			calculatedPosition = (1 - (positionOnClick - dynamicPosition)) - 1; // Обратить число позиции курсора мыши в отрицательное, если оно левее позиции курсора мыши в момент клика.
-			calculatedPosition = buttonLeftOffset + calculatedPosition;
+			dynamicPosition = event.clientX; // Позиция перемещенного курсора мыши по оси X, после клика.
 
-			if (calculatedPosition < -1) {  // Ограничение перемещения влево.
-				calculatedPosition = -1;
+			if (positionOnClick > dynamicPosition ) {
+
+				calculatedPosition = (1 - (positionOnClick - dynamicPosition)) - 1; // Обратить число позиции курсора мыши в отрицательное, если оно левее позиции курсора мыши в момент клика.
+				calculatedPosition = buttonLeftOffset + calculatedPosition;
+
+				if (calculatedPosition < -1) {  // Ограничение перемещения влево.
+					calculatedPosition = -1;
+				}
 			}
-		}
 
-		else {
+			else {
 
-			calculatedPosition = dynamicPosition - positionOnClick;
-			calculatedPosition = buttonLeftOffset + calculatedPosition;
+				calculatedPosition = dynamicPosition - positionOnClick;
+				calculatedPosition = buttonLeftOffset + calculatedPosition;
 
-			if (calculatedPosition > 184) {  // Ограничение перемещения вправо.
-				calculatedPosition = 184;
+				if (calculatedPosition > 184) {  // Ограничение перемещения вправо.
+					calculatedPosition = 184;
+				}
 			}
-		}
 
 			button.style.left = calculatedPosition + "px";
-			
+				
 
 			box.innerHTML = "Calculated Mouse Position : " + calculatedPosition;
 			box2.innerHTML = "Left Offset : " + button.offsetLeft;
 
-	});
+		}
 
+		window.addEventListener('mouseup', function(event) {
+			statusM = 1;
+			button.style.backgroundColor = "green";
+		});	
+
+		if (statusM == 0) {
+			readd ();
+		}
+	});
 });
+	
