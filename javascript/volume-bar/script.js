@@ -10,18 +10,15 @@ var buttonLeftOffset; // Число левого отступа ползунка
 
 button.addEventListener('mousedown', function(event) {
 
-	button.style.backgroundColor = "red";
-	
-
+	button.style.backgroundColor = "#006400";
+	rang.style.backgroundColor = "#80755c";
 	positionOnClick = event.clientX;  // Позиция курсора мыши по оси X, в момент клика.
 	buttonLeftOffset = button.offsetLeft;  // Текущий левый отступ ползунка от контейнера.
-
-	var statusM = 0;
-
+	var clickStatus = true;
 
 	document.addEventListener('mousemove', function(event) {
 
-		function readd () {		
+		if (clickStatus == true) {		
 
 			dynamicPosition = event.clientX; // Позиция перемещенного курсора мыши по оси X, после клика.
 
@@ -46,21 +43,16 @@ button.addEventListener('mousedown', function(event) {
 			}
 
 			button.style.left = calculatedPosition + "px";
-				
-
 			box.innerHTML = "Calculated Mouse Position : " + calculatedPosition;
 			box2.innerHTML = "Left Offset : " + button.offsetLeft;
 
 		}
-
-		window.addEventListener('mouseup', function(event) {
-			statusM = 1;
-			button.style.backgroundColor = "green";
-		});	
-
-		if (statusM == 0) {
-			readd ();
-		}
 	});
+
+	window.addEventListener('mouseup', function(event) {
+		button.style.backgroundColor = "#3CB371";
+		rang.style.backgroundColor = "#b0a792";
+		clickStatus = false;
+	});
+
 });
-	

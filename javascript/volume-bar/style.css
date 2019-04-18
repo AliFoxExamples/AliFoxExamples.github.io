@@ -25,6 +25,10 @@
 	border-radius: 50px;
 
 	position: relative;
+
+	background-color: #b0a792;
+
+	transition: all 0.3s;
 }
 
 #button {
@@ -35,7 +39,7 @@
 
 	border-radius: 50%;
 
-	background-color: green;
+	background-color: #3CB371;
 
 	cursor: pointer;
 
@@ -43,4 +47,6 @@
 	top: 50%; left: -1px;
 
 	transform: translate(0, -8px);
+
+	transition: background-color 0.3s;
 }
