@@ -7,10 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	
 </head>
-<body>
+<body onload="idle()">
 
 
-	<div class="wrapper">
+	<div class="wrapper" id="parent">
 		<div id="box">
 			<div class="cell" id="cell1_1"></div>
 			<div class="cell" id="cell1_2"></div>
@@ -332,31 +332,21 @@
 			<div class="cell" id="cell20_14"></div>
 			<div class="cell" id="cell20_15"></div>
 
-			<div class="cell" id="cell21_1"></div>
-			<div class="cell" id="cell21_2"></div>
-			<div class="cell" id="cell21_3"></div>
-			<div class="cell" id="cell21_4"></div>
-			<div class="cell" id="cell21_5"></div>
-			<div class="cell" id="cell21_6"></div>
-			<div class="cell" id="cell21_7"></div>
-			<div class="cell" id="cell21_8"></div>
-			<div class="cell" id="cell21_9"></div>
-			<div class="cell" id="cell21_10"></div>
-			<div class="cell" id="cell21_11"></div>
-			<div class="cell" id="cell21_12"></div>
-			<div class="cell" id="cell21_13"></div>
-			<div class="cell" id="cell21_14"></div>
-			<div class="cell" id="cell2	1_15"></div>
-
 			
 
 
 		</div>
-		<div id="button"><div>ADD</div></div>
-		
+		<div class="start">
+			<div id="button" class="button" onclick="start()"><div>START</div></div>
+		</div>
+			
 		<!-- Пример поворота блоков -->
-		
-		<div id="button2"><div>FLIP</div></div>
+
+		<div class="controls">
+			<div id="buttonLeft" class="button"  onclick="movingLeft()"><div><</div></div>
+			<div id="button2"><div>FLIP</div></div>
+			<div id="buttonRight" class="button"  onclick="movingRight()"><div>></div></div>
+		</div>
 		
 		
 	</div>
