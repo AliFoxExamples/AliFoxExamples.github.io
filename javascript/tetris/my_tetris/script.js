@@ -1,19 +1,20 @@
 ﻿var parentA = document.getElementById("parent");
 var rangeBox = document.getElementById("box");
 var button = document.getElementById("button");
+var hiddenCells = document.getElementsByClassName("hidden");
 
 var gameHasStarted = false;
 
-var x = 8;
+var x = 5;
 var y = 1;
 var currentPos = "cell" + y + "_" + x;
 
 
 function idle () {
 
-	x = 8;
+	x = 5;
 	y = 1;
-	var startCell = document.getElementById("cell1_8");
+	var startCell = document.getElementById("cell1_5");
 
 	startCell.style.backgroundColor = "#4d9900";
 }
@@ -32,21 +33,29 @@ function start () {
 
 	function movingDown () {
 
-		if (y == 19)	{
+		if (y == 22)	{
 			clearInterval(moving);
 		}
 
-		previousCell = document.getElementById(currentPos);
+		else {
 
-		previousCell.style.backgroundColor = "transparent";
+			previousCell = document.getElementById(currentPos);
 
-		y++;
+			previousCell.style.backgroundColor = "#eeffb3";
 
-		currentPos = "cell" + y + "_" + x;
+			y++;
 
-		currentCell = document.getElementById(currentPos);
+			for (var i = 0; i < hiddenCells.length; i++)
+	    		hiddenCells[i].style.backgroundColor = "transparent";
 
-		currentCell.style.backgroundColor = "#4d9900";
+			currentPos = "cell" + y + "_" + x;
+
+			currentCell = document.getElementById(currentPos);
+
+			currentCell.style.backgroundColor = "#4d9900";
+		}
+
+
 
 	}
 
@@ -61,7 +70,7 @@ function movingLeft () {
 
 		previousCell = document.getElementById(currentPos);
 
-		previousCell.style.backgroundColor = "transparent";
+		previousCell.style.backgroundColor = "#eeffb3";
 
 		x--;
 
@@ -76,11 +85,11 @@ function movingLeft () {
 
 function movingRight () {
 
-	if (x != 15 && gameHasStarted == true) {
+	if (x != 10 && gameHasStarted == true) {
 
 		previousCell = document.getElementById(currentPos);
 
-		previousCell.style.backgroundColor = "transparent";
+		previousCell.style.backgroundColor = "#eeffb3";
 
 		x++;
 
