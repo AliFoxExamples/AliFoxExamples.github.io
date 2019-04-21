@@ -108,6 +108,7 @@ range.addEventListener('mousedown', function(event) {				// Основная ф�
 	window.addEventListener('mouseup', function(event) {				// Прекрашение выполнения функции после отжатия кнопки мыши.
 		button.style.backgroundColor = "#3CB371";
 		range.style.backgroundColor = "#b0a792";
+		xCoordinateOfMouseBox.innerHTML = "Mouse x : -";
 		clickStatus = false;
 	});
 });
