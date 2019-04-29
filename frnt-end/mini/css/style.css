@@ -52,6 +52,13 @@ header {
 }
 
 
+.hr {
+	margin: 120px 0;
+	height: 2px;
+	background-color: #e6e6e6;
+}
+
+
 
 /* HEADER NAVIGATION SECTION BEGINS */
 
@@ -247,10 +254,6 @@ h1 .sm {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-
-	border-bottom: 2px solid #e6e6e6;
-
-	padding-bottom: 124px;
 }
 
 .about-wrap-content {
@@ -325,8 +328,6 @@ h6 {
 
 .box-skills {
 	display: flex;
-
-	margin-top: 120px;
 }
 
 .box-skills-item {
@@ -698,6 +699,160 @@ h6 {
 
 
 
+/* PRICING */
+
+.box-pricing {
+	display: flex;
+
+}
+
+.box-pricing .service-list__item {
+	text-align: left;
+	padding: 0 15px;
+}
+
+
+.box-pricing .service-list__icon {
+	margin: 0 auto 30px 0;
+	width: 129px; height: 129px;
+	border: 2px solid rgb(243, 156, 18);
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.box-pricing .service-list__item h6 {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.25;
+}
+
+
+.pricing {
+	margin-left: 5%;
+	display: flex;
+	text-align: center;
+}
+
+.pricing-item {
+	width: 250px;
+	cursor: pointer;
+	
+}
+
+.pricing-item:first-child {
+	border-left: 1px solid rgb(230, 230, 230);
+}
+
+.pricing-item__active .pricing-header {
+	background-color: #F39C12;
+	color: #FFF;
+	box-shadow: 0px -16px #F39C12;
+	border-top: 1px solid #F39C12;
+
+}
+
+.pricing-item__active .pricing-header span {
+	color: #fff;
+}
+
+.pricing-item__active .pricing-header_title span:before {
+	background-color: #fff;
+}
+
+
+.pricing-item__active .pricing-list li:nth-child(odd) {
+
+	background-color: #E6E6E6;
+}
+
+.pricing-item__active .pricing-list li:nth-child(even){
+
+	background-color: #F2F2F2;
+}
+
+.pricing-item__active .pricing-footer {
+
+	background-color: #E6E6E6;
+	box-shadow: 0px 11px #E6E6E6;
+}
+
+.pricing-item__active .pricing-footer .button--warning:hover {
+
+	background-color: #F39C12;
+	color: #fff;
+	transition: 0.3s;
+
+}
+
+.pricing-item:last-child {
+	border-right: 1px solid rgb(230, 230, 230);
+}
+
+.pricing-header {
+	padding: 25px 28px;
+	
+	border-top: 1px solid rgb(230, 230, 230);
+
+}
+
+.pricing-header_title {
+	color: #0d0d0d;
+	text-transform: uppercase;
+	font-weight: 900;
+	line-height: 25px;
+	font-size: 22px;
+}
+
+.pricing-header_title span:before {
+	margin: 14px auto;
+	content: "";
+	display: block;
+	height: 2px; width: 50px;
+	background-color: #F39C12;
+}
+
+.pricing-list {
+	list-style: none;
+}
+
+.pricing-list li {
+	color: #737373;
+	font-size: 15px;
+	line-height: 18px;
+
+	padding: 15px;
+	border-top: 1px solid rgb(230, 230, 230);
+
+}
+
+.pricing-list li:nth-child(odd) {
+	background-color: #FAFAFA;
+}
+
+.pricing-footer {
+	padding: 31px 28px;
+	border-top: 1px solid rgb(230, 230, 230);
+	border-bottom: 1px solid rgb(230, 230, 230);
+
+	background-color: #FAFAFA;
+
+}
+
+.button--warning {
+	color: #0d0d0d;
+	border: 2px solid #F39C12;
+	font-weight: bold;
+	padding: 12px 33px;
+}
+
+
+
 
 
 /* SERVICE SECTION ENDS */
+
+
