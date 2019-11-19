@@ -1,0 +1,151 @@
+body {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
+.wrapper {
+
+	display: flex;
+	justify-content: center;
+	border-bottom: gray solid 80px;
+}
+
+.wrap {
+	position: relative;
+	height: 300px;
+	margin: 0 -5px 0 -5px;
+}
+
+.volume {
+	position: absolute;
+	top: 45px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.pump {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.handle-wrap {
+	width: 50px;
+	height: 90px;
+	display: flex;
+	flex-direction: column;
+	position:relative;
+	
+}
+
+.handle {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	
+	
+	/**//**//**/
+}
+
+.handleA {
+	width: 50px;
+	height: 10px;
+	background-color: #707070;
+}
+
+.handleB {
+	margin: 0 auto;
+	width: 6px;
+	height: 80px;
+	background-color: #707070;
+}
+
+.piston {
+	z-index: 2;
+	margin: 0 auto;
+	width: 30px;
+	background-color: #adaaaa;
+	height: 200px;
+	margin-bottom: 5px;
+}
+
+.num {
+	margin-top: 5px;
+}
+
+.progress {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px auto 0 auto;
+	width: 20px;
+	height: 160px;
+}
+
+.empty {
+	display:flex;
+	flex-basis: 160px;
+	flex-shrink: 0.5;
+	width: auto;
+	height: auto;
+	background-color: #d4cfcf;
+}
+
+.full {
+	display:flex;
+	flex-shrink: 1;
+	flex-basis: 160px;
+	width: auto;
+	height: auto;
+	background-color: green;
+}
+
+.speaker-wrap {
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dev-wrapper {
+	margin: 50px 0 0 0; padding: 0;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	user-select: none;
+}
+
+#hideShowHandle {
+	margin: 0 0 10px 0; padding: 0 5px 0 5px;
+
+	font-size: 13px;
+
+	background-color: gray;
+
+	border-radius: 50px;
+
+	cursor: pointer;
+}
+
+#dev {
+	width: 250px;
+	/*display: none;*/
+	margin: 0; padding: 0;
+	border: 1px dashed gray;
+}
