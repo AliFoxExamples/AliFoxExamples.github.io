@@ -12,18 +12,12 @@ body {
 }
 
 .wrap {
-	position: relative;
+
 	height: 300px;
-	margin: 0 -5px 0 -5px;
 }
 
 .volume {
-	position: absolute;
-	top: 45px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	margin-top: 45px;
 }
 
 .pump {
@@ -35,8 +29,6 @@ body {
 .handle-wrap {
 	width: 50px;
 	height: 90px;
-	display: flex;
-	flex-direction: column;
 	position:relative;
 	
 }
@@ -45,9 +37,6 @@ body {
 	position: absolute;
 	z-index: 1;
 	top: 0px;
-	
-	
-	/**//**//**/
 }
 
 .handleA {
