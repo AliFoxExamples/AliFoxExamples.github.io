@@ -74,16 +74,16 @@ body {
 	height: 160px;
 }
 
-.empty {
+#empty {
 	display:flex;
 	flex-basis: 160px;
-	flex-shrink: 0.5;
+	flex-shrink: 0;
 	width: auto;
 	height: auto;
 	background-color: #d4cfcf;
 }
 
-.full {
+#full {
 	display:flex;
 	flex-shrink: 1;
 	flex-basis: 160px;
@@ -97,17 +97,6 @@ body {
 	display: flex;
 	justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .dev-wrapper {
 	margin: 50px 0 0 0; padding: 0;
@@ -134,7 +123,26 @@ body {
 
 #dev {
 	width: 250px;
-	/*display: none;*/
+	display: none;
 	margin: 0; padding: 0;
 	border: 1px dashed gray;
+}
+
+
+#videoWrapper {
+	width: 100%;
+	margin: 100px 0;
+}
+
+#videoWrap {
+
+	width: max-content;
+	margin: 0 auto;
+}
+
+#video1 {
+	position: fixed;
+	top: 20px;
+	left: 60%;
+	right: 40%;
 }

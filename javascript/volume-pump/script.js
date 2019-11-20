@@ -2,7 +2,7 @@ var handleMove = document.getElementById("handleMove");															// Опр�
 var handleOffset = document.getElementById("handleOffset");														// Определение контейнера движущегося блока ручки громкости.
 var handleClick = document.getElementById("handleClick");														// Определение кликабельного участка ручки громкости.
 
-var volume = 0;																									// Определение переменной значения громкости.
+var volume;																									// Определение переменной значения громкости.
 
 var volumeBox = document.getElementById("volumeBox");															// Табло вывода результата значения громкости.
 var calculatedHandlePositionBox = document.getElementById("calculatedHandlePositionBox");						// Табло вывода значения вычисленной позиции курсора.
@@ -18,8 +18,25 @@ var devBox = document.getElementById("dev"); 																	// Блок таб
 var minValueOfRange = 0;																						// Минимальное значение длины поля движения ползунка громкости.
 var maxValueOfRange = 80;																						// Максимальное значение длины поля движения ползунка громкости.
 
+var calculatedHandlePosition = handleMove.offsetTop;
+var calculatedHandlePreviousPosition = handleMove.offsetTop;
+var volumePersentOfProgress = 0;
+
+
+var videoAutoplay = document.getElementById("video1");
+var progressFullNum = 1;
+var progressEmptyNum = 1000;
+var progressEmpty = document.getElementById("empty");
+var progressFull = document.getElementById("full");
+
+videoAutoplay.volume = 0;
+
 
 handleClick.addEventListener('mousedown', function(event) {														// Основная функция.
+
+
+	videoAutoplay.muted = false;
+
 
 	clickStatus = true;
 
@@ -28,7 +45,6 @@ handleClick.addEventListener('mousedown', function(event) {														// Ос
 	handleMoveOffset = handleMove.offsetTop;
 
 	mousePositionOnClick = event.clientY;
-	
 
 	document.addEventListener('mousemove', function(event) {
 
@@ -57,12 +73,8 @@ handleClick.addEventListener('mousedown', function(event) {														// Ос
 				}
 			}
 
-			handleMove.style.top = calculatedHandlePosition + "px";
-			volume = Math.floor(100 * (handleMove.offsetTop / maxValueOfRange));
-			
-			
+			handleMove.style.top = calculatedHandlePosition + "px";																	// Вывод значений.
 
-			volumeBox.innerHTML = volume;																							// Вывод значений.
 			calculatedHandlePositionBox.innerHTML = "Calculated Handle Position : " + calculatedHandlePosition;
 			topOffsetOfHandleBox.innerHTML = "Top Offset of Handle : " + handleOffset.offsetTop;
 			topOffsetOfHandleMoveBox.innerHTML = "Top Offset of Handle Move : " + handleMove.offsetTop;
@@ -70,16 +82,38 @@ handleClick.addEventListener('mousedown', function(event) {														// Ос
 			positionOnClickBox.innerHTML = "Position on Click : " + mousePositionOnClick;
 			dynamicPositionOfMouseBox.innerHTML = "Dynamic Position of Mouse: " + dynamicPositionOfMouse;
 
+
+
+
+			//test
+
+			if (calculatedHandlePreviousPosition < calculatedHandlePosition) {
+				
+				if (volumePersentOfProgress < 100) {
+
+					volumePersentOfProgress = volumePersentOfProgress + 1;
+					volumeBox.innerHTML = Math.floor(volumePersentOfProgress);
+
+					progressFullNum = (-1 * ((volumePersentOfProgress / 99 * 999) - 999));
+					progressEmptyNum = (volumePersentOfProgress / 100 * 1000);
+					progressFull.style = "flex-shrink: " + progressFullNum;
+					progressEmpty.style = "flex-shrink: " + progressEmptyNum;
+
+
+					videoAutoplay.volume = ((1 / 100) * Math.floor(volumePersentOfProgress));
+				}
+
+			}
+
+			calculatedHandlePreviousPosition = calculatedHandlePosition;
+
+			//endTest
+
 		}		
 
 	});
 
 
-	volume = Math.floor(100 * (handleMove.offsetTop / (maxValueOfRange)));
-
-	
-
-	volumeBox.innerHTML = volume;
 	topOffsetOfHandleBox.innerHTML = "Top Offset of Handle : " + handleOffset.offsetTop;											// Вывод значений.
 	topOffsetOfHandleMoveBox.innerHTML = "Top Offset of Handle Move : " + handleMove.offsetTop;
 	yCoordinateOfMouseBox.innerHTML = "Mouse y : " + event.clientY;
@@ -111,3 +145,36 @@ function hideShow () {
 		return;
 	}
 };
+
+
+
+
+
+var progressFunc = function () {
+
+
+	volumeBox.innerHTML = Math.floor(volumePersentOfProgress);
+	volumePersentOfProgress = volumePersentOfProgress - 1;
+	if (volumePersentOfProgress <= 0) {
+			volumePersentOfProgress = 0;
+		}
+
+
+		progressFullNum = (-1 * ((volumePersentOfProgress / 99 * 999) - 999));
+		progressEmptyNum = (volumePersentOfProgress / 100 * 1000);
+		progressFull.style = "flex-shrink: " + progressFullNum;
+		progressEmpty.style = "flex-shrink: " + progressEmptyNum;
+
+
+		videoAutoplay.volume = ((1 / 100) * Math.floor(volumePersentOfProgress));
+
+
+}
+
+
+
+var progressFuncStart = function () {
+	let progressInterval = setInterval(progressFunc, 250);
+}
+let progressTimer = setTimeout(progressFuncStart, 500);
+
