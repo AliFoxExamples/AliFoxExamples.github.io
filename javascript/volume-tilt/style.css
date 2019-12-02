@@ -1,0 +1,29 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.wrap {
+	margin: 300px 0 0 0;
+}
+
+#box {
+	width: 200px;
+	height: 20px;
+	background-color: red;
+	border-radius: 20px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#point {
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	border-radius: 50% 50%;
+	position: absolute;
+	top: 10px;
+	margin-left: 10px;
+}

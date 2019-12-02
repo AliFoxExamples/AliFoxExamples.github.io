@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+#start {
+	margin-top: 50px;
+	background-color: grey;
+	border: 1px black solid;
+	border-radius: 20% 20%;
+	padding: 2px;
+	cursor: pointer;
+	user-select: none;
+}
+
+#start:hover {
+	background-color: yellow;
+}
+
+.box {
+	margin-top: 50px;
+	width: 500px;
+	height: 800px;
+	border: 2px red dashed;
+	position: relative;
+}
+
+#ball {
+	background-color: green;
+	width: 50px;
+	height: 50px;
+	border-radius: 50% 50%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-25px, 0);
+}
+
+.dev {
+	width: 300px;
+	margin: 10px 0 10px 0;
+	border: green 1px solid;
+	padding: 2px;
+}

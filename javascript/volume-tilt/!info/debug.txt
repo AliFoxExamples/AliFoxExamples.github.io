@@ -1,0 +1,3 @@
+var boxStyle = getComputedStyle(box, null); var styleValue = boxStyle.getPropertyValue("transform"); console.log(styleValue);
+
+https://vk-book.ru/poluchenie-ugla-na-kotoryj-povernut-element-sredstvami-javascript/
