@@ -6,9 +6,9 @@ let photosUrl = "https://jsonplaceholder.typicode.com/photos";
 const users = [];
 const photos = [];
 
+let debugBlock = document.getElementById("debugBlock");
+
 function requestMaker (urlOne, urlTwo) {
-
-
 
 	function serverRequest (targetUrl) {
 
@@ -55,7 +55,7 @@ function requestMaker (urlOne, urlTwo) {
 				}
 			}
 
-		})
+		}).catch (e => {debugBlock.innerHTML = e});
 
 	}
 
@@ -69,6 +69,10 @@ function requestMaker (urlOne, urlTwo) {
 
 
 function blockParser (targetOne, targetTwo) {
+
+	debugBlock.style.margin = "auto";
+	debugBlock.style.width = "200px"
+	debugBlock.style.border = "1px black dashed";
 	
 	for (let key of targetOne) {
 
