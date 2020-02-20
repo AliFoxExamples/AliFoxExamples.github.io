@@ -2,3 +2,64 @@
 	display: flex;
 	justify-content: center;
 }
+
+#physBox {
+	margin-top: 20px;
+	width: 1000px;
+	height: 900px;
+	border: 2px blue dashed;
+	background-color: #ccffff;
+	position: relative;
+}
+
+.centering {
+	position: absolute;
+	left: 50%;
+	transform: translate(-10px);
+}
+
+.hinge {
+	width: 20px; height: 20px;
+	background: red;
+	border-radius: 50%;
+}
+
+.chain {
+	width: 100px; height: 5px;
+	background-color: green;
+	transform-origin: 0 50%;
+	transform: rotate(90deg);
+}
+
+#chain1 {
+	
+	top: 18px;
+}
+
+#hinge2 {
+	top: 120px;
+}
+
+#chain2 {
+	top: 138px;
+}
+
+#hinge3 {
+	top: 240px;
+}
+
+#chain3 {
+	top: 258px;
+}
+
+#hinge4 {
+	top: 358px;
+}
+
+#chain4 {
+	top: 376px;
+}
+
+#hinge5 {
+	top: 476px;
+}
