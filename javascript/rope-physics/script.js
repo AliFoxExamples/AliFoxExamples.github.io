@@ -1,3 +1,7 @@
+function cl (...sub) {
+	console.log(...sub);
+}
+
 const physBox = document.getElementById("physBox");
 const chain1 = document.getElementById("chain1");
 const chain2 = document.getElementById("chain2");
@@ -9,126 +13,111 @@ const hinge3 = document.getElementById("hinge3");
 const hinge4 = document.getElementById("hinge4");
 const hinge5 = document.getElementById("hinge5");
 
+let clickStatus;
+
+physBox.addEventListener("mousedown", (event) => {clickStatus = true; physStateEngine(event, chain4, hinge5)})
+document.addEventListener("mousemove", (event) => {physStateEngine(event, chain4, hinge5)})
+window.addEventListener("mouseup", (event) => {clickStatus = false});
+document.addEventListener("mouseup", (event) => {clickStatus = false});
 
 
-function getElementDegree (element) {
+function physStateEngine (event, target, subj) {
+	let mClickX = event.clientX;
+	let mClickY = event.clientY;
+	let mClickXInRange = mClickX - physBox.offsetLeft;
+	let mClickYInRange = mClickY - physBox.offsetTop;
+	let trgLeft = target.offsetLeft;
+	let trgTop = target.offsetTop;
+	let  a, b, c, aDeg, bDeg, aRad, bRad, cotan, elDeg;
 
-	let chain4Style = getComputedStyle(element, null);
+	if (clickStatus == true) {
 
-	let styleValue = chain4Style.getPropertyValue("transform");
+		// Определение координат клика мыши относительно "коробки".
+		mClickXInRange = event.clientX + window.scrollX - physBox.offsetLeft;
+		mClickYInRange = event.clientY + window.scrollY - physBox.offsetTop;
 
-	let values = styleValue.split('(')[1];
+		// Физика рычага.
+		// Определение координат вешин прямоугольного треугольника для дальнейшего определения угла направления указателя.
+		if (mClickXInRange < trgLeft) {
+			a = ((trgLeft - mClickXInRange)+2) * -1; 
+		}
+		else if (mClickXInRange > trgLeft) {
+			a =  mClickXInRange - trgLeft - 2; 
+		}
+		else { a = 0 }
+		if (mClickYInRange > trgTop) {
+			b = mClickYInRange - trgTop - 2;
+		}
+		else if (mClickYInRange < trgTop) {
+			b = ((trgTop - mClickYInRange) + 2) * -1;
+		}
+		else { b = 0 }
+		c = Math.sqrt(a*a + b*b);
 
-	values = values.split(')')[0];
+		// Определение угла поворота указателя.
+		cotan = Math.acos(a/c);
+		if (mClickYInRange < trgTop) {						// Изменение знака угла указателя относительно положения курсора относительно оси указателя.
+			cotan = cotan * -1;
+		}
+		aDeg = (cotan)/Math.PI * 180;
+		
+		// Применение значений угла к указателю.
+		target.style.transform = `rotate(${aDeg}deg)`;
 
-	values = values.split(',');
+		// Физика шарнира.
+		// Переопределение значения угла указателя в формат "360".
+		elDeg = aDeg;
+		if (elDeg < 0) {
+			elDeg = elDeg + 360;
+		}
 
-	let cos = values[0];
+		// Определение углов катетов прямоугольного треугольника.
+		if (aDeg <= 90 && aDeg >= 0) {
+			aDeg = (90 - aDeg);
+		}
+		else if (aDeg >= 90 && aDeg <= 180) {
+			aDeg = (aDeg - 90);
+		}
+		else if (aDeg <= 0 && aDeg >= - 90) {
+			aDeg = (-90 - aDeg) * -1;
+		}
+		else {
+			aDeg = (aDeg + 90) * -1;
+		}
+		bDeg = 90 - aDeg;
 
-	var sin = values[1];
+		// Перевод значений углов катетов в радианы.
+		aRad = aDeg * Math.PI / 180;
+		bRad = bDeg * Math.PI / 180;
 
-	var degree = Math.round(Math.asin(sin) * (180/Math.PI));
+		// Определения длин катетов по радиусу "100" (медианы) и углам катетов в радианах.
+		a = Math.sin(aRad) * target.offsetWidth;
+		b = Math.sin(bRad) * target.offsetWidth;
 
+		// Определение знака длины катетов.
+		if (elDeg > 90 && elDeg < 270) { 
+			a = a * -1;
+		}
+		if (elDeg > 180) {
+			b = b * -1;
+		}
 
-	if(cos<0){
-	    addDegree = 90 - Math.round(Math.asin(sin) * (180/Math.PI));
-	    degree = 90 + addDegree;
-	}
-	if(degree < 0){
-	    degree = 360 + degree;
-	}
+		// Ограничение перемещения шарнира по радиусу "100".		
+		subj.style.left = trgLeft + a + "px";
+		subj.style.top = trgTop + b + 3 + "px"; // С добавлением ширины рычага "3px";
 
-	return degree;
-}
-
-
-function changeElementDegree (element, degree) {
-	let currDegree = getElementDegree(element);
-	element.style.transform = `rotate(${currDegree+degree}deg)`;
-}
-
-
-
-
-const rope = {
-
-	hinges: [
-		{
-	    	node: hinge1,
-	    	x() { return getRopeElemPos(hinge1, "x") },
-	    	y() { return getRopeElemPos(hinge1, "y") },
-	    	deg() {return getElementDegree(hinge1) }
-	    },
-	    {
-	    	node: hinge2,
-	    	x() { return getRopeElemPos(hinge2, "x") },
-	    	y() { return getRopeElemPos(hinge2, "y") },
-	    	deg() {return getElementDegree(hinge2) }
-	    },
-	    {
-	    	node: hinge3,
-	    	x() { return getRopeElemPos(hinge3, "x") },
-	    	y() { return getRopeElemPos(hinge3, "y") },
-	    	deg() {return getElementDegree(hinge3) }
-	    },
-	    {
-	    	node: hinge4,
-	    	x() { return getRopeElemPos(hinge4, "x") },
-	    	y() { return getRopeElemPos(hinge4, "y") },
-	    	deg() {return getElementDegree(hinge4) }
-	    },
-	    {
-	    	node: hinge5,
-	    	x() { return getRopeElemPos(hinge5, "x") },
-	    	y() { return getRopeElemPos(hinge5, "y") },
-	    	deg() {return getElementDegree(hinge5) }
-	    },
-	],
-	chains: [
-	    {
-	    	node: chain1,
-	    	x() { return getRopeElemPos(chain1, "x") },
-	    	y() { return getRopeElemPos(chain1, "y") },
-	    	deg() {return getElementDegree(chain1) }
-	    },
-	    {
-	    	node: chain2,
-	    	x() { return getRopeElemPos(chain2, "x") },
-	    	y() { return getRopeElemPos(chain2, "y") },
-	    	deg() {return getElementDegree(chain2) }
-	    },
-	    {
-	    	node: chain3,
-	    	x() { return getRopeElemPos(chain3, "x") },
-	    	y() { return getRopeElemPos(chain3, "y") },
-	    	deg() {return getElementDegree(chain3) }
-	    },
-	    {
-	    	node: chain4,
-	    	x() { return getRopeElemPos(chain4, "x") },
-	    	y() { return getRopeElemPos(chain4, "y") },
-	    	deg() {return getElementDegree(chain4) }
-	    }
-	]
-}
-
-function getRopeElemPos (el, c) {
-
-	if (c === "x") {
-
-		return el.getBoundingClientRect().left
-	}
-
-	else if (c === "y") {
-
-		return el.getBoundingClientRect().top
-
-	}
-
-	else {
-
-		return false
+		// Обновление значений координат мыши.
+		mClickX = event.clientX;
+		mClickY = event.clientY;
 	}
 }
+
+
+
+
+
+
+
+
 
 

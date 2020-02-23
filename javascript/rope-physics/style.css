@@ -1,65 +1,75 @@
+body {
+	user-select: none;
+}
 .wrapper {
 	display: flex;
 	justify-content: center;
 }
 
 #physBox {
-	margin-top: 20px;
+	margin-top: 100px;
 	width: 1000px;
-	height: 900px;
+	height: 800px;
 	border: 2px blue dashed;
-	background-color: #ccffff;
 	position: relative;
 }
 
 .centering {
 	position: absolute;
 	left: 50%;
-	transform: translate(-10px);
 }
 
 .hinge {
 	width: 20px; height: 20px;
-	background: red;
+	background-color: red;
+	opacity: 50%;
 	border-radius: 50%;
+	transform: translate(-10px, -10px);
+	z-index: 99;
+	border: yellow 1px dashed;
 }
 
 .chain {
-	width: 100px; height: 5px;
-	background-color: green;
+	width: 100px; height: 6px;
+	background-color: #03bfa6;
+	border-radius: 3px;
 	transform-origin: 0 50%;
 	transform: rotate(90deg);
 }
 
+#hinge1 {
+	top: 10px;
+}
+
 #chain1 {
 	
-	top: 18px;
+	top: 8px;
 }
 
 #hinge2 {
-	top: 120px;
+	top: 110px;
 }
 
 #chain2 {
-	top: 138px;
+	top: 108px;
 }
 
 #hinge3 {
-	top: 240px;
+	top: 210px;
 }
 
 #chain3 {
-	top: 258px;
+	top: 208px;
 }
 
 #hinge4 {
-	top: 358px;
+	top: 310px;
 }
 
 #chain4 {
-	top: 376px;
+	top: 308px;
 }
 
 #hinge5 {
-	top: 476px;
+	top: 410px;
 }
