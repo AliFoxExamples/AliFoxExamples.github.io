@@ -4,33 +4,21 @@
 <head>
 	<title>Gravity Simulation</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
-	
+	<link rel="stylesheet" type="text/css" href="style.css" />	
 </head>
 <body>
 
 	<div class="wrapper">
-		<div id="start" onclick="gravityIntervalStart()">START</div>
+		<div id="start" onclick="applyGravityEngineToAllPhysObjects ();">START ALL</div>
 	</div>
 
 	<div class="wrapper">
-		<div class="dev">
-			<div id="ballTopOffset">Ball Top Offset = -</div>
-			<div id="ballAcceleration">Ball Acceleration = -</div>
+		<div id="physBox">
+			<div id="ball1" class="ball"></div>
+			<div id="ball2" class="ball"></div>
+			<div id="ball3" class="ball"></div>
 		</div>
-	</div>
-
-	<div class="wrapper">
-
-		<div class="box">
-			
-			<div id="ball">
-				
-			</div>
-
-		</div>
-
 	</div>
 
 <script type="text/javascript" src="script.js" ></script>

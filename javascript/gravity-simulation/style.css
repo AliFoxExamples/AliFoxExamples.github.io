@@ -1,3 +1,7 @@
+body {
+	user-select: none;
+}
+
 .wrapper {
 	display: flex;
 	justify-content: center;
@@ -8,7 +12,7 @@
 	background-color: grey;
 	border: 1px black solid;
 	border-radius: 20% 20%;
-	padding: 2px;
+	padding: 5px;
 	cursor: pointer;
 	user-select: none;
 }
@@ -17,27 +21,40 @@
 	background-color: yellow;
 }
 
-.box {
+#physBox {
 	margin-top: 50px;
-	width: 500px;
+	width: 1000px;
 	height: 800px;
 	border: 2px red dashed;
 	position: relative;
 }
 
-#ball {
+.ball {
+	border-radius: 50% 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+}
+
+#ball1 {
 	background-color: green;
 	width: 50px;
 	height: 50px;
-	border-radius: 50% 50%;
-	position: absolute;
-	left: 50%;
-	transform: translate(-25px, 0);
+	left: 20%;
 }
 
-.dev {
-	width: 300px;
-	margin: 10px 0 10px 0;
-	border: green 1px solid;
-	padding: 2px;
+#ball2 {
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	left: 50%;
 }
+
+#ball3 {
+	background-color: black;
+	width: 10px;
+	height: 10px;
+	left: 70%;
+}
+
+
+	
