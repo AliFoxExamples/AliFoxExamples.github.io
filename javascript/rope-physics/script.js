@@ -7,7 +7,7 @@ const hinge4 = document.getElementById("hinge4");
 const chain4 = document.getElementById("chain4");
 const hinge5 = document.getElementById("hinge5");
 
-let chainGroups = {
+let chainsGroup = {
 	objectSuitableWithPhysEngine: true,
 	physBox: (document.getElementById("physBox")),
 	g1: [chain1, hinge2, {taken: false}],
@@ -16,24 +16,24 @@ let chainGroups = {
 	g4: [chain4, hinge5, {taken: false}]
 }
 
-function applyPhysEngineTo (chainGroups, target) {
+function applyPhysEngineTo (chainsGroupObject, chainsGroupObjectTarget) {
 
-	if (!chainGroups || !target) {return console.error("Missing arguments!")}
-	if (!(chainGroups instanceof Object) || !chainGroups.objectSuitableWithPhysEngine) {return console.error("Invalid input!")}
-	if (!(target in chainGroups)) {return console.error("Requested chain group does not exist!")}
-	let [chain, hinge, {taken : status}] = chainGroups[target];
+	if (!chainsGroupObject || !chainsGroupObjectTarget) {return console.error("Missing arguments!")}
+	if (!(chainsGroupObject instanceof Object) || !chainsGroupObject.objectSuitableWithPhysEngine) {return console.error("Invalid input!")}
+	if (!(chainsGroupObjectTarget in chainsGroupObject)) {return console.error("Requested chain group does not exist!")}
+	let [chain, hinge, {taken : status}] = chainsGroupObject[chainsGroupObjectTarget];
 	if (status) {return console.error("Requested chain group is already taken!")}
-	chainGroups[target][2].taken = true;
+	chainsGroupObject[chainsGroupObjectTarget][2].taken = true;
 
 	let clickStatus;
-	let physBox = chainGroups.physBox;
-	function physEngine (event, target, subj) {
+	let physBox = chainsGroupObject.physBox;
+	function physEngine (event, targetChain, targetHinge) {
 		let mClickX = event.clientX;
 		let mClickY = event.clientY;
 		let mClickXInRange = mClickX - physBox.offsetLeft;
 		let mClickYInRange = mClickY - physBox.offsetTop;
-		let trgLeft = target.offsetLeft;
-		let trgTop = target.offsetTop;
+		let trgLeft = targetChain.offsetLeft;
+		let trgTop = targetChain.offsetTop;
 		let  a, b, c, aDeg, bDeg, aRad, bRad, cotan, elDeg;
 
 		if (clickStatus == true) {
@@ -68,7 +68,7 @@ function applyPhysEngineTo (chainGroups, target) {
 			aDeg = (cotan)/Math.PI * 180;
 			
 			// Применение значений угла к указателю.
-			target.style.transform = `rotate(${aDeg}deg)`;
+			targetChain.style.transform = `rotate(${aDeg}deg)`;
 
 			// Физика шарнира.
 			// Переопределение значения угла указателя в формат "360".
@@ -97,8 +97,8 @@ function applyPhysEngineTo (chainGroups, target) {
 			bRad = bDeg * Math.PI / 180;
 
 			// Определения длин катетов по радиусу "100" (медианы) и углам катетов в радианах.
-			a = Math.sin(aRad) * target.offsetWidth;
-			b = Math.sin(bRad) * target.offsetWidth;
+			a = Math.sin(aRad) * targetChain.offsetWidth;
+			b = Math.sin(bRad) * targetChain.offsetWidth;
 
 			// Определение знака длины катетов.
 			if (elDeg > 90 && elDeg < 270) { 
@@ -109,8 +109,8 @@ function applyPhysEngineTo (chainGroups, target) {
 			}
 
 			// Ограничение перемещения шарнира по радиусу "100".		
-			subj.style.left = trgLeft + a + "px";
-			subj.style.top = trgTop + b + 3 + "px"; // С добавлением ширины рычага "3px";
+			targetHinge.style.left = trgLeft + a + "px";
+			targetHinge.style.top = trgTop + b + 3 + "px"; // С добавлением ширины рычага "3px";
 
 			// Обновление значений координат мыши.
 			mClickX = event.clientX;
@@ -123,3 +123,5 @@ function applyPhysEngineTo (chainGroups, target) {
 	document.addEventListener("mouseup", (event) => {clickStatus = false});
 
 }
+
+applyPhysEngineTo (chainsGroup, "g4");
