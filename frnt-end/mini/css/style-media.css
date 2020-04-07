@@ -1,4 +1,4 @@
- test */
+/* test */
 
 /*.main-menu {
 	display: none;
@@ -64,8 +64,8 @@
 		margin-right: 0;
 	}
 }
-/*880*/
-@media (max-width: 1080px) {
+
+@media (max-width: 880px) {
 
 	.box-skills {
 		display: block;
@@ -87,8 +87,8 @@
 		text-align: center;
 	}
 }
-/*800*/
-@media (max-width: 1080px) {
+
+@media (max-width: 800px) {
 	
 	.heading {
 		display: block;
@@ -165,4 +165,4 @@
 		padding: 0;
 		width: auto;
 	}
-}
+}*/
