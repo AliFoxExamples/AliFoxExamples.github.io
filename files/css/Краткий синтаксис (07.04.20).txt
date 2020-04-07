@@ -1,0 +1,467 @@
+﻿--------------------------------------------------------------------------------------------------------------------------------------------
+
+Краткий синтаксис.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Вендорные префиксы:
+
+	-webkit-
+
+	-moz-
+
+	-o-
+
+	-ms-
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Единицы измерения CSS: "em", "ex", "px", "%".
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Селекторы атрибутов:
+
+	a[target] {}
+
+	a[href="http://google.com/"] {}
+	 
+	a[href*="login"] {}
+	  
+	a[href^="https://"] {}
+	 
+	a[href$=".pdf"] {}
+	 
+	a[rel~="tag"] {}
+	 
+	a[lang|="en"] {}
+
+	div[data-<userAttr>=<userAttrValue>] {}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Тест:
+
+	font-family
+
+	font-size
+
+	font-style
+
+	font-weight
+
+	font-variant
+
+	text-transform
+
+	color
+
+	text-align
+
+	vertical-align
+
+	text-decoration
+
+	text-indent
+
+	text-shadow
+
+	letter-spacing
+
+	word-spacing
+
+	white-space
+
+	word-wrap
+
+	line-height
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Многоколоночный текст:
+
+	column-count
+
+	column-gap
+
+	column-width
+
+	column-rule
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Элементы:
+
+	margin
+
+	margin-top
+	margin-left
+	margin-bottom
+	margin-right
+
+	padding
+
+	padding-top
+	padding-left
+	padding-bottom
+	padding-right
+
+	border
+
+	border-top
+	border-rigt
+	border-bottom
+	border-left
+
+	border-width
+
+	border-top-width
+	border-rigt-width
+	border-bottom-width
+	border-left-width
+
+	border-style
+
+	border-top-style
+	border-right-style
+	border-bottom-style
+	border-left-style
+
+	border-color
+
+	border-top-color
+	border-rigt-color
+	border-bottom-color
+	border-left-color
+
+	width
+
+	min-width
+	max-width
+
+	height
+
+	min-height
+	max-height
+
+	background
+
+	background-color
+	background-image
+	background-position
+	background-repeat
+	background-attachment
+
+	border-radius
+
+	border-bottom-left-radius
+	border-bottom-right-radius
+	border-top-left-radius
+	border-top-right-radius
+
+	background-size
+
+	background-clip
+
+	border-image
+
+	border-image-source
+	border-image-slice
+	border-image-width
+	border-image-outset
+	border-image-repeat
+
+	box-shadow
+
+	opacity
+
+	transform
+
+	transform-origin
+
+	transition
+
+	transition-property
+	transition-duration
+	transition-timing-function
+	transition-delay
+
+	perspective
+
+	perspective-origin
+
+	animation
+
+	animation-name
+	animation-duration
+	animation-timing-function
+	animation-iteration-count
+	animation-direction
+	animation-play-state
+	animation-delay
+	animation-fill-mode
+
+	content
+
+	user-select
+
+	will-change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Стилизация списков:
+
+	list-style
+
+	list-style-type
+	list-style-image
+	list-style-position
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Стилизация таблиц:
+
+	border-collapse
+
+	border-spacing
+
+	caption-side
+
+	empty-cells
+
+	table-layout
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Стилизация ссылок с помощью псевдо-селекторов:
+
+	a:link
+
+	a:visited
+
+	a:active
+
+	a:hover
+
+	border
+
+	outline
+
+	outline-offset
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Позиционирование и разметка:
+
+	display
+
+	visibility
+
+	position
+
+	top
+	bottom
+	right
+	left
+
+	z-index
+
+	float
+
+	clear
+
+	overflow
+	overflow-x
+	overflow-y
+
+	overscroll-behavior
+	overscroll-behavior-x
+	overscroll-behavior-y
+	
+	resize
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Функция/метод "attr()".
+
+<селектор>:<псевдоэлемент> { content: attr(<атрибут тега>); }
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Значение "!important".
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+<свойство>: <значение> !important;
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Стилизация элементов с помощью псевдо-селекторов и псевдо-элементов:
+
+	:after
+
+	:before
+
+	:first-letter
+
+	:first-line
+
+	:first-child
+
+	:last-child
+
+	:last-letter
+
+	:invalid
+
+	:read-only
+
+	::-moz-placeholder
+
+	::-webkit-input-placeholder
+
+	:active
+
+	:checked
+
+	:default
+
+	:disabled
+
+	:empty
+
+	:enabled
+
+	:first-child
+
+	:first-of-type
+
+	:focus
+
+	:hover
+
+	:indeterminate
+
+	:lang
+
+	:last-of-type
+
+	:link
+
+	:not
+
+	:nth-child
+
+	:nth-last-child
+
+	:nth-last-of-type
+
+	:nth-of-type
+
+	:only-child
+
+	:only-of-type
+
+	:optional
+
+	:read-write
+
+	:required
+
+	:root
+
+	:target
+
+	:valid
+
+	:visited
+
+	::-moz-focus-inner
+
+	::-moz-selection
+
+	::-ms-browse
+
+	::-ms-check
+
+	::-ms-clear
+
+	::-ms-expand
+
+	::-ms-fill
+
+	::-ms-reveal
+
+	::-ms-value
+
+	::after
+
+	::before
+
+	::first-letter
+
+	::first-line
+
+	::selection
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Объявление пользовательских переменных "var()":
+
+	:root {
+		--<переменная>
+	}
+
+	var( <переменная> [, <значение> ]? )
+
+	или 
+
+	--<переменная>
+
+	var( <переменная> [, <значение> ]? )
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+"@-Правила":
+
+	@media
+
+	@font-face
+
+	@keyframes
+
+	@charset
+
+	@import
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Линейный градиент и посторяющийся линейный градиент:
+
+	background: linear-gradient( направление(опционально), transparent (опционально),
+	переходы цвета через запятую и остановка (опционально) цвета);
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Радиальный градиент и повторяющийся радиальный градиент:
+
+	background: radial-gradient(форма градиента (опционально) размер градиента (опционально) позиция градиента(опционально),
+	начальный цвет (остановка - опциональна), конечный цвет (остановка - опциональна));
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+"CSS" фильтры.
+
+	filter
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Значения через калькуляцию ("calc()"): "<свойство>: calc(выражение)";
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Прочее:
+
+	cursor
+
+--------------------------------------------------------------------------------------------------------------------------------------------

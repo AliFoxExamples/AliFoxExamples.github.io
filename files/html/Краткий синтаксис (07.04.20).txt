@@ -1,0 +1,546 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Краткий синтаксис.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Теги:
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- ... -->
+
+<!DOCTYPE HTML>
+
+<html>...</html>
+
+<head>...</head>
+
+<meta ... />
+
+<title>...</title>
+
+<link />
+
+<script>...</script>
+
+<noscript>...</noscript>
+
+<base ... />
+
+<body>...</body>
+
+<header>...</header>
+
+<div>...</div>
+
+<style>...</style>
+
+<span>...</span>
+
+<nav>...</nav>
+
+<main>...</main>
+
+<article>...</article>
+
+<section>...</section>
+
+<p>...</p>
+
+<br />
+
+<b>...</b>
+
+<big>...</big>
+
+<i>...</i>
+
+<small>...</small>
+
+<strong>...</stong>
+
+<sub>...</sub>
+
+<sup>...</sup>
+
+<ins>...</ins>
+
+<del>...</del>
+
+<pre>...</pre>
+
+<h1>
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+
+<hr />
+
+<img ... />
+
+<a>...</a>
+
+<ol>...</ol>
+
+<ul>...</ul>
+
+<li>...</li>
+
+<table>...</table>
+
+<caption>...</caption>
+
+<tbody />
+<tbody>...</tbody>
+
+<thead />
+<thead>...</thead>
+
+<tfoot />
+<tfoot>...</tfoot>
+
+<colgroup />
+<colsgroup>...</colgroup>
+
+<col />
+
+<tr>...<tr/>
+
+<td>...</td>
+
+<th>...</th>
+
+<form>...</form>
+
+<select>...</select>
+
+<input .../>
+
+<label>...</label>
+
+<textarea>...</textarea>
+
+<datalist>...</datalist>
+
+<optgroup ... />
+
+<option>...</option>
+
+<font>...</font>
+
+<frameset>...</frameset>
+
+<frame ... />
+
+<iframe>...</iframe>
+
+<noframes>...</noframes>
+
+<progress>...</progress>
+
+<aside>...</aside>
+
+<figure>...</figure>
+
+<figcaption>...</figcaption>
+
+<details>...</details>
+
+<summary>...</summary>
+
+<mark>...</mark>
+
+<time>...</time>
+
+<footer>...</footer>
+
+<button>...</button>
+
+<embed>...</embed>
+
+<canvas>...</canvas>
+
+<math>...</math>
+
+<object>...</object>
+
+<param ... />
+
+<svg>...</svg>
+
+<circle ... />
+
+<rect ... />
+
+<audio>...</audio>
+
+<video>...</video>
+
+<source ... />
+
+<line ... />
+
+<polyline ... />
+
+<ellipse ... />
+
+<polygon ... />
+
+<path ... />
+
+<animate ... />
+
+<code>...</code>
+
+<meter>...</meter>
+
+<blockquote>...</blockquote>
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Атрибуты (общие):
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+data-...
+
+	<element data-* = "value">
+
+id="..."
+
+class="..."
+
+lang="..."
+
+align="..."
+
+width="..."
+
+heigh="..."
+
+rel="..."
+
+rev="..."
+
+src="..."
+
+defer="..."
+
+alt="..."
+
+border="..."
+
+href="..."
+
+title="..."
+
+target="..."
+
+colspan="..."
+
+span="..."
+
+valign="..."
+
+rownspan="..."
+
+bgcolor="..."
+
+action="..."
+
+method="..."
+
+type="..."
+
+name="..."
+
+placeholder="..."
+
+autocomplete="..."
+
+value="..."
+
+class="..."
+
+style="..."
+
+color="..."
+
+bordercolor="..."
+
+rows="..."
+
+cols="..."
+
+rules="..."
+
+summary="..."
+
+char="..."
+
+charoff="..."
+
+scrolling="..."
+
+frameborder="..."
+
+min="..."
+
+max="..."
+
+label="..."
+
+cx="..."
+cy="..."
+r="..."
+fill="..."
+stroke="..."
+
+draggable="..."
+
+ondrop="..."
+
+ondragover="..."
+
+ondragstart="..."
+
+viewBox="..."
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Атрибуты (самостоятельные):
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+noresize
+
+autofocus
+
+required
+
+controls
+
+defer
+
+async
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Мета теги:
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+name="..."
+
+	Description
+
+		<описание>
+
+	Viewport
+
+		width
+
+		height
+
+		initial-scale
+
+		user-scalable
+
+		minimum-scale
+
+		maximum-scale
+
+	Author
+
+		<автор>
+
+	Generator
+
+		<названия>
+
+	Robots
+
+		all
+
+		index
+
+		noindex
+
+		follow
+
+		nofollow
+
+		index, follow
+
+		noindex, nofollow
+
+		none
+
+	Keywords
+
+		<ключеывые слова>
+
+	Copyright
+
+		<авторские права>
+
+	Document-state
+
+		Static
+
+		Dinamic
+
+	Revizit-after
+
+		<число от 1 до 30>
+
+	Googlebot
+
+		Index
+
+		Follow
+
+		Noindex
+
+		Nofollow
+
+		Nosnipplet
+
+		Noodp
+
+		Noachive
+
+		unavailable_after
+
+			<дата>
+
+		Noimageindex
+
+	URL
+
+		<адрес>
+
+	Resource-type
+
+		Build
+
+		Classification
+
+		Creation
+
+		Document
+
+		Formatter
+
+		Host
+
+		Operator
+
+		Random text
+
+		Rating
+
+		Site-languages
+
+		Subject
+
+		Template
+
+		Version
+
+http-enquiv="..."
+
+	Expires
+
+		<дата в стандарте [RFC850]>
+
+	Refresh
+
+		<задержка времени в секундах ("url" опционален)>
+
+	Pragma
+
+		no-cache
+
+	Cache-Control
+
+		public
+
+		private
+
+		no-cache
+
+		no-store
+
+		max-age=time, must-revalidate
+
+		max-age=time, proxy-revalidate
+
+	Content-Type
+
+		<text/html; charset="...">
+
+	Reply-to
+
+		<эл. почта>
+
+	Content-Language
+
+		en
+
+		de
+
+		rus
+
+		...
+
+	Content-Script-Type
+
+		<script type>
+
+	Content-Style-Type
+
+		<style type>
+
+	Set-Cookie
+
+		NAME
+
+		EXPIRES
+
+		DOMAIN
+
+		PATH
+
+		SECURE
+
+	PICS-Label
+
+		sex
+
+		violence
+
+		...
+
+	Window-target
+
+		_blank
+
+		_parent
+
+		_top
+
+		_self
+
+charset="..."
+
+lang="..."
+
+property="..."
+
+content="..."
+
+--------------------------------------------------------------------------------------------------------------------------------------------
