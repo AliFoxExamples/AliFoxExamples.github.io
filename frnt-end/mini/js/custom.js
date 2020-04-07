@@ -39,7 +39,7 @@ $(function(){
 	});
 });
 
-alert(window.screen.width);
+// alert(window.screen.width);
 
    
 

@@ -625,6 +625,7 @@ h6 {
 .facts-list {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	
 }
 

@@ -48,6 +48,28 @@
 		max-width: 40%;
 		margin-left: 40px;
 	}
+
+	/**/
+
+	.box-pricing {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.box-pricing .service-list__item {
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 0;
+		text-align: center;
+	}
+
+	.box-pricing .service-list__icon {
+		margin: 0 auto 10px;
+	}
+
+	.box-pricing .pricing {
+		margin: 0;
+	}
 }
 
 @media (max-width: 1160px) {
@@ -62,6 +84,30 @@
 	.about-wrap-content-icon {
 		margin-bottom: 20px;
 		margin-right: 0;
+	}
+
+	/**/
+
+	.team-list__item {
+		width: 50%;
+	}
+
+	/**/
+
+	.service .heading {
+		margin-bottom: 50px;
+	}
+
+	.service-list__icon {
+		margin-bottom: 10px;
+	}
+
+	.service-list__item h6 {
+		margin-bottom: 10px;
+	}
+
+	.service-list__item p {
+		line-height: 1.5;
 	}
 }
 
@@ -121,6 +167,69 @@
 		margin: 0 auto;
 		max-width: 100%;
 	}
+
+	/**/
+
+	.quote-text {
+		font-size: 34px;
+		line-height: 46px;
+	}
+
+	.quote-text:before {
+		font-size: 80px;
+	}
+
+	.quote-text:after {
+		font-size: 80px;
+	}
+
+	/**/
+
+	.facts-list__item {
+		width: 50%;
+		margin-bottom: 10px;
+	}
+
+	.facts-list__icon {
+		margin: 0 auto;
+	}
+
+	.facts-list__item h5 {
+		margin-top: 10px;
+	}
+
+	/**/
+
+	.pricing {
+		display: block;
+		width: 100%;
+	}
+
+	.pricing-item {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.service-list {
+		flex-wrap: wrap;
+	}
+
+	.service-list__item {
+		min-width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 620px) {
+
+	.team-list {
+		display: block;
+	}
+	.team-list__item {
+		width: 100%;
+	}
 }
 
 @media (max-width: 480px) {
@@ -135,34 +244,33 @@
 	.about-wrap-content-text .heading-text {
 		text-align: center;
 	}
+
+	/**/
+
+	.section-bg {
+		background-image: none;
+		background-color: #423030;
+		height: auto;
+		padding: 20px 0;
+	}
+
+	.quote-text {
+		font-size: 32px;
+		line-height: 35px;
+	}
+
+	/**/
+
+	.facts-list {
+		padding: 20px 0;
+	}
 }
 
-/*@media (max-width: 991px) {
-	.section {
-		padding: 0 70px;
-	}
-	.about-wrap, .box-skills {
+@media (max-width: 380px) {
+	.facts-list {
 		display: block;
 	}
-
-	.about-wrap-img {
-		margin: 40px auto 0;
-		max-width: 80%;
+	.facts-list__item {
+		width: 100%;
 	}
-
-	.hr {
-		margin: 80px 0;
-	}
-
-	.box-skills-left {
-		margin: 0 auto 40px;
-		width: auto;
-		padding: 0;
-		text-align: center;
-	}
-
-	.box-skills-right {
-		padding: 0;
-		width: auto;
-	}
-}*/
+}
