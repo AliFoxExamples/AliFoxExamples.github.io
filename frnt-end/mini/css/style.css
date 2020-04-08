@@ -1072,10 +1072,10 @@ h6 {
 .portfolio-list {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .portfolio-list__item {
-	width: 25%;
 	text-align: center;
 	position: relative;
 }
@@ -1090,7 +1090,7 @@ h6 {
 
 .portfolio-list__img {
 	background-color: #C7C7C7;
-	height: 220px;
+	height: 220px; width: 290px;
 	display: flex;
 	justify-content: center;
 	-ms-align-items: center;
@@ -1101,7 +1101,7 @@ h6 {
 
 .portfolio-list__img img {
 	display: block;
-	width: 100%;
+	
 	min-height: 100%;
 }
 
@@ -1543,3 +1543,34 @@ textarea.form-control {
 
 /**/ 
 
+/* Slick Slider */
+
+.nav-tab-list {
+	position: relative;
+}
+
+.nav-tab-list button {
+
+	border: 2px solid rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
+    width: 39px;
+    height: 39px;
+    margin: 0 4px;
+}
+
+
+.nav-tab-list .slick-prev {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translate(0, -50%);
+	z-index: 20;
+}
+
+.nav-tab-list .slick-next {
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	transform: translate(0, -50%);
+	z-index: 20;
+}

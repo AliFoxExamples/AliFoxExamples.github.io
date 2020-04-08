@@ -70,6 +70,14 @@
 	.box-pricing .pricing {
 		margin: 0;
 	}
+
+	/**/
+
+	.blog-list {
+		flex-direction: column;
+		-ms-align-items: center;
+		align-items: center;
+	}
 }
 
 @media (max-width: 1160px) {
@@ -131,6 +139,14 @@
 		-ms-align-items: center;
 		align-items: center;
 		text-align: center;
+	}
+
+	/**/
+
+	.nav-tab-list__item:before {
+		/*content: none;*/
+		margin: 0 10px 0 10px;
+
 	}
 }
 
@@ -208,6 +224,21 @@
 	.pricing-item {
 		width: 100%;
 	}
+
+	/**/
+
+	.nav-tab-list__item:before {
+		content: none;
+	}
+
+	.nav-tab-list .nav-tab-list__link {
+		display: inline-block;
+		width: 200px;
+		padding: 10px;
+		border: 2px rgb(255, 157, 0) solid;
+		border-radius: 5px;
+
+	}
 }
 
 @media (max-width: 768px) {
@@ -238,7 +269,7 @@
 	}
 
 	.hr {
-		margin: 10px 0;
+		margin: 20px 0;
 	}
 
 	.about-wrap-content-text .heading-text {
