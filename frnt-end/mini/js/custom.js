@@ -29,7 +29,19 @@ $(function(){
 
 	$(".banner-slider, .testimonial-slider").slick({
 		arrows: false,
-		dots: true
+		dots: true,
+		responsive: [
+		    {
+		      breakpoint: 600,
+		      settings: {
+		        dots: false,
+		        arrows: true,
+		        appendArrows: ".banner-slider__buttons",
+		        prevArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-left"></i></button>',
+				nextArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-right"></i></button>',
+		      }
+		    }
+		]
 	});
 
 	$(".portfolio-slider").slick({
