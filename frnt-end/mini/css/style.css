@@ -1831,7 +1831,7 @@ textarea.form-control {
 .nav-tab-list .slick-prev {
 	position: absolute;
 	top: 50%;
-	left: 10%;
+	left: 0%;
 	-webkit-transform: translate(0, -50%);
 	    -ms-transform: translate(0, -50%);
 	        transform: translate(0, -50%);
@@ -1841,7 +1841,7 @@ textarea.form-control {
 .nav-tab-list .slick-next {
 	position: absolute;
 	top: 50%;
-	right: 10%;
+	right: 0%;
 	-webkit-transform: translate(0, -50%);
 	    -ms-transform: translate(0, -50%);
 	        transform: translate(0, -50%);
