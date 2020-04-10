@@ -1440,11 +1440,12 @@ h6 {
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
+	-ms-flex-pack: justify;
 	        justify-content: space-between;
 }
 .blog-list__item {
 	max-width: 555px;
+	width: 555px;
 	margin-bottom: 60px;
 }
 
