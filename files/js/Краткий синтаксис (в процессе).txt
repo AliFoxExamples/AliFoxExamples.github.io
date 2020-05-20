@@ -797,7 +797,33 @@
 
 Прокси и Рефлект ("Proxy"/"Reflect").
 
-	//
+	new Proxy(<цель>, <обработчик>);
+	
+		get
+
+		set
+
+		has
+
+		deleteProperty
+
+		apply
+
+		construct
+
+		getPrototypeOf
+
+		setPrototypeOf
+
+		isExtensible
+
+		preventExtensions
+
+		defineProperty
+
+		getOwnPropertyDescriptor
+
+		ownKeys
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
