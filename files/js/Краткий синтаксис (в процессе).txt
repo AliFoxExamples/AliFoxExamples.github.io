@@ -797,33 +797,33 @@
 
 Прокси и Рефлект ("Proxy"/"Reflect").
 
-	new Proxy(<цель>, <обработчик>);
+	new Proxy(<цель>, {<ловушка>(<аргументы>)});
 	
-		get
+		get(<цель>, <свойство>, <ресивер (опционально)>)
 
-		set
+		set(<цель>, <свойство>, <значение>, <ресивер (опционально)>)
 
-		has
+		has(<цель>, <свойство>)
 
-		deleteProperty
+		deleteProperty(<цель>, <свойство>)
 
-		apply
+		apply(<цель>, <передаваемый "this">, <массив аргументов>)
 
-		construct
+		construct(<цель>, <массив аргументов>)
 
-		getPrototypeOf
+		getPrototypeOf(<цель>)
 
-		setPrototypeOf
+		setPrototypeOf(<цель>)
 
-		isExtensible
+		isExtensible(<цель>)
 
-		preventExtensions
+		preventExtensions(<цель>)
 
-		defineProperty
+		defineProperty(<цель>, <свойство>, <дескриптор>)
 
-		getOwnPropertyDescriptor
+		getOwnPropertyDescriptor(<цель>, <свойство>)
 
-		ownKeys
+		ownKeys(<цель>)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
