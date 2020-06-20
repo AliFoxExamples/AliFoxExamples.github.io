@@ -5097,13 +5097,56 @@ continue;
 	
 	admin.name	// Админ
 
+• Внутренние слоты. Многие встроенные объекты, например "Map", "Set", "Date", "Promise" и другие используют так называемые "внутренние слоты".
+Например, "Map" хранит элементы во внутреннем слоте "[[MapData]]". Встроенные методы обращаются к слотам напрямую, не через "[[Get]]"/"[[Set]]".
+Таким образом, прокси не может перехватить их. Подробнее "https://learn.javascript.ru/proxy#vstroennye-obekty-vnutrennie-sloty".
+
+Если встроенный объект проксируется, то в прокси не будет этих "внутренних слотов", так что попытка вызвать на таком прокси встроенный метод приведёт к ошибке:
+
+	let map = new Map();
+
+	let proxy = new Proxy(map, {});
+
+	proxy.set('test', 1);	//	ошибка.
+
+Исправленный вариант:
+
+	let map = new Map();
+
+	let proxy = new Proxy(map, {
+		get(target, prop, receiver) {
+			let value = Reflect.get(...arguments);
+			return typeof value == 'function' ? value.bind(target) : value;
+		}
+	});
+
+	proxy.set('test', 1);
+	alert(proxy.get('test'));	//	1
+
+	Пример, для лучшего понимания как работает внутренний слот у "Map":
+	
+		let map = new Map();
+		
+		let b = map.set;	//	извлекаем метод "set" у "Map";
+		
+		b("number", 450);	//	ошибка, так как функция пытается получить доступ к своему внутреннему свойству "this.[[MapData]]" (в "Map"), но так как "this" в данном
+							//	случае равен "undefined", будет ошибка.
+		
+		b = b.bind(map);	//	фиксируем контекст у извлеченной на объект "Map" - "map". Можно так же было использовать 'b.apply(map, ["number", 450]);'.
+		
+		b("number", 450);	// то же самое, что и 'map.set("number", 450)';
+
+Объект "Array" не использует внутренние слоты.
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
 
-ОСТ:	https://learn.javascript.ru/proxy#vstroennye-obekty-vnutrennie-sloty
+ОСТ:	https://learn.javascript.ru/proxy#privatnye-polya
 
 
 
