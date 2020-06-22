@@ -933,6 +933,8 @@
 	
 	clearInterval(<идентификатор "setInterval">);
 	
+	eval(<исполняемый код>);
+	
 Методы и свойства объекта "Math":
 
 	Math.floor();
