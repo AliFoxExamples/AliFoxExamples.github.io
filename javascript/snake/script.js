@@ -35,6 +35,7 @@ let snake = {
 }
 
 function start () {
+	score = 0;
 	let difficulty;
 
 	document.getElementById("start").style.display = "none";
