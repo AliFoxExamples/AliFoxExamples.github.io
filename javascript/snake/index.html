@@ -7,8 +7,9 @@
 </head>
 <body>
 	<div class="wrapper">
+		<div class="game">
+		<div id="message">Game Over.</div>
 		<table>
-			<div id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo eligendi voluptatum</div>
 			<tr>
 				<td></td>
 				<td></td>
@@ -2612,9 +2613,22 @@
 		</table>
 	</div>
 	<div class="screen">
-		<div class="controls"></div>
-		<div class="score"></div>
+		<div id="score">Score: 0</div>
+		<br/>
+		<div class="controls">
+			<button id="start" onclick="start();">Start</button>
+		</div>
+		<br/>
+		<div id="difficulty">
+			<input id="test" type="radio" name="difficulty" value="Easy"> Easy <br>
+			<input id="test" type="radio" name="difficulty" value="Normal"> Normal <br>
+			<input id="test" type="radio" name="difficulty" value="Hard"> Hard <br>
+		</div>
+		
+		
 	</div>
+	</div>
+	
 
 <script src="script.js"></script>
 </body>

@@ -1,9 +1,11 @@
 let snakeHeadColor = "#474842";
 let snakeBodyColor = "black";
 let backgroundColor = "#eeffb3";
+let pointColor = "#0f7fb5";
 
 let table = document.getElementsByTagName("table")[0].childNodes[1].childNodes;
 let rows = [];
+let score = 0;
 
 for (let i = 0; i < table.length; i++) {
 	if ( (i & 1) !== 1 ) {
@@ -32,6 +34,35 @@ let snake = {
 	body: []
 }
 
+function start () {
+	let difficulty;
+
+	document.getElementById("start").style.display = "none";
+	document.getElementById("message").style.visibility = "hidden";
+	document.getElementById("difficulty").style.display = "none";
+
+	let difficultyInput = document.getElementById("difficulty").childNodes;
+	difficultyInput  = Array.prototype.filter.call(difficultyInput, el=>el.tagName == "INPUT");
+
+	for (let i = 0; i < difficultyInput.length; i++) {
+		if(difficultyInput[i].checked) {
+        	if (difficultyInput[i].value == "Easy") {
+        		difficulty = 200
+        	}
+        	else if (difficultyInput[i].value == "Normal") {
+        		difficulty = 150;
+        	}
+        	else {
+        		difficulty = 50;
+        	}
+        }
+        else {
+        	difficulty = 200;
+        }
+    }
+    moveAnimation(difficulty);
+}
+
 function gameOver() {
 	let switcher = false;	// Переключатель моргания.
 	let deathColor;
@@ -54,16 +85,21 @@ function gameOver() {
 			rows[i.y-1].childNodes[i.x+i.x-1].style.backgroundColor = backgroundColor;
 		}
 		snake.body = [];
+		rows[snake.point.y-1].childNodes[snake.point.x+snake.point.x-1].style.backgroundColor = backgroundColor;
+		document.getElementById("start").style.display = "block";
+		document.getElementById("difficulty").style.display = "block";
+		document.getElementById("score").innerHTML = `Score: 0`;
+		document.getElementById("message").innerHTML = `Game Over. Your score is: ${score}`;
+		document.getElementById("message").style.visibility = "visible";
 	}, 4000);
-	
-
 }
 
 function moveAnimation(speed){
-	snake.body[0] = { x:25, y:25, head:true};
+	snake.body = [{ x:25, y:25},{ x:25, y:24},{ x:25, y:23}];
 	let activeAxis = "y";
 	let incDecNum = 1;
 	let eventBreaker = false;	// Переключатель для предотвращения изменения направления ("direction") до того как будет выполнен цикл отрисовки.
+	snake.point = {x: undefined, y: undefined};
 
 	window.onkeydown = directionDefiner;
 	function directionDefiner(e) {
@@ -106,6 +142,31 @@ function moveAnimation(speed){
 		}
 	}
 
+	function randomCell() {
+		let arr = [rows.length, Array.prototype.filter.call(rows[0].childNodes, el=>el.tagName == "TD").length]
+		snake.point.x = Math.ceil(Math.random() * arr[0]);
+		snake.point.y = Math.ceil(Math.random() * arr[0]);
+		for (let i = snake.body.length-1; i > 0; i--) {
+			if ( snake.body[i].x === snake.point.x  && snake.body[i].y === snake.point.y ) {
+				return randomCell();
+			}
+		}
+	    rows[snake.point.y-1].childNodes[snake.point.x+snake.point.x-1].style.backgroundColor = pointColor;
+	}
+
+	function addScore() {
+		score += 10;
+		document.getElementById("score").innerHTML = `Score: ${score}`;
+	}
+
+	function eat() {
+		if( snake.body[0].x === snake.point.x  && snake.body[0].y === snake.point.y) {
+			addScore();
+			randomCell();
+			snake.addCell();
+		}
+	}
+
 	let moveInteval = setInterval(()=>{
 
 		let target = activeAxis == "y"? "y" : "x";
@@ -126,7 +187,11 @@ function moveAnimation(speed){
 
 		draw(snake.body[0]);
 
+		eat();
+
 		eventBreaker = false;
 	}, speed);
+
+	randomCell();
 }
 
