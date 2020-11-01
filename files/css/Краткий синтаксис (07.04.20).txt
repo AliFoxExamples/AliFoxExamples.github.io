@@ -70,6 +70,16 @@
 
 Свойства. Общее:
 
+	width
+
+	min-width
+	max-width
+
+	height
+
+	min-height
+	max-height
+
 	margin
 
 	margin-top
@@ -111,36 +121,14 @@
 	border-rigt-color
 	border-bottom-color
 	border-left-color
-
-	width
-
-	min-width
-	max-width
-
-	height
-
-	min-height
-	max-height
-
-	background
-
-	background-color
-	background-image
-	background-position
-	background-repeat
-	background-attachment
-
+	
 	border-radius
 
 	border-bottom-left-radius
 	border-bottom-right-radius
 	border-top-left-radius
 	border-top-right-radius
-
-	background-size
-
-	background-clip
-
+	
 	border-image
 
 	border-image-source
@@ -150,6 +138,18 @@
 	border-image-repeat
 
 	box-shadow
+
+	background
+
+	background-color
+	background-image
+	background-position
+	background-repeat
+	background-attachment
+
+	background-size
+
+	background-clip
 
 	opacity
 
@@ -180,6 +180,10 @@
 	animation-fill-mode
 
 	content
+	
+	counter-reset
+	
+	counter-increment
 	
 	cursor
 
