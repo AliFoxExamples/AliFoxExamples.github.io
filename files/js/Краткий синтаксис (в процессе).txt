@@ -499,13 +499,19 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Методы объека "Symbol":
+Объект "Symbol":
+
+	Symbol
+
+	Symbol.for
+	
+	Symbol.keyFor
 	
 	Symbol.isConcatSpreadable
 	
 	Symbol.iterator
 	
-	Symbol.asyncIterator 
+	Symbol.asyncIterator
 	
 	Symbol.toPrimitive
 	
