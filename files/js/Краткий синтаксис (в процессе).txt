@@ -871,10 +871,6 @@
 
 			setPrototypeOf(<цель>);
 
-			isExtensible(<цель>);
-
-			preventExtensions(<цель>);
-
 			defineProperty(<цель>, <свойство>, <дескриптор>);
 
 			getOwnPropertyDescriptor(<цель>, <свойство>);
