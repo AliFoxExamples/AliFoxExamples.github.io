@@ -48,6 +48,8 @@
 
 	toFixed(<n>);
 	
+	toLocaleString([<локали>, [<опции (опционально)>] (опционально)]);
+	
 Методы объекта "Number":
 
 	isFinite(<аргумент>);
@@ -92,7 +94,7 @@
 	
 	codePointAt(<позиция>);
 	
-	localeCompare(<строка>, <язык (опционально)>, <объект с определителями (опционально)>);
+	localeCompare(<строка>, [<локали>, [<опции (опционально)>] (опционально)]);
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -663,6 +665,12 @@
 			getTime();
 			
 			getTimezoneOffset();
+			
+			toLocaleString([<локали>, [<опции (опционально)>] (опционально)]);
+			
+			toLocaleDateString([<локали>, [<опции (опционально)>] (опционально)]);
+			
+			toLocaleTimeString([<локали>, [<опции (опционально)>] (опционально)]);
 		
 		Установка (опциональные параметры, которые не будут переданы, останутся неизменными):
 		
@@ -948,8 +956,211 @@
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Интернационализация ("Intl").
 
+	Intl.Collator([<локали>, [<опции (опционально)>] (опционально)]):
+	
+		Опции:
+		
+			localeMatcher:
+			
+				"lookup"
+				
+				"best fit"	-	(по умолчанию).
+
+			usage:
+			
+				"sort"	-	(по умолчанию).
+				
+				"search"
+
+			sensitivity:
+
+				"base"
+				
+				"accent"
+				
+				"case"
+				
+				"variant"	-	(по умолчанию).
+				
+				"ignorePunctuation"
+
+			numeric:
+
+				"true"
+				
+				"false"
+
+			caseFirst
+			
+				"upper"
+				
+				"lower"
+	
+		compare(<строка1>, <строка2>);
+		
+	Intl.DateTimeFormat([<локали>, [<опции (опционально)>]]):
+	
+		Опции:
+		
+			localeMatcher:
+			
+				"lookup"
+				
+				"best fit"	-	(по умолчанию).
+	
+			formatMatcher:
+
+				"basic"
+				
+				"best fit"	-	(по умолчанию).
+
+			hour12:
+			
+				"true"
+				
+				"false"
+
+			timeZone:
+			
+				"Europe"
+				
+				"Moscow"
+				
+				"UTC"	-	(по умолчанию).
+
+			weekday:
+			
+				"narrow"
+				
+				"short"
+				
+				"long"
+
+			era:
+			
+				"narrow"
+				
+				"short"
+				
+				"long"
+
+			year:
+			
+				"2-digit"
+				
+				"numeric"	-	(по умолчанию).
+
+			month:
+			
+				"2-digit"
+				
+				"numeric"	-	(по умолчанию).
+
+				"narrow"
+				
+				"short"
+				
+				"long"
+
+			day:
+			
+				"2-digit"
+				
+				"numeric"	-	(по умолчанию).
+
+			hour:
+
+				"2-digit"
+
+				"numeric"
+
+			minute:
+
+				"2-digit"
+				
+				"numeric"
+
+			second:
+			
+				"2-digit"
+				
+				"numeric"
+
+			timeZoneName:
+			
+				"short"
+				
+				"long"
+	
+		format(<объект даты>);
+
+	Intl.NumberFormat([<локали>, [<опции (опционально)>] (опционально)]):
+	
+		Опции:
+		
+			localeMatcher:
+			
+				"lookup"
+				
+				"best fit"	-	(по умолчанию).
+
+			style:
+			
+				"decimal"	-	(по умолчанию).
+				
+				"percent"
+				
+				"currency"
+
+			currency
+
+			currencyDisplay:
+			
+				"code"
+				
+				"symbol"	-	(по умолчанию).
+				
+				"name"
+
+			useGrouping:
+			
+				"true"	-	(по умолчанию).
+				
+				"false"
+
+			minimumIntegerDigits
+
+			minimumFractionDigits
+
+			maximumFractionDigits
+
+			minimumSignificantDigits
+
+			maximumSignificantDigits
+	
+		format(<число>);
+	
+	String.prototype.localeCompare(<строка>, [<локали>, [<опции (опционально)>] (опционально)]);
+	
+	Date.prototype.toLocaleString([<локали>, [<опции (опционально)>] (опционально)]);
+	
+	Date.prototype.toLocaleDateString([<локали>, [<опции (опционально)>] (опционально)]);
+	
+	Date.prototype.toLocaleTimeString([<локали>, [<опции (опционально)>] (опционально)]);
+	
+	Number.prototype.toLocaleString([<локали>, [<опции (опционально)>] (опционально)]);
+	
+	Локали:
+	
+		1. Код языка.
+	
+		2. Код способа записи.
+	
+		3. Код страны.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
