@@ -60,7 +60,7 @@
 
 Методы строк:
 
-	length;
+	length
 	
 	charAt(<позиция>);
 	
@@ -170,7 +170,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Инкремент. Постинкремент. Декремент. Постдекркмент:
+Инкремент, постинкремент, декремент, постдекркмент:
 
 	x++
 
@@ -325,11 +325,11 @@
 	
 Встроенные методы/свойства функций:
 
-	name;
+	name
 	
-	length;
+	length
 	
-	prototype;
+	prototype
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -367,9 +367,9 @@
 	
 	isPrototypeOf(<объект>);
 	
-	__proto__;
+	__proto__
 	
-	constructor;
+	constructor
 
 	delete	<объект.свойство>;
 	
@@ -449,7 +449,7 @@
 
 Методы массивов:
 
-	length;
+	length
 	
 	pop();
 	
@@ -503,13 +503,15 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Объект "Symbol":
+Объект "Symbol".
 
-	Symbol
-
-	Symbol.for
+	Symbol(<описание>);
 	
-	Symbol.keyFor
+		description
+
+	Symbol.for(<имя ключа>);
+	
+	Symbol.keyFor(<символ>);
 	
 	Symbol.isConcatSpreadable
 	
@@ -553,7 +555,7 @@
 			
 			clear();
 			
-			size;
+			size
 			
 			keys();
 			
@@ -578,7 +580,7 @@
 			
 			clear();
 			
-			size;
+			size
 			
 			keys();
 		
@@ -616,7 +618,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Деструктуризация:
+Деструктуризация.
 
 	let [<переменная/свойство> = <значение по умолчанию (опционально)>, <...rest (опционально)>] = <массив/строка>;
 	
@@ -624,7 +626,7 @@
 	
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Дата и время:
+Дата и время.
 
 	Конструктор:
 
@@ -763,7 +765,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Обработка ошибок "try/catch"
+Обработка ошибок "try/catch".
 
 	try{<тело блока>} catch(<объект ошибки>){<тело блока>} finally {<тело блока>}
 
@@ -921,43 +923,6 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Интернационализация ("Intl").
 
 	Intl.Collator([<локали>, [<опции (опционально)>] (опционально)]):
@@ -994,7 +959,7 @@
 				
 				"false"
 
-			caseFirst
+			caseFirst:
 			
 				"upper"
 				
@@ -1168,19 +1133,19 @@
 
 	export {<функции/объекты/классы/примитивы и т.д.> as <пользовательское имя элементу>}
 
-	import {<функции/объекты/классы/примитивы и т.д.> as <пользовательское имя элементу>} from "<ссылка из атрибута "src" тега "<script>">";
+	import {<функции/объекты/классы/примитивы и т.д.> as <пользовательское имя элементу>} from '<ссылка из атрибута "src" тега "<script>">';
 
-	import * as <пользовательское имя> from "<ссылка из атрибута "src" тега "<script>">";
+	import * as <пользовательское имя> from '<ссылка из атрибута "src" тега "<script>">';
 	
 	export default <функции/объекты/классы/примитивы и т.д.>
 	
 	export {<функции/объекты/классы/примитивы и т.д.> as default}
 	
-	import * as <пользовательское имя> from "<ссылка из атрибута "src" тега "<script>">";
+	import * as <пользовательское имя> from '<ссылка из атрибута "src" тега "<script>">';
 	
-	export {<функции/объекты/классы/примитивы и т.д.>} from "<ссылка из атрибута "src" тега "<script>">"
+	export {<функции/объекты/классы/примитивы и т.д.>} from '<ссылка из атрибута "src" тега "<script>">'
 	
-	export {<функции/объекты/классы/примитивы и т.д.> as <пользовательское имя элементу> } from "<ссылка из атрибута "src" тега "<script>">"
+	export {<функции/объекты/классы/примитивы и т.д.> as <пользовательское имя элементу> } from '<ссылка из атрибута "src" тега "<script>">'
 	
 	import(<модуль>).then((<объект модуля>)=><объект модуля>).catch((<объект ошибки>)=><объект ошибки>);
 
@@ -1190,9 +1155,51 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Событийный цикл.
+!РАСПИСАТЬ Объект "navigator. 
 
-	queueMicrotask(<функция>);
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!РАСПИСАТЬ Объект "Perfomance.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!РАСПИСАТЬ Регулярные выражения "RegEx".
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!РАСПИСАТЬ Сетевые запросы.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1213,10 +1220,6 @@
 	clearInterval(<идентификатор "setInterval">);
 	
 	eval(<исполняемый код>);
-	
-
-
-
 
 	getEventListerners(<элемент>);
 	
@@ -1236,10 +1239,883 @@
 	Math.min(<аргументы>);
 
 	Math.pow(<число>, <степень>);
+	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. Структура.
+
+Структура наследования классов "DOM":
+
+	Object
+
+		EventTarget
+		
+			Node
+			
+				Text
+				
+				Comment
+				
+				Element
+				
+					HTMLElement
+					
+						HTMLInputElement
+						
+						HTMLBodyElement
+						
+						HTMLAnchorElement
+					
+					SVGElement
+
+Основные типы узлов:
+
+	document
+	
+	узлы-элементы
+
+	текстовые узлы
+
+	комментарии
+
+nodeType:
+
+	1	-	узел элемент.
+	
+	3	-	узел текст.
+	
+	9	-	объект документа.
+
+Получение имени тега и имени узла:
+
+	<node>.nodeName
+	
+	<node>.tagName
+
+Структура навигации в "DOM":
+
+	document
+	
+		document.documentElement
+		
+			document.head
+		
+			document.body
+			
+				<parentNode>
+				
+					<childNode>
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+DOM. Свойства и методы узлов - создание, вставка, удаление, получение.
+
+Создание узлов:
 	
+	document.createElement(<тег>);
+
+	document.createTextNode(<текст>);
+	
+	let fragment = new DocumentFragment();
+
+	document.createDocumentFragment();
+
+Получение узлов по родственным связям:
+
+	<node>.childNodes
+	
+	<node>.firstChild
+	
+	<node>.lastChild
+	
+	<node>.nextSibling
+	
+	<node>.previousSibling
+	
+	<node>.parentNode
+	
+	<node>.children
+	
+	<node>.firstElementChild
+	
+	<node>.lastElementChild
+	
+	<node>.nextElementSibling
+	
+	<node>.previousElementSibling
+	
+	<node>.parentElement
+	
+	<node>.closest("<CSS селектор>");
+	
+	<node>.contains(<DOM элемент/узел>);
+
+Свойства/методы для получения/обращения узлов напрямую:
+
+	document.getElementById("<id>");
+	
+	<node>.getElementsByTagName("<имя тега>");
+	
+	<node>.getElementsByClassName("<имя класса>");
+	
+	document.getElementsByName("<имя>");
+	
+	<node>.querySelectorAll("<CSS селектор>");
+	
+	<node>.querySelector("<CSS селектор>");
+	
+	<node>.matches("<CSS селектор>");
+
+Свойства-методы для получения/установки/вставки/удаления содержимого элементов:
+	
+	<node>.append(<узлы или строки>);
+	
+	<node>.prepend(<узлы или строки>);
+	
+	<node>.before(<узлы или строки>);
+	
+	<node>.after(<узлы или строки>);
+	
+	<node>.replaceWith(<узлы или строки>);
+	
+	<node>.clone(<boolean>);
+	
+	<node>.remove();
+	
+	<node>.innerHTML
+	
+	<node>.outerHTML
+	
+	<node>.insertAdjacentHTML("<способ>", "<HTML строка>");
+	
+		"beforebegin"
+
+		"afterbegin"
+
+		"beforeend"
+
+		"afterend"
+	
+	<node>.insertAdjacentText("<способ>", "<текст>");
+	
+	<node>.insertAdjacentElement("<способ>", <элемент>);
+
+	<node>.textContent
+	
+	<node>.appendChild(<node>);
+	
+	<node>.insertBefore(<node>, <next sibling>);
+	
+	<node>.replaceChild(<node>,  <old child);
+	
+	<node>.removeChild(<node>);
+
+	document.write("<HTML>");
+
+	<node-text>.data
+	
+	<node-text>.nodeValue
+
+Работа с формами:
+
+	document.forms
+	
+		document.forms[<порядковый номер>]
+		
+		document.forms.<имя формы>
+		
+		<форма>.elements[<порядковый номер>]
+		
+		<форма>.elements.<имя поля>
+		
+		<форма>.[<порядковый номер>]
+		
+		<форма>.<имя поля>
+		
+	<элемент>.form
+	
+	<form>.submit
+	
+	<form>.action
+	
+	<form>.method
+	
+	<select>.options
+
+		<option>.selected
+		
+		<option>.index
+		
+		<option>.text
+
+		let option = new Option(<text>, <value>, <defaultSelected>, <selected>);
+	
+	<select>.value
+	
+	<select>.selectedIndex
+	
+	<select>.selected
+	
+	<node>.focus();
+
+Работа с атрибутами:
+
+	<node>.<пользовательский атрибут>
+
+	<node>.hasAttribute(<атрибут>);
+
+	<node>.getAttribute(<атрибут>);
+
+	<node>.setAttribute(<атрибут>, <значение>);
+
+	<node>.removeAttribute(<атрибут>);
+	
+	<node>.attributes
+	
+	<node>.dataset.<пользовательский атрибут>
+	
+	<node>.hidden
+	
+	<node>.value
+	
+	<node>.href
+	
+	<node>.id
+	
+	<script>.async
+	
+	<script>.defer
+
+Работа со стилями:
+
+	document.activeElement
+
+	<node>.className
+	
+	<node>.classList
+	
+		<node>.classList.add("<класс>");
+		
+		<node>.classList.remove("<класс>");
+		
+		<node>.classList.toggle("<класс>");
+		
+		<node>.classList.contains("<класс>");
+	
+	<node>.style
+	
+		<node>.style.cssText
+	
+	getComputedStyle(<элемент>, "<псевдоэлемент>");
+
+Метрики (размеры, прокрутка):
+
+	<node>.offsetParent
+	
+	<node>.offsetLeft
+	
+	<node>.offsetTop
+	
+	<node>.offsetWidth
+	
+	<node>.offsetHeight
+	
+	<node>.clientLeft
+	
+	<node>.clientTop
+	
+	<node>.clientWidth
+	
+	<node>.clientHeight
+	
+	<node>.scrollWidth
+	
+	<node>.scrollHeight
+	
+	<node>.scrollLeft
+	
+	<node>.scrollTop
+	
+	window.pageXOffset
+	
+	window.pageYOffset
+	
+	window.scrollX
+	
+	window.scrollY
+	
+	window.scrollTo(<pageX>,<pageY>);
+	
+	window.scrollBy(<x>,<y>);
+	
+	<node>.scrollIntoView(<bool>);
+	
+	window.innerWidth
+	
+	window.innerHeight
+
+Координаты:
+
+	<node>.getBoundingClientRect();
+	
+		x
+		
+		y
+		
+		width
+		
+		height
+		
+		top
+		
+		bottom
+		
+		right
+		
+		left
+	
+	document.elementFromPoint(<x>,<y>);
+
+Навигация по таблице ("<table>"):
+
+	<node>.rows
+	
+		<node>.cells
+		
+			<node>.cellIndex
+		
+		<node>.sectionRowIndex
+		
+		<node>.rowIndex
+		
+	<node>.caption
+	
+	<node>.tHead
+	
+	<node>.tFoot
+	
+	<node>.tBodies
+
+Свойства и методы для событий:
+
+	<node>.dispatchEvent(<объект события>);
+	
+	<node>.setPointerCapture(<pointerId>);
+	
+	<node>releasePointerCapture(<pointerId>);
+	
+	document.readyState
+
+		loading
+		
+		interactive
+		
+		complete
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. События.
+
+Общие свойства/методы объекта "event":
+
+	type
+	
+	currentTarget
+	
+	eventPhase
+	
+	stopPropagation();
+
+	stopImmediatePropagation();
+	
+	preventDefault();
+	
+	defaultPrevented
+	
+	isTrusted
+	
+	detail
+	
+	shiftKey
+
+	altKey
+
+	ctrlKey
+
+	metaKey
+
+События мыши:
+
+	click
+	
+	dblclick
+
+	contextmenu
+
+	mouseover
+	
+	mouseout
+	
+	mouseenter
+	
+	mouseleave
+
+	mousedown
+	
+	mouseup
+
+	mousemove
+	
+	contextmenu
+	
+	Свойства/методы объекта "event" соответствующих событий:
+	
+		target
+		
+		relatedTarget
+			
+		clientX
+
+		clientY
+		
+		pageX
+		
+		pageY
+		
+		screenX
+		
+		screenY
+		
+		which
+		
+События указателя:
+
+	pointerdown
+	
+	pointerup
+	
+	pointermove
+	
+	pointerover
+	
+	pointerout
+	
+	pointerenter
+	
+	pointerleave
+	
+	pointercancel
+	
+	gotpointercapture
+	
+	lostpointercapture
+	
+	Свойства/методы объекта "event" соответствующих событий (те же что и у событий мыши, плюс дополнительные):
+	
+		pointerId
+
+		pointerType
+
+		isPrimary
+
+		width
+		
+		height
+		
+		pressure
+		
+		tangentialPressure
+		
+		tiltX
+		
+		tiltY
+		
+		twist
+
+События клавиатуры:
+
+	keydown
+	
+	keyup
+	
+	keypress
+	
+	keyCode
+	
+	charCode
+	
+	Свойства/методы объекта "event" соответствующих событий:
+	
+		key
+		
+		code
+
+		repeat
+
+События страницы и стороннего контента:
+
+	scroll
+	
+	DOMContentLoaded
+	
+	readystatechange
+	
+	load
+	
+	error
+	
+	beforeunload
+	
+	unload
+
+События стилей:
+
+	transitioned
+
+События фокуса и форм:
+
+	submit
+
+	focus
+	
+	blur
+	
+	focusin
+	
+	focusout
+	
+	change
+
+	input
+
+События перетаскивания:
+
+	dragstart
+	
+	drag
+	
+	dragend
+	
+	dragenter
+	
+	dragleave
+	
+	dragover
+	
+	drop
+	
+	Свойства/методы объекта "event" соответствующих событий:
+	
+		dataTransfer
+
+События выделения:
+
+	selectstart
+	
+	select
+	
+	selectionchange
+
+События буфера обмена:
+
+	copy
+	
+	cut
+	
+	paste
+	
+	Свойства/методы объекта "event" соответствующих событий:
+	
+		clipboardData
+
+Прочие события:
+	
+	unhandledrejection
+
+Обработчики событий:
+	
+	<тег on<событие>="<обработчик>">
+	
+	<node>.on<событие>	=	<обработчик>;
+
+	<node>.addEventListener(<событие>, <обработчик>[, <опции>]);
+
+	<node>.removeEventListener(<событие>, <обработчик>[, <опции>]);
+
+Действия браузера по умолчанию:
+
+	mousedown
+	
+	click
+
+	submit
+
+	keydown
+
+	contextmenu
+	
+	А так же переход по ссылкам и т.д.
+
+Генерация пользовательских событий. Конструкторы:
+
+	Event
+
+	CustomEvent
+
+	FocusEvent
+
+	MouseEvent
+
+	WheelEvent
+
+	KeyboardEvent
+
+	Свойства:
+	
+		bubbles
+		
+		cancelable
+
+		composed
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. Drag'n'Drop. DataTransfer.
+
+DataTransfer.
+
+	dropEffect:
+	
+		none
+		
+		copy
+		
+		link
+		
+		move
+	
+	effectAllowed:
+	
+		none
+		
+		copy
+		
+		copyLink
+		
+		copyMove
+		
+		link
+		
+		linkMove
+		
+		move
+		
+		all
+		
+		uninitialized
+	
+	files
+	
+	types
+	
+	addElement(<элемент>);
+	
+	clearData(<тип>);
+	
+	getData(<тип>);
+	
+	setData(<тип(ключ)>, <данные>);
+	
+	setDragImage(<элемент>, <x>, <y>);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. MutationObserver - наблюдатель за изменениями:
+
+	let observer = new MutationObserver(<callback>);
+
+		observe(<узел>, <config>);
+		
+			childList
+			
+			subtree
+			
+			attributes
+			
+			attributeFilter
+			
+			characterData
+			
+			characterDataOldValue
+			
+			attributeOldValue
+		
+		disconnect();
+		
+		takeRecords();
+
+MutationRecord - свойства:
+
+	type
+		
+		attributes
+		
+		characterData
+		
+		childList
+	
+	target
+	
+		элемент для "attributes".
+		
+		текстовый узел для "characterData".
+		
+		элемент для "childList".
+	
+	addedNodes
+	
+	removedNodes
+	
+	previousSibling
+	
+	nextSibling
+	
+	attributeName
+	
+	attributeNamespace
+	
+	oldValue
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. Selection и Range. Выделение в документе, и в элементах форм.
+
+Range.
+
+	let range = new Range();
+
+		setStart(<узел>, <отступ>);
+		
+		setEnd(<узел>, <отступ>);
+		
+		setStartBefore(<узел>);
+		
+		setStartAfter(<узел>);
+
+		setEndBefore(<узел>);
+		
+		setEndAfter(<узел>);
+		
+		selectNode(<узел>);
+		
+		selectNodeContents(<узел>);
+		
+		collapse(<bool>);
+		
+		cloneRange();
+
+		deleteContents();
+		
+		extractContents();
+		
+		cloneContents();
+		
+		insertNode(<узел>);
+		
+		surroundContents(<узел>);
+
+		startContainer
+		
+		startOffset
+		
+		endContainer
+		
+		endOffset
+		
+		collapsed
+		
+		commonAncestorContainer
+
+Selection.
+
+	getRangeAt(<i>);
+	
+	removeAllRanges();
+	
+	removeRange(<объект диапазона>);
+	
+	empty();
+	
+	addRange(<объект диапазона>);
+	
+	anchorNode
+	
+	anchorOffset
+	
+	focusNode
+	
+	focusOffset
+	
+	isCollapsed
+	
+	rangeCount
+
+	setBaseAndExtent(<anchorNode>, <anchorOffset>, <focusNode>, <focusOffset>);
+
+	сollapse(<узел>, <отступ>);
+	
+	setPosition(<узел>, <отступ>);
+	
+	collapseToStart();
+	
+	collapseToEnd();
+	
+	extend(<узел>, <отступ>);
+	
+	selectAllChildren(<узел>);
+	
+	deleteFromDocument();
+	
+	containsNode(<узел>, allowPartialContainment = false);
+
+Выделение в полях форм:
+
+	<поле>.selectionStart
+	
+	<поле>.selectionEnd
+	
+	<поле>.selectionDirection
+	
+		forward
+		
+		backward
+		
+		none
+
+	<поле>.select();
+
+	<поле>.setSelectionRange(<start>, <end>, [<direction>]);
+
+	<поле>.setRangeText(<replacement>, [<start>], [<end>], [<selectionMode>]);
+
+		select
+		
+		start
+		
+		end
+		
+		preserve
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOM. Событийный цикл.
+
+	queueMicrotask(<функция>);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 

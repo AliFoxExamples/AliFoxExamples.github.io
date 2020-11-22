@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CRUD</title>
+	<link rel="stylesheet" href="default.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<header>
+			<h2>CREATE - READ - UPDATE - DELETE</h2>
+			<nav>
+				<li><button id="clearList">Очистить</button></li>
+			</nav>
+		</header>
+		<main>
+			<div class="articleTemplate">
+				<article class="task task-template">
+					<div class="main">
+						<div class="text" contenteditable>Новая задача...
+					</div>
+
+					</div>
+					<div class="task-submit-button-container">
+						<button class="task-submit-button task-button" onclick="createTask(this)">Добавить</button>
+					</div>
+				</article>
+			</div>
+			<div class="articlesContainer">	
+			</div>
+		</main>
+	</div>
+
+<script src="default.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

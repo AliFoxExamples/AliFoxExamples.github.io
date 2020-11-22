@@ -1,0 +1,152 @@
+.wrapper header, .wrapper main {
+	width: 100%;
+	text-align: center;
+}
+
+.wrapper header {
+	margin-bottom: 30px;
+	background-color: #e4f7f6;
+	border-radius: 0 0 1vw 1vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.wrapper main {
+	height: 100vh;
+	background-color: #e4f7f6;
+	border-radius: 1vw 1vw 0 0;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+#clearList {
+	background-color: #ff1f4dd1;
+	padding: 10px 20px;
+	outline: none;
+	border: transparent;
+	border-radius: 12px;
+	color: #0affdd;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#clearList:hover {
+	background: red;
+	color: black;
+}
+
+.articlesContainer {
+	transition: 0.5s;
+}
+
+ul {
+	display: flex;
+	padding: 0; margin: 0 0 10px;
+	justify-content: space-between;
+	width: 400px;
+}
+
+li 	{
+	list-style: none;
+}
+
+.task {
+	margin: 10px 10px;
+	padding: 10px 10px;
+	display: flex;
+	background-color: #2ec074;
+	border-radius: 1vw;
+	user-select: none;
+	transition: 0.5s;
+}
+
+.task-template {
+	background-color: transparent;
+}
+
+.number-wrapper {
+	width: 5%;
+	align-self: center;
+}
+
+.number {
+	padding-right: 25%;
+	text-align: center;
+	outline: none;
+}
+
+.task .main {
+	width: 90%;
+	align-self: center;
+}
+
+.text {
+	background-color: #1fffe0;
+	padding: 8px;
+	text-align: left;
+	outline: none;
+}
+
+.articleTemplate .text {
+	border-radius: 1vw;
+	text-align: left;
+	outline: none;
+}
+
+.articlesContainer .text {
+	border-radius: 1vw 0 1vw 0;
+	outline: none;
+}
+
+.text:focus {
+	background-color: #fff;
+}
+
+.task-submit-button-container {
+	display: flex;
+	justify-content: end;
+	align-self: center;
+}
+
+.task-close-button-container {
+	width: 5%;
+	display: flex;
+	justify-content: flex-end;
+	align-self: center;
+}
+
+.task-button {
+	outline: none;
+	border:none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.task-submit-button {
+	padding: 8px;
+	border-radius: 20px;
+	margin-left: 5%;
+	background-color: transparent;
+}
+
+.task-close-button {
+	width: 25px; height: 25px;
+	border-radius: 50%;
+}
+
+.task-button:active {
+	color: white;
+	background: #2ec074;
+}
+
+.task-close-button:active {
+	border: 1px solid #351010;
+	background: #941717;
+	font-weight: bold;
+}
+
