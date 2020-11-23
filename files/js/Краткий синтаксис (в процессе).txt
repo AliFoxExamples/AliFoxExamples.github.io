@@ -2038,45 +2038,49 @@ Range.
 
 Selection.
 
-	getRangeAt(<i>);
+	document.getSelection();
 	
-	removeAllRanges();
-	
-	removeRange(<объект диапазона>);
-	
-	empty();
-	
-	addRange(<объект диапазона>);
-	
-	anchorNode
-	
-	anchorOffset
-	
-	focusNode
-	
-	focusOffset
-	
-	isCollapsed
-	
-	rangeCount
+	window.getSelection();
 
-	setBaseAndExtent(<anchorNode>, <anchorOffset>, <focusNode>, <focusOffset>);
+		getRangeAt(<i>);
+		
+		removeAllRanges();
+		
+		removeRange(<объект диапазона>);
+		
+		empty();
+		
+		addRange(<объект диапазона>);
+		
+		anchorNode
+		
+		anchorOffset
+		
+		focusNode
+		
+		focusOffset
+		
+		isCollapsed
+		
+		rangeCount
 
-	сollapse(<узел>, <отступ>);
-	
-	setPosition(<узел>, <отступ>);
-	
-	collapseToStart();
-	
-	collapseToEnd();
-	
-	extend(<узел>, <отступ>);
-	
-	selectAllChildren(<узел>);
-	
-	deleteFromDocument();
-	
-	containsNode(<узел>, allowPartialContainment = false);
+		setBaseAndExtent(<anchorNode>, <anchorOffset>, <focusNode>, <focusOffset>);
+
+		сollapse(<узел>, <отступ>);
+		
+		setPosition(<узел>, <отступ>);
+		
+		collapseToStart();
+		
+		collapseToEnd();
+		
+		extend(<узел>, <отступ>);
+		
+		selectAllChildren(<узел>);
+		
+		deleteFromDocument();
+		
+		containsNode(<узел>, allowPartialContainment = false);
 
 Выделение в полях форм:
 
