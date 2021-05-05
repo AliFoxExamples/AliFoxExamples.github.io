@@ -647,7 +647,9 @@
 
 		multiple
 
-		pattern (regexp)
+		pattern (regexp)	-	паттерн входных данных.
+		
+		title	-	сообщения для всплывающего поля.
 
 		placeholder
 

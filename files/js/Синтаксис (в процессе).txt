@@ -6808,7 +6808,7 @@ getEventListerners(<элемент>);
 	
 	<node>.insertBefore(<node>, <next sibling>)	-	добавляет узел перед указанным узлом.
 	
-	<node>.replaceChild(<node>,  <old child)	-	заменяет старый узел,но новый.
+	<node>.replaceChild(<node>,  <old child>)	-	заменяет старый узел,но новый.
 	
 	<node>.removeChild(<node>)	-	удаляет узел.
 
@@ -6886,9 +6886,6 @@ getEventListerners(<элемент>);
 	<node>.href	-	полный адрес ссылки "href" для тега "<a>". При обращении к атрибуту "href", вернется относительный адрес.
 	
 	<node>.id	-	значение атрибута "id".<node>.hidden	-	получение/запись содержимого атрибута "hidden" в виде булевого значения.
-	
-	<node>.value	-	получение значения для тегов "<input>", "<select>" и "<textarea>" ("HTMLInputElement", "HTMLSelectElement"). Изменение значения атрибута "value"
-	изменит и свойство "value", а изменение свойства "value" не изменит значение атрибута "value".
 	
 	<node>.href	-	полный адрес ссылки "href" для тега "<a>". При обращении к атрибуту "href", вернется относительный адрес.
 	
