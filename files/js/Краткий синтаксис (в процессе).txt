@@ -24,7 +24,7 @@
 			
 			"0o"
 		
-		NaN
+			NaN
 		
 		BigInt
 		
