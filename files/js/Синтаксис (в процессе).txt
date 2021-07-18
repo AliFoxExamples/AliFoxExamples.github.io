@@ -4883,7 +4883,7 @@ continue;
 Для объявления асинхронного метода достаточно написать "async" перед именем:
 
 	let obj = {
-		async wait() {
+		async await() {
 			return await Promise.resolve("test");
 		}
 	}
@@ -7473,14 +7473,14 @@ getEventListerners(<элемент>);
 
 Пример перехвата события погружения:
 
-	let a = document.quertSelector("#parent");
+	let a = document.querySelector("#parent");
 	a.addEventListener('click', e=>{
 		console.log("big");
 		e.stopPropagation();
 	}, true)
 
 
-	let b = document.quertSelector("#child");
+	let b = document.querySelector("#child");
 	b.addEventListener('click', e=>{
 		console.log("small")
 	});

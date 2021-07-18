@@ -1,1 +1,43 @@
 //
+
+Модификаторы:
+
+	public	-	публичный (по умолчанию). Наследуются другими классами и инстансами.
+
+	protected	-	видны только внутри класса, и наследуются другими классамми. Не доступен инстансам.
+
+	private	-	видны только внутри данного класса, и не наследуются другими классами. Не доступен инстансам.
+
+	readonly - только для чтения.
+
+// https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
+// https://github.com/microsoft/TypeScript/blob/main/lib/ru/diagnosticMessages.generated.json
+// https://www.typescriptlang.org/docs/handbook/2/classes.html#static-members
+// https://github.com/vladilenm/typescript-youtube-cc
+
+Можно задавать значения по умолчанию у полей класса:
+
+	class A {
+		public name: string = "Jon";
+		public age: number = 26;
+
+		constructor(name: string, age: number) {
+
+			this.name = name;
+			this.age = age;
+
+		}
+	}
+
+Можно сразу указать типы полей в конструкторе:
+
+	class A {
+		name: string = "Jon";
+
+		constructor(
+			public name: string,
+			public age: number
+		) {}
+	}
+
+	Для этого каждому свойству обязательно нужно указывать модификатор.
