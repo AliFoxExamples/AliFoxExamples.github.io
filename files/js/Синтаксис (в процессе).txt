@@ -8161,7 +8161,7 @@ getEventListerners(<элемент>);
 			console.log(range.toString());	//	Example: italic
 			
 			document.getSelection().removeAllRanges()	//	очистить все выделения документа.
-			document.getSelection().addRange(range)	//	выделить асть документа в указанном диапазоне указанном в объекте диапазона.
+			document.getSelection().addRange(range)	//	выделить часть документа в указанном диапазоне указанном в объекте диапазона.
 
 		</script>
 	
