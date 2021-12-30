@@ -1,0 +1,58 @@
+// Про хостинг:
+https://youtu.be/zHgd2G5NVhc?t=3450
+
+// Что такое REST:
+https://youtu.be/zHgd2G5NVhc?t=3659
+https://youtu.be/zHgd2G5NVhc?t=4736
+https://youtu.be/zHgd2G5NVhc?t=5886
+
+// Роутинг на Express:
+https://youtu.be/zHgd2G5NVhc?t=4420
+
+// Роутинг с шаблонм на Express:
+https://youtu.be/zHgd2G5NVhc?t=4550
+
+#####################################
+#####################################
+
+// Про хостинг:
+https://youtu.be/k-kbQ7ixMJI?t=342https://youtu.be/k-kbQ7ixMJI?t=342
+
+// БД:
+
+	MongoDB
+
+	NoSQL
+
+	SQL
+
+// Логин и пароль:
+https://youtu.be/k-kbQ7ixMJI?t=2364
+https://youtu.be/k-kbQ7ixMJI?t=3602
+
+// Если один пользователь все удалил а второй ничего не видит:
+https://youtu.be/k-kbQ7ixMJI?t=2480
+https://youtu.be/k-kbQ7ixMJI?t=4528
+
+// Авторизация:
+https://youtu.be/k-kbQ7ixMJI?t=2551
+https://youtu.be/k-kbQ7ixMJI?t=2823
+https://youtu.be/k-kbQ7ixMJI?t=3995
+
+// Ошибки авторизации:
+https://youtu.be/k-kbQ7ixMJI?t=5218
+
+// Кликабельность вкладки Words:
+https://youtu.be/k-kbQ7ixMJI?t=3268
+
+// Swagger:
+https://youtu.be/k-kbQ7ixMJI?t=4169
+https://youtu.be/k-kbQ7ixMJI?t=5388
+https://youtu.be/k-kbQ7ixMJI?t=5480
+
+// Адаптивная верстка:
+https://youtu.be/k-kbQ7ixMJI?t=5872
+
+// Приложение может быть пустым:
+https://youtu.be/k-kbQ7ixMJI?t=5884
+

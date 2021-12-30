@@ -1,0 +1,11 @@
+!Установть Heroku через Visual Studio Code не получится.
+
+Ссылка на деплой "English for kids admin page":
+
+	https://dashboard.heroku.com/apps/protected-tundra-78432
+
+Команды консоли:
+
+	git add .
+	git commit -m '<message>'
+	git push heroku master

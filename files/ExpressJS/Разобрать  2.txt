@@ -1,0 +1,86 @@
+npm i typescript --save
+
+npm i @types/node
+
+npm i ts-node --save
+
+// Чтобы запустить ts файл
+npx ts-node <название файла>
+
+// Установить watch режим для node
+npm i nodemon --save-dev
+
+// Скрипты package.json:
+"start": "ts-node <путь до файла>",
+"watch": "nodemon",
+
+// Для корректной работы nodemonitor:
+https://youtu.be/zHgd2G5NVhc?t=2416
+
+#####################################
+
+npm i express --save
+
+npm i --save-dev @types/express
+
+// Работа с express
+https://youtu.be/zHgd2G5NVhc?t=2978
+
+	import { Router } from 'express';
+
+	GET:
+
+		router.get('<url | шаблон>', callback(request, resolve) {...})
+
+			request.params	-	параменты шаблонов.
+
+			router.resolve.
+
+				sendStatus(<HTTP Status>)
+
+				json(<response content>)
+
+				status(<HTTP Status>).
+
+					send(<пользователькая ошибка)
+
+	POST:
+
+		https://youtu.be/zHgd2G5NVhc?t=6483
+
+		https://youtu.be/zHgd2G5NVhc?t=6811
+
+	DELETE:
+
+		https://youtu.be/zHgd2G5NVhc?t=5493
+
+// Для того чтобы получать тело запроса передаваемые фетчем методом пост, в express нужен body-parser:
+https://youtu.be/zHgd2G5NVhc?t=6506
+npm i body-parser --save
+
+// CORS
+https://youtu.be/zHgd2G5NVhc?t=5007
+npm i cors --save
+npm i --save-dev @types/cors
+
+// Объединение сервера и клиента:
+https://youtu.be/zHgd2G5NVhc?t=7173
+
+	// Получение статических файлов:
+
+		express.static(<путь до папки со статическими файлами>)
+
+// Если менять url страницы и обновить страницу:
+https://youtu.be/zHgd2G5NVhc?t=7511
+
+// Перехватывать url и перенапрявлять на нужный url:
+https://youtu.be/zHgd2G5NVhc?t=7573
+
+#####################################
+#####################################
+
+// Фронтэнд и бэкенд
+https://youtu.be/k-kbQ7ixMJI?t=652
+
+// 
+

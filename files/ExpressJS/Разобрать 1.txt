@@ -1,0 +1,94 @@
+// Чтобы Node js понимал работу с импортами/экспортми
+https://youtu.be/9EtkpCzqZu0?t=315
+
+// Работа с Express js:
+
+	console:
+
+		npm i express --save
+
+		npm i --save-dev @types/express
+
+	index.ts:
+
+		import express from 'express';
+
+		const app = express();
+
+		const PORT = process.env.PORT?? 3000;
+
+		app.listen(<port>, callback(){...});
+
+		app.get(<endPoint (url)>, (req, res) => {
+
+			req.
+				send(<body>);
+
+				sendFile(<fileUrl/fileName>);
+
+				download(<fileUrl/fileName>);
+
+			res.
+
+				render(<fileUrl/fileName>);	//	Отрисовать указанную в параметрах страницу.
+
+		});
+
+		app.get(<константа экспресса>);
+
+			app.get('view engine');
+
+			app.get('views');	//	Получить путь папки, куда складываются все файлы 'views'.
+
+		app.set(<константа экспресса>, <значение>);
+
+			// Установить значение переменной "view engine" на "ejs":
+			app.set('view engine', 'ejs');	//	Express сам поймет откуда брать "ejs".
+
+			// Установить значение переменной "views" на произвольную:
+			app.set('views', <путь>);	//	Переписать путь "views".
+
+
+		// Если '__dirname' не работает:
+		import path from 'path'
+		const __dirname = path.resolve();
+
+		// Установить статичный путь
+		app.use(express.static(<путь до static папки>));
+
+			// При использовании статической директории нужно:
+			https://youtu.be/9EtkpCzqZu0?t=1466
+
+		// Возвращать страницу в соответствии с его запросом при помощи 'ejs':
+		https://youtu.be/9EtkpCzqZu0?t=2173
+
+			app.set('view engine', 'ejs');
+			app.set('views', path.resolve(__dirname, 'public'); // В папке "public" находятся два файла: "index.ejs", "features.ejs".
+
+			app.get('/', (req, res) => {
+
+				res.render('index');	//	При переходе на главную страницу откроется страница "index.ejs". ".ejs" не надо писать, потому что Express и так это понимает.
+
+			});
+
+			app.get('/features', (req, res) => {
+
+				res.render('features');	//	При переходе на страницу "/features" откроется страница "features.ejs". ".ejs" не надо писать, потому что Express и так это понимает.
+
+			})
+
+			
+
+			
+
+// Middlewares:
+https://youtu.be/9EtkpCzqZu0?t=1384
+
+	express().use(<middleware>)
+
+https://youtu.be/9EtkpCzqZu0?t=1499
+
+// ОСТ:
+https://youtu.be/9EtkpCzqZu0?t=2253
+
+		

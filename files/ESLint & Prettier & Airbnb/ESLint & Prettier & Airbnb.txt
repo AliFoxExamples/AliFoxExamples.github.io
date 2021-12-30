@@ -1,0 +1,1075 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+◘ "ESLint".
+
+• Работа с "Webpack".
+
+	Для того, чтобы при каждой сборке, код проверялся через "ESLint", нужно установить для него плагин "eslint-webpack-plugin":
+	
+		npm i -D eslint-webpack-plugin
+		
+	Далее нужно его импортировать и добавить его в список плагинов:
+	
+			const ESLintPlugin = require('eslint-webpack-plugin');
+	
+			module.exports = {
+				plugins: [
+					new ESLintPlugin(),
+				]
+			}
+	
+	Плагин "eslint-webpack-plugin" можно настроить передав в конструктор объект конфигурации. В этом объектк будут свойства:
+	
+		extensions
+		
+			Значением будет массив со строками состоящий из расширений, на которые будет распростроняться данный плагин.			
+			Если линтер запускается при сборке проекта, то для того чтобы линтер запускался для тега "<script>" в "HTML", нужно добавить расширение ".html" в массив с расширениями.
+			
+			Пример объекта конфигурации:
+			
+				const ESLintPlugin = require('eslint-webpack-plugin');
+	
+				module.exports = {
+					plugins: [
+						new ESLintPlugin({
+							extensions: ['.js', '.ts', '.html']
+						}),
+					]
+				}
+			
+			Так же потребуется установить плагин для этого (подробнее в главе "Основной список пакетов для установки" в пакете "eslint-plugin-html").
+
+			При использовании "TypeScript", у его парсера нужно дополнительно указать свойство "extraFileExtensions", который будет равен массиву с
+			дополнительными расширениями (например ".html"). Подробнее с свойстве "parserOptions" у корневого объекта конфигурации ".eslintrc".
+
+	• Добавлять плагин "eslint-webpack-plugin" в список плагинов "Webpack" рекомендуется основываясь на режиме сборки. Не рекомендуется проверять код через "ESLint" для режима
+	разработки.
+
+• Игнорирование директорий для линтера.
+
+	Для этого создается файл ".eslintignore", в котором будут перечислени адреса папок, которые будут игнорироваться "ESLint".
+	Примерное содержание файла ".eslintignore":
+	
+		node_modules
+		./vscode
+		./git
+
+• Общая настройка "ESLint".
+
+	Для начала нужно установить "ESLint":
+
+		npm i -D eslint
+
+	Далее можно воспользоваться помощником конфигурации "ESLint", набрав команду "npx eslint --init". Далее нужно отвечать на вопросы в консоли чтобы получить предпочитаемую
+	конфигурацию.
+	Далее будет предложено установить зависимости, которые появились в результате настройки предпочитаемой конфигурации. К примеру если был выбран стиль кода "Airbnb",
+	то будет предложено дополнительно установить зависимости для него.
+	
+	Настройка конфигурации "ESLint". Если была выполнена команда "npx eslint --init", то создастся файл ".eslintrc.json" с настройками "ESLint". Данный файл конфигурации
+	не обязательно будет ".json" формата, он будет того формата, который был выбран в помошнике настройки конфигурации.
+	Файл конфигурации "ESLint" (".eslintrc.json") можно так же создать вручную.
+	
+	Ручная настройка файла конфигурации ".eslintrc.json". Данный файл в корне будет иметь объект, со свойствами:
+	
+		env
+		
+			Среда разработки. Значением является массив с именем среды как свойство, и его булевым значением. Среды:
+			
+				browser
+				
+					Среда разработки браузера. Значением является булево значение.
+				
+				node
+				
+					Среда разработки "Node". Значением является булево значение.
+				
+				es6
+				
+					Поддержка стандарта "es6". Лучше использовать значение "es2021". Автоматически устанавливает "ecmaVersion" в значение 6. Значением является булево значение.
+				
+				es2021
+				
+					Поддержка стандарта "es2021". Автоматически устанавливает "ecmaVersion" в значение 12. Значением является булево значение.
+			
+			Подробнее "https://eslint.org/docs/user-guide/configuring/language-options#specifying-environments".
+		
+		extends
+		
+			Строка либо массив с правилами (в виде строк), от которых "ESLint" будет расширяться.
+			Префикс "eslint-config-" можно не писать в имени дополнительной конфигурации. Например на вместо "eslint-config-airbnb" можно написать "airbnb".
+			Порядок указания правил важен: если два набора правил будут пересекаться, то последний указанный набор  правил перетерет правила предыдущего.
+			Правила идут друг за другом в массиве (дополняют/перетирают) правила предыдущего правила.
+			
+			Правила:
+			
+				airbnb
+				
+					Включение настроек стилизации кода "airbnb" для "Javascript". По умолчанию данная настройка требует плагины "React", так как он связан с ними,
+					поэтому если не используется "React", то можно конкретизировать конфигурацию добавив "/base" - только базовую конфигурацию.
+					Если не используется "React" то лучше сразу установить конфигурацию "airbnb-base".
+					
+					Пример конкретизированной конфигурации "airbnb":
+					
+						airbnb/base
+					
+					Установка:
+					
+						npm i -D eslint-config-airbnb
+			
+				airbnb-base
+				
+					То же самое что и конкретизированная конфигурация "airbnb" - "airbnb/base". Если в массиве конфигураций "exstends" далее "airbnb-base" идут
+					других конфигурации, которые могут пересекаться в настройках, то последний перетерет эти правила и будет обарабывать пересекающиеся
+					настройки (например конфигурации "Prettier"). Установка:
+					
+						npm i -D eslint-config-airbnb-base
+				
+				airbnb-typescript
+				
+					Расширение правил стилей кода "Airbnb" у "ESLint" для "TypeScript". По умолчанию данная настройка требует плагины "React", так как он связан с ними,
+					поэтому если не используется "React", то можно конкретизировать конфигурацию добавив "/base" - только базовую конфигурацию.
+					Пример конкретизированной конфигурации "airbnb-typescript":
+					
+						airbnb-typescript/base
+					
+					Для работы нужно так же установить и добавить базовую конфигурацию "Airbnb" - "eslint-config-airbnb", или "eslint-config-airbnb-base" (если не
+					используется "React").
+					
+					Так же для работы понадобится установить и добавить пакеты: "@typescript-eslint/eslint-plugin", "@typescript-eslint/parser" (подробнее в соответствующих пакетах
+					(подглава "Основной список пакетов для установки")).
+					
+					Установка:
+					
+						npm i -D eslint-config-airbnb
+						
+							или
+							
+								eslint-config-airbnb-base
+					
+						npm i -D eslint-config-airbnb-typescript
+						
+						npm i -D @typescript-eslint/eslint-plugin
+						
+						npm i -D @typescript-eslint/parser
+				
+				eslint:recommended
+				
+					Включение основных правил "ESLint". По умолчанию установлено.
+				
+				plugin:@typescript-eslint/recommended
+				
+					Включение правил "ESLint" для "TypeScript". Для работы нужно так же установить и добавить парсер "@typescript-eslint/parser".
+					
+					Установка:
+					
+						npm i -D @typescript-eslint/parser
+					
+						npm i -D @typescript-eslint/eslint-plugin
+				
+				plugin:prettier/recommended
+				
+					Расширение настроек плагина "eslint-plugin-prettier". Для работы нужен еще и сам "Prettier". Установка:
+					
+						npm i -D prettier
+					
+						npm i -D eslint-plugin-prettier
+				
+				prettier
+				
+					Расширение настроек "Prettier" в "ESLint". Для работы нужен еще и сам "Prettier". Использование данной конфигурации автоматически отключит некторые настройки
+					"ESLint" (подробнее на странице пакета).
+
+					Установка:
+					
+						npm i -D prettier
+					
+						npm i -D eslint-config-prettier
+				
+				plugin:node/recommended
+				
+					Дополнительные правила "ESLint" для "Node.js". Не рекомендуется к установке, достаточно добавить "node" со значением "true" в объект "env",
+					корневого объекта файла конфигурации ".eslintrc".
+					
+					Установка:
+					
+						npm i -D eslint-plugin-node
+				
+				node
+				
+					Конфигурация правил "Node.js" для "ESLint". Не рекомендуется к установке, достаточно добавить "node" со значением "true" в объект "env",
+					корневого объекта файла конфигурации ".eslintrc".
+					
+					Установка:
+					
+						npm i -D eslint-config-node
+				
+				plugin:import/recommended
+				
+					Расширение настроек для поддержки и правильной работы импортов/экспортов и имен файлов. Установка:
+					
+						npm i -D eslint-plugin-import
+				
+				plugin:import/typescript
+				
+					Расширение настроек для поддержки и правильной работы импортов/экспортов и имен файлов в "TypeScript".
+					Для работы нужно так же установить и добавить парсер "@typescript-eslint/parser".
+					
+					Установка:
+					
+						npm i -D @typescript-eslint/parser
+					
+						npm i -D eslint-plugin-import
+		
+		parser
+		
+			Парсер, которым будет пользоваться "ESLint". Значения:
+			
+				@typescript-eslint/parser
+				
+					Парсер "ESLint" для "TypeScript". Установка:
+					
+						npm i -D @typescript-eslint/parser
+				
+				babel-eslint
+				
+					Парсер "Babel".
+		
+		parserOptions
+		
+			Настроки парсера, которым будет пользоваться "ESLint". Значением будет объект со свойствами:
+			
+				project
+				
+					Путь с конфигурационным файлом для парсера. Пример для пути для парсера "@typescript-eslint/parser":
+					
+						"./tsconfig.json"
+				
+				ecmaVersion
+				
+					Установка версии "ECMAScript". Значение численное значение (например 13).
+				
+				sourceType
+				
+					Тип кода (скрипт или модули). Значения:
+					
+						script
+						
+							Использование обычных скриптов (по умолчанию).
+						
+						module
+						
+							Использование модулей.
+				
+				extraFileExtensions
+				
+					Дополнительные расширения файлов, которые парсер будет парсить. Данная опция необходима при проверке кода находящийся в теге "<script>" в "HTML".
+					Значением свойства будет массив с расширениями в виде строк. Например:
+					
+						"extraFileExtensions": [".html"]
+					
+					Для проверки кода находящийся в теге "<script>" в "HTML" так же потребуется установить плагин для этого. Подробнее в главе "Основной список пакетов для установки" в
+					пакете "eslint-plugin-html".
+
+					Если линтер запускается при сборке проекта, то для того чтобы линтер запускался для тега "<script>" в "HTML", нужно настроить объект конфигурации передающийся как аргумент
+					конструктору плагина "eslint-webpack-plugin" соответствующим образом. Подробнее в подглаве 'Работа с "Webpack"'.
+		
+		plugins
+		
+			Массив со сторонними плагинами. Плагины указываются в виде строки. Префикс "eslint-plugin-" можно не писать в именах плагинов. Список сторонних плагинов.
+			
+				@typescript-eslint
+				
+					Плагин, который добавляет поддержку правил "ESLint" для "TypeScript".
+					Для работы нужно так же установить и добавить парсер "@typescript-eslint/parser".
+					
+					Установка:
+					
+						npm i -D @typescript-eslint/parser
+					
+						npm i -D @typescript-eslint/eslint-plugin
+				
+				prettier
+				
+					Плагин для связывания "Prettier" с "ESLint". Для работы нужен еще и сам "Prettier". Установка:
+					
+						npm i -D prettier
+						
+						npm i -D eslint-plugin-prettier
+				
+				html
+				
+					Данный плагин нужен для работы линтера в теге "<script>" в "HTML".
+				
+					Если линтер запускается вручную для определенной директории, то он будет проверять только файлы "js". Чтобы указать дополнительные расширения (например ".html"),
+					надо добавить флаг "--ext", далее указав расширение. Данный флаг нужно добавить для каждого расширения. Если данный флаг был использован для другого расширения
+					(не ".js"), то линтер не будет работать для расширений ".js". Для этого его тоже нужно будет добавить с список расширений вручную.
+
+					Например:
+					
+						npx eslint ./src --ext .js --ext .ts --ext .html
+
+					Установка:
+					
+						npm i -D eslint-plugin-html
+					
+					Если линтер запускается при сборке проекта, то для того чтобы линтер запускался для тега "<script>" в "HTML", нужно настроить объект конфигурации передающийся как аргумент
+					конструктору плагина "eslint-webpack-plugin" соответствующим образом. Подробнее в подглаве 'Работа с "Webpack"'.
+
+					При использовании "TypeScript", у его парсера нужно дополнительно указать свойство "extraFileExtensions", который будет равен массиву с
+					дополнительными расширениями (например ".html"). Подробнее с свойстве "parserOptions" у корневого объекта конфигурации ".eslintrc".
+				
+				import
+				
+					Плагин для поддержки и правильной работы импортов/экспортов и имен файлов. Установка:
+					
+						npm i -D eslint-plugin-import
+		
+		rules
+		
+			Объект со свойствами - правилами линтера. Зачения перечисленных свойств могут быть строкамии, и могут быть ммассивами для более детальной настройки.
+			Основные правила:
+			
+				no-unsued-vars
+				
+					Поведение при неиспользованных переменных. Значения:
+					
+						warn
+						
+							Выдать предупреждение. Сборка не остановится.
+						
+						error
+						
+							Выдать ошибку. Сборка остановится.
+						
+						off
+						
+							Не использовать данную функцию (по умолчанию).
+				
+				max-len
+				
+					Поведение при превышении максимальной длины строки. Значение является массивом, первым значением которого идет поведение (наприммер "error"), которое должно
+					сработать при нарушении правила, а вторым идет численное значение длины строки, превышение которого будт являться нарушением правила. Третьим значением
+					может идти объект, с более детальной настройкой. Свойства этого объекта:
+					
+						ignoreUrls
+						
+							Игнорирование данного правила ("max-len") для "URL" адресов (например когда "URL" адрес длинный). Значением является булево значение.
+					Пример:
+					
+						"max-len": ["error", 150, { "ignoreUrls": true }]
+				
+				prettier/prettier
+				
+					Натройска правил поведения "Prettier".				
+					Если используется "Prettier", то не рекомендуется пользоваться встроеннымии настройками правил "ESLint", а вместо него пользоваться настройками правил "Prettier".
+					Значением "prettier/prettier" является массив с настройкой. Первым элементом в масиве будет строковое значание поведения. Поведения:
+					
+						error
+						
+							При нарушении правил выдать ошибку.
+					
+					Вторым элементом в массиве будет объект с правилами:
+					
+						trailingComma
+						
+							Требование к "висящей запятой". Значения:
+							
+								all
+								
+									Требовать везде.
+						
+						tabWidth
+						
+							Длина табуляции. Значнием будет численное значание. Рекомендуется использовать 2.
+						
+						semi
+						
+							Требование точкек с запятыми (";"). Значением является булево значание.
+						
+						singleQuote
+						
+							Требование использования одинарных кавычек. Значением является булево значание.
+						
+						bracketSpacing
+						
+							Требование добавления пробельных отступов в фигурных скобках. Значением является булево значание.
+						
+						printWidth
+						
+							Максимально допустимая длина строки. Значением является численное значание. Рекомендуется использовать 120.
+					
+					Пример настройки правил:
+	
+						"rules": {
+							"prettier/prettier": [
+								"error",
+								{
+									"trailingComma": "all",
+									"tabWidth": 2,
+									"semi": true,
+									"singleQuote": true,
+									"bracketSpacing": true,
+									"printWidth": 120
+								}
+							]
+						}
+
+• Ручной запуск "ESLint".
+
+	Для ручного запуска "ESLint" нужно обратиться к "ESLint" ("eslint") после ключевого слова "npx", затем указать папку или конкретный файл для проверки, затем можно добавить флаг.
+	Если запустить "ESLint" без флагов, то он запустится в режиме проверки.
+
+	Флаги:
+	
+		--fix
+		
+			Отредактировать код соглавсно "ESLint".
+		
+		--ext
+		
+			Если линтер запускается для определенной директории, то он будет проверять только файлы "js". Чтобы указать дополнительные расширения,
+			надо добавить флаг "--ext", далее указав расширение. Данный флаг нужно добавить для каждого расширения. Если данный флаг был использован для другого расширения
+			(не ".js"), то линтер не будет работать для расширений ".js". Для этого его тоже нужно будет добавить с список расширений вручную.
+
+			Например:
+			
+				npx eslint ./src --ext .js --ext .ts --ext .html
+	
+	Приммеры:
+	
+		npx eslint ./src
+		
+			Запустить "ESLint" и вывсести информацию о форматировании файлов.
+
+		npx eslint ./src --fix
+		
+			Запустить "ESLint" и отформатировать файлы согласно ему.
+
+• Основной список пакетов для установки:
+
+	eslint-plugin-import
+
+		Для поддержки и правильной работы импортов/экспортов и имен файлов.
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"plugin:import/recommended",
+				],
+				
+				"plugins": [
+					"import"
+				]
+			}
+		
+		Если используется "TypeScript", то для работы нужно так же установить и добавить парсер "@typescript-eslint/parser".
+		Конфигурация будет следующией:
+		
+			{
+				"exstends": [
+					"plugin:import/recommended",
+					"plugin:import/typescript"
+				],
+				
+				"parser": "@typescript-eslint/parser",
+				
+				"plugins": [
+					"import"
+				]
+			}
+	
+		Подробнее "https://www.npmjs.com/package/eslint-plugin-import".
+		
+	@typescript-eslint/parser
+
+		Парсер, для поддержки "TypeScript".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"parser": "@typescript-eslint/parser",
+			}
+		
+		Подробнее "https://www.npmjs.com/package/@typescript-eslint/parser".
+	
+	@typescript-eslint/eslint-plugin
+	
+		Плагин, который добавляет поддержку правил "ESLint" для "TypeScript". Для работы нужно так же установить и добавить парсер "@typescript-eslint/parser".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"plugin:@typescript-eslint/recommended"
+				],
+				
+				"parser": "@typescript-eslint/parser",
+				
+				"plugins": [
+					"@typescript-eslint"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/@typescript-eslint/eslint-plugin".
+	
+	eslint-config-airbnb
+
+		Пакет с правиламии стилизации кода "Airbnb". По умолчанию данный пакет распространяется на "React", так как он связан с ними, поэтому если не используется "React",
+		то не рекомендуется устанавливать данный пакет, а установить "eslint-config-airbnb-base" ("-base" означает только базовую конфигурацию).
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"airbnb"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-config-airbnb".
+		
+	eslint-config-airbnb-base
+	
+		Пакет с правиламии стилизации кода "Airbnb". Данный пакет является конкретизированной конфигурацией пакета "eslint-config-airbnb",
+		так как содержит оконание "-base", что означает только базовая конфигурация. Пакет "eslint-config-airbnb" же более расширенный и
+		распространяется на "React", так как он связан с ними, поэтому если не используется "React", то не рекомендуется устанавливать
+		основной расширенный пакет "eslint-config-airbnb", а только установить этот пакет - "eslint-config-airbnb-base".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"airbnb-base"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-config-airbnb-base".
+		
+	eslint-webpack-plugin
+
+		Плагин для связывания "Webpack" с "ESLint". Подробнее в подглаве 'Работа с "Webpack"'.
+		
+		Подробнее "https://www.npmjs.com/package/eslint-webpack-plugin".
+
+	eslint-config-airbnb-typescript
+
+		Расширение правил стилей кода "Airbnb" у "ESLint" для "TypeScript". Для работы нужно так же установить и добавить базовую конфигурацию "Airbnb" - "eslint-config-airbnb",
+		или "eslint-config-airbnb-base" (если не используется "React"). Использование данного пакета в расширениях правил ("extends") так же зависит от того, используется ли "React"
+		или нет. Если используется, то зачением в массиве расширения правил "extends" будет "airbnb-typescript", а если не используется "React", то значением будет
+		"airbnb-typescript/base".
+		
+		Так же для работы понадобится установить и добавить пакеты: "@typescript-eslint/eslint-plugin", "@typescript-eslint/parser" (подробнее в соответствующих пакетах).
+		
+		Свойства корневого объекта конфигурации ".eslintrc" при использовании "React" (касаемо конкретно "eslint-config-airbnb-typescript"):
+		
+			{
+				"exstends": [
+					"airbnb",
+					"airbnb-typescript",
+					"plugin:@typescript-eslint/recommended"
+				],
+				
+				"parser": "@typescript-eslint/parser",
+				
+				"plugins": [
+					"@typescript-eslint"
+				]
+			}
+		
+		Свойства корневого объекта конфигурации ".eslintrc" без использования "React" (касаемо конкретно "eslint-config-airbnb-typescript"):
+		
+			{
+				"exstends": [
+					""airbnb-base",
+					"airbnb-typescript/base",
+					"plugin:@typescript-eslint/recommended"
+				],
+				
+				"parser": "@typescript-eslint/parser",
+				
+				"plugins": [
+					"@typescript-eslint"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-config-airbnb-typescript".
+
+	prettier
+	
+		Корневой функционал "Prettier". Для связывания с "ESLint" понядобятся пакеты "eslint-plugin-prettier" и "eslint-config-prettier"
+		(подробнее в соответствующих пакетах).
+
+	eslint-plugin-prettier
+
+		Плагин для связывания "Prettier" с "ESLint". Для работы нужен еще и сам "Prettier".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"plugin:prettier/recommended"
+				],
+				
+				"plugins": [
+					"prettier"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-plugin-prettier".
+
+	eslint-config-prettier
+
+		Конфигурация "Prettier" для "ESLint". Для работы нужен еще и сам "Prettier". Использование данной конфигурации автоматически отключит некторые настройки
+		"ESLint" (подробнее на странице пакета).
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"prettier"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-config-prettier".
+
+	eslint-plugin-node
+
+		Дополнительные правила "ESLint" для "Node.js". Не рекомендуется к установке, достаточно добавить "node" со значением "true" в объект "env",
+		корневого объекта файла конфигурации ".eslintrc".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"plugin:node/recommended"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-plugin-node".
+
+	eslint-config-node
+
+		Конфигурация правил "Node.js" для "ESLint". Не рекомендуется к установке, достаточно добавить "node" со значением "true" в объект "env",
+		корневого объекта файла конфигурации ".eslintrc".
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"exstends": [
+					"node"
+				]
+			}
+		
+		Подробнее "https://www.npmjs.com/package/eslint-config-node".
+
+	eslint-plugin-html
+
+		Данный плагин нужен для работы линтера в теге "<script>" в "HTML".
+		
+		Если линтер запускается вручную для определенной директории, то он будет проверять только файлы "js". Чтобы указать дополнительные расширения (например ".html"),
+		надо добавить флаг "--ext", далее указав расширение. Данный флаг нужно добавить для каждого расширения. Если данный флаг был использован для другого расширения
+		(не ".js"), то линтер не будет работать для расширений ".js". Для этого его тоже нужно будет добавить с список расширений вручную.
+
+		Например:
+		
+			npx eslint ./src --ext .js --ext .ts --ext .html
+		
+		Подключение (свойства корневого объекта конфигурации ".eslintrc"):
+		
+			{
+				"plugins": [
+					"html"
+				]
+			}
+		
+		Если линтер запускается при сборке проекта, то для того чтобы линтер запускался для тега "<script>" в "HTML", нужно настроить объект конфигурации передающийся как аргумент
+		конструктору плагина "eslint-webpack-plugin" соответствующим образом. Подробнее в подглаве 'Работа с "Webpack"'.
+		
+		При использовании "TypeScript", у его парсера нужно дополнительно указать свойство "extraFileExtensions", который будет равен массиву с
+		дополнительными расширениями (например ".html"). Подробнее с свойстве "parserOptions" у корневого объекта конфигурации ".eslintrc".
+		
+		Подробнее "https://www.npmjs.com/package/eslint-plugin-html".
+
+Подробнее "https://eslint.org".
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+◘ "Prettier".
+
+Установка:
+
+	npm i -D prettier
+
+• Использование вместе с "ESLint".
+
+	Чтобы "ESLint" после своей проверки кода автоматически запускал "Prettier", нужно установить плагин "eslint-plugin-prettier":
+	
+		npm i -D eslint-plugin-prettier
+	
+	Так же нужно установить конфигурацию "Prettier" для "ESLint":
+	
+		npm i -D eslint-config-prettier
+	
+	Далее в список плагинов "ESLint" (свойство "plugins") добавляется "prettier", для того чтобы "Prettier" запускался вместе с "ESLint":
+	
+		"plugins": [
+			"prettier",
+		]
+	
+	Далее нужно расширить конфигурацию "ESLint" конфигурациями "Prettier", добавив соответствующие свойства:
+	
+		"extends": [
+			"plugin:prettier/recommended",
+			"prettier"
+		]
+	
+	Далее можно добавить правила форматирования кода. Делается это добалвением свойства "prettier/prettier" в объект "rules" корневого объекта конфигурации ".eslintrc".
+	Подробнее в соответствующем свойстве. Пример настройки правил:
+	
+		"rules": {
+			"prettier/prettier": [
+				"error",
+				{
+					"trailingComma": "all",
+					"tabWidth": 2,
+					"semi": true,
+					"singleQuote": true,
+					"bracketSpacing": true,
+					"printWidth": 120
+				}
+			]
+		}
+
+	Так же можно настроить правила форматирования кода в файле конфигурации проекта "package.json".	Делается это добавлением свойства "prettier" в корневой объект
+	файла конфигурации проекта "package.json". Значением этого свойства будет объект с настройками. Не рекомендуется пользоваться данным способом, так как способ выше
+	лучше.
+	
+	Пример:
+	
+		"prettier": {
+			"singleQuote": true,
+			"printWith": 120
+		}
+
+• Ручной запуск:
+
+	Для ручного запуска "Prettier" нужно обратиться к "Prettier" ("prettier") после ключевого слова "npx", затем указать папку или конкретный файл для проверки, затем добавить флаг. Флаги:
+	
+		--check
+		
+			Простая проверка "Prettier".
+		
+		--write
+		
+			Отредактировать код соглавсно "Prettier".
+	
+	Приммеры:
+	
+		npx prettier ./src --check
+		
+			Запустить "Prettier" и вывсести информацию о форматировании файлов.
+
+		npx prettier ./src --write
+		
+			Запустить "Prettier" и отформатировать файлы согласно ему.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+◘ Потоковая работа "ESLint" и "Prettier" в редакторе "Visual Studio Code".
+
+Для этого нужно установить дополнение "ESLint" и дополнение "Prettier" в разделе дополнений "Visual Studio Code".
+
+Далее можно настроить эти дополнения. Для этого нужно перейтм в настройки "Visual Studio Code",  и в правом верхнем углу нажать на "Open Settings (JSON)", далее в "JSON"
+файле настроек добавить поля:
+
+	eslint.autoFixOnSave
+	
+		Исправлять код согласно "ESLint" при каждом сохранении кода. Значением является булево значение.
+	
+	prettier.disableLanguages
+	
+		Отключение "Prettier" для указанных языков, чтобы не конфликтовать с "ESLint". Значением является массиа с именами отключаемых языков. Пример:
+		
+			"prettier.disableLanguages": ['js']
+
+По умолчанию плагин "ESLint" пользуется конфигурациями ".eslintrs" и ".eslintignore", которые лежат в корне рабочей директории (директория, где открыт "Visual Studio Code"),
+и по этому он может проверять файлы, которые не нужно проверять (например файлы конфигурации "webpack.config.js" или "tsconfig.json"). Для предотвращения такого поведения,
+можно добавить нежелательные для проверки файлы и директории в файл игнорирования ".eslintignore".
+
+	Начальное содержание файла ".eslintignore":
+	
+		node_modules
+		./vscode
+		./git
+		./dist
+		webpack.config.js
+		webpack.config.production.js
+		webpack.config.development.js
+		webpack.config.common.js
+		tsconfig.json
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+◘ Роадмап по настройке.
+
+• Для "Javascript".
+
+Настройка для использования "ESLint" для "Javascript" с "Prettier", "Airbnb" без "React" в сборщике "Webpack".
+
+	Пакеты для установки:
+
+		eslint
+
+		eslint-plugin-import
+
+		eslint-config-airbnb-base
+
+		eslint-webpack-plugin
+
+		prettier
+
+		eslint-plugin-prettier
+
+		eslint-config-prettier
+
+		eslint-plugin-html
+		
+		Укороченная запись в одно строку для удобного копирования и установки:
+		
+			npm i -D eslint eslint-plugin-import eslint-config-airbnb-base eslint-webpack-plugin prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-html
+	
+	Конфигурация:
+	
+		{
+			"env": {
+				"browser": true,
+				"es2021": true,
+				"node": true
+			},
+			"extends": [
+				"eslint:recommended",
+				"airbnb-base",
+				"plugin:import/recommended",
+				"plugin:prettier/recommended",
+				"prettier"
+			],
+			"plugins": [
+				"import",
+				"prettier",
+				"html"
+			],
+			"rules": {
+				"prettier/prettier": [
+					"error",
+					{
+						"trailingComma": "all",
+						"tabWidth": 2,
+						"semi": true,
+						"singleQuote": true,
+						"bracketSpacing": true,
+						"printWidth": 120
+					}
+				]
+			}
+		}
+	
+	Настройка работы с "Webpack". Подробнее в главе "ESLint", в подглаве 'Работа с "Webpack"'.
+	
+	Скрипты в файле конфигурации сборки "package.json":
+	
+		"scripts": {
+			"lint": "eslint ./src --ext .js --ext .ts --ext .html",
+			"lintFix": "eslint ./src --ext .html --ext .js --ext .ts --fix"
+		}
+	
+	Для дополнительных расширений для проверки линтером их нужно так же добавить в скрипт после флага "--ext".
+	
+	Так же можно настроить потоковую проверку кода текстовым редаоктором "Visual Studio Code". Подробнее в главе 
+	Потоковая работа "ESLint" и "Prettier" в редакторе "Visual Studio Code"'. Иногда если потоковая проверка не работает (наприммер после внесения изменений),
+	нужно просто перезапустить редактор кода.
+	
+	Начальное содержание файла ".eslintignore":
+	
+		node_modules
+		./vscode
+		./git
+		./dist
+		webpack.config.js
+		webpack.config.production.js
+		webpack.config.development.js
+		webpack.config.common.js
+		tsconfig.json
+
+• Для "TypeScript".
+
+Настройка для использования "ESLint" для "TypeScript" с "Prettier", "Airbnb" без "React" в сборщике "Webpack".
+
+	Пакеты для установки:
+
+		eslint
+
+		eslint-plugin-import
+
+		@typescript-eslint/parser
+
+		eslint-config-airbnb-base
+
+		eslint-webpack-plugin
+
+		@typescript-eslint/eslint-plugin
+
+		eslint-config-airbnb-typescript
+
+		prettier
+
+		eslint-plugin-prettier
+
+		eslint-config-prettier
+
+		eslint-plugin-html
+
+		Укороченная запись в две строки для удобного копирования и установки:
+
+			npm i -D eslint eslint-plugin-import @typescript-eslint/parser eslint-config-airbnb-base eslint-webpack-plugin @typescript-eslint/eslint-plugin
+
+			npm i -D eslint-config-airbnb-typescript prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-html
+
+	
+	Конфигурация:
+	
+		{
+			"env": {
+				"browser": true,
+				"es2021": true,
+				"node": true
+			},
+			"extends": [
+				"eslint:recommended",
+				"airbnb-base",
+				"airbnb-typescript/base",
+				"plugin:@typescript-eslint/recommended",
+				"plugin:import/recommended",
+				"plugin:prettier/recommended",
+				"prettier"
+			],
+			"parser": "@typescript-eslint/parser",
+			"parserOptions": {
+				"ecmaVersion": 12,
+				"sourceType": "module",
+				"project": "./tsconfig.json",
+				"extraFileExtensions": [".html"]
+			},
+			"plugins": [
+				"@typescript-eslint",
+				"import",
+				"prettier",
+				"html"
+			],
+			"rules": {
+				"prettier/prettier": [
+					"error",
+					{
+						"trailingComma": "all",
+						"tabWidth": 2,
+						"semi": true,
+						"singleQuote": true,
+						"bracketSpacing": true,
+						"printWidth": 120
+					}
+				]
+			}
+		}
+	
+	Настройка работы с "Webpack". Подробнее в главе "ESLint", в подглаве 'Работа с "Webpack"'.
+	
+	Скрипты в файле конфигурации сборки "package.json":
+	
+		"scripts": {
+			"lint": "eslint ./src --ext .js --ext .ts --ext .html",
+			"lintFix": "eslint ./src --ext .html --ext .js --ext .ts --fix"
+		}
+	
+	Для дополнительных расширений для проверки линтером их нужно так же добавить в скрипт после флага "--ext".
+	
+	Так же можно настроить потоковую проверку кода текстовым редаоктором "Visual Studio Code". Подробнее в главе 
+	Потоковая работа "ESLint" и "Prettier" в редакторе "Visual Studio Code"'. Иногда если потоковая проверка не работает (наприммер после внесения изменений),
+	нужно просто перезапустить редактор кода.
+	
+	Начальное содержание файла ".eslintignore":
+	
+		node_modules
+		./vscode
+		./git
+		./dist
+		webpack.config.js
+		webpack.config.production.js
+		webpack.config.development.js
+		webpack.config.common.js
+		tsconfig.json
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

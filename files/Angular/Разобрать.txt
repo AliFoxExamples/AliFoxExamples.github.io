@@ -1,0 +1,62 @@
+https://habr.com/ru/post/501830/
+
+> Для начала нужно ввести команду "Set-ExecutionPolicy RemoteSigned" в "Power Shell", запущенного от имени администратора.
+
+Начать:
+
+	https://youtu.be/HoUq9xyfCAk?t=1408
+
+Angular config:
+
+	https://youtu.be/HoUq9xyfCAk?t=1584
+
+tslint:
+
+	https://youtu.be/HoUq9xyfCAk?t=1701
+
+Environmets:
+
+	https://youtu.be/HoUq9xyfCAk?t=1792
+
+app:
+
+	https://youtu.be/HoUq9xyfCAk?t=1889
+
+настройка входного файла:
+
+	https://youtu.be/HoUq9xyfCAk?t=1932
+
+bootstrap:
+
+	https://youtu.be/HoUq9xyfCAk?t=2010
+
+Запуск:
+
+	https://youtu.be/HoUq9xyfCAk?t=2382
+
+Генерация компоненты:
+
+	https://youtu.be/HoUq9xyfCAk?t=2512
+
+Typescript в Angular:
+
+	https://youtu.be/HoUq9xyfCAk?t=2803
+
+	Как начать:
+
+		https://youtu.be/HoUq9xyfCAk?t=3237
+
+	ОСТ:
+
+		https://youtu.be/HoUq9xyfCAk?t=3645
+
+Команды:
+
+	ng g interface
+
+	ng g component
+
+	ng g class
+
+
+
