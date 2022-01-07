@@ -2871,8 +2871,7 @@ outline-offset
 		@font-face {
 			font-family: Delicious; /* Имя шрифта */
 			src: url('Delicious.ttf'); /* Путь к файлу со шрифтом в формате ".ttf" */
-			src: url('Delicious.eot?
-			#iefix');
+			src: url('Delicious.eot? #iefix');
 		}
 		p {
 			font-family: Delicious;
