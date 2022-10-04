@@ -1,5 +1,15 @@
 const cl = console.log;
 
+// Конвертировать радианы в градусы.
+function convertRadToDeg(rad) {
+  return (rad / Math.PI) * 180;
+}
+
+// Конвертировать градусы в радианы.
+function convertDegToRad(deg) {
+  return (deg * Math.PI) / 180;
+}
+
 const chain1 = document.getElementById("chain1");
 const hinge2 = document.getElementById("hinge2");
 const chain2 = document.getElementById("chain2");
@@ -43,7 +53,7 @@ function applyPhysEngineTo(chainsGroupObject, chainsGroupObjectTarget) {
     let mClickYInRange = mClickY - physBox.offsetTop;
     let trgLeft = targetChain.offsetLeft;
     let trgTop = targetChain.offsetTop;
-    let a, b, hypot, aDeg, bDeg, aRad, bRad, cotan, elDeg;
+    let a, b, hypot, aDeg, bDeg, aRad, bRad, elDeg;
 
     if (clickStatus == true) {
       // Определение координат клика мыши относительно "коробки".
@@ -74,24 +84,22 @@ function applyPhysEngineTo(chainsGroupObject, chainsGroupObjectTarget) {
       // Гипотенуза.
       hypot = Math.hypot(a, b);
 
-      //---------------------------------
-
       const sine = b / hypot; // Определение синуса угла поворота рычага.
       aRad = Math.asin(sine); // Определение угла поворота рычага в радианах через арксинус.
 
-      aDeg = (aRad / Math.PI) * 180; // Перевод радианов в градусы.
+      aDeg = convertRadToDeg(aRad); // Перевод радианов в градусы.
       aDeg = mClickXInRange < trgLeft ? 180 - aDeg : aDeg; // Форматирование угла рычага в зависимости от того, в какой половине находится курсор относительно вертикальной оси.
 
       // Применение значений угла к рычагу.
       targetChain.style.transform = `rotate(${aDeg}deg)`;
 
-      //---------------------------------
+      //--------------------------------- ОСТ
 
       // Физика шарнира.
       // Переопределение значения угла рычага в формат "360".
 
       elDeg = aDeg < 0 ? aDeg + 360 : aDeg;
-      cl(aDeg);
+      cl(elDeg, aDeg);
 
       // Определение углов катетов прямоугольного треугольника.
       if (aDeg <= 90 && aDeg >= 0) {
@@ -104,10 +112,11 @@ function applyPhysEngineTo(chainsGroupObject, chainsGroupObjectTarget) {
         aDeg = (aDeg + 90) * -1;
       }
       bDeg = 90 - aDeg;
+      cl("2", elDeg, aDeg, bDeg);
 
-      // // Перевод значений углов катетов в радианы.
-      aRad = (aDeg * Math.PI) / 180;
-      bRad = (bDeg * Math.PI) / 180;
+      // Перевод значений углов катетов в радианы.
+      aRad = convertDegToRad(aDeg);
+      bRad = convertDegToRad(bDeg);
 
       // Определения длин катетов по радиусу "100" (медианы) и углам катетов в радианах.
       a = Math.sin(aRad) * targetChain.offsetWidth;
@@ -220,7 +229,7 @@ function Arcsine(x, n) {
   let result = 0;
 
   for (let i = 0; i <= n; i++) {
-    // Расчет ислителя.
+    // Расчет числителя.
     let numerator = getFactorial(2 * i);
     // Расчет знаменателя.
     let denominator = Math.pow(4, i) * Math.pow(getFactorial(i), 2) * (2 * i + 1);
